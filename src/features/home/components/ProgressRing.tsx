@@ -1,22 +1,27 @@
 import { StyleSheet, View } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
 
-import { Text } from '@/components/ui';
+import { type ColorToken, Text } from '@/components/ui';
 import { useTheme } from '@/theme';
 
-/** Circular progress with a centred label (Today's Amol "2/5"). */
+/** Circular progress with a centred label (Today's Amol "2/5", My Ramadan). */
 export function ProgressRing({
   progress,
   label,
   accessibilityLabel,
   size = 44,
   stroke = 5,
+  color = 'primary',
+  labelSize,
 }: {
   progress: number;
   label: string;
   accessibilityLabel: string;
   size?: number;
   stroke?: number;
+  color?: ColorToken;
+  /** Label font size; defaults to the micro variant. */
+  labelSize?: number;
 }) {
   const { colors } = useTheme();
   const r = (size - stroke) / 2;
@@ -44,7 +49,7 @@ export function ProgressRing({
             cy={size / 2}
             r={r}
             fill="none"
-            stroke={colors.primary}
+            stroke={colors[color]}
             strokeWidth={stroke}
             strokeLinecap="round"
             strokeDasharray={`${filled} ${c}`}
@@ -53,7 +58,7 @@ export function ProgressRing({
         ) : null}
       </Svg>
       <View style={[StyleSheet.absoluteFill, styles.center]}>
-        <Text variant="micro" weight="700" tabular maxFontSizeMultiplier={1}>
+        <Text variant="micro" size={labelSize} weight="700" tabular maxFontSizeMultiplier={1}>
           {label}
         </Text>
       </View>

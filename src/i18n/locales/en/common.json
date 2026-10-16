@@ -501,5 +501,205 @@
       "stop": "Stop playback",
       "playError": "Couldn't play this recitation. Check your connection or download it for offline use."
     }
+  },
+  "ramadan": {
+    "title": "Ramadan",
+    "mubarak": "Ramadan Mubarak",
+    "upcoming": "Ramadan {{year}} AH",
+    "remindersButton": "Ramadan reminders",
+    "dayOf": "Day {{day}} of {{total}}",
+    "startsIn": "In {{n}} days",
+    "startsTomorrow": "Starts tomorrow",
+    "iftarIn": "Iftar in",
+    "sehriEndsIn": "Sehri ends in",
+    "iftarAt": "Iftar at {{time}}",
+    "sehriAt": "Sehri ends at {{time}}",
+    "countdownA11y": "{{label}} {{h}} hours {{m}} minutes",
+    "beginsIn": "Ramadan begins in",
+    "days": "{{n}} days",
+    "expected": "Expected 1 Ramadan: {{date}}",
+    "moonNote": "Dates depend on the moon sighting.",
+    "fastProgress": "Fast completed",
+    "sehriShort": "Sehri {{time}}",
+    "iftarShort": "Iftar {{time}}",
+    "fastPercent": "{{percent}}% of today's fast",
+    "fastComplete": "Today's fast is complete",
+    "beforeSehri": "Time for Sehri",
+    "cards": {
+      "sehriEnds": "Sehri ends",
+      "iftar": "Iftar",
+      "endedFasting": "Ended · fasting",
+      "ended": "Ended",
+      "in": "in {{duration}}",
+      "done": "Fast complete",
+      "tomorrow": "Tomorrow · in {{duration}}"
+    },
+    "ashraTitle": "The three Ashra",
+    "ashraEach": "10 days each",
+    "ashraDays": "Days {{from}}–{{to}}",
+    "ashraCardSub": "{{days}} · {{meaning}}",
+    "ashraCardDay": "{{days}} · Day {{n}}",
+    "now": "NOW",
+    "ashraDone": "{{name}}, completed",
+    "ashra": {
+      "rahmat": {
+        "name": "Rahmat",
+        "meaning": "Mercy",
+        "long": "The ten days of mercy",
+        "ordinal": "FIRST ASHRA"
+      },
+      "maghfirat": {
+        "name": "Maghfirat",
+        "meaning": "Forgiveness",
+        "long": "The ten days of forgiveness",
+        "ordinal": "SECOND ASHRA"
+      },
+      "nijat": {
+        "name": "Nijat",
+        "meaning": "Release",
+        "long": "The ten days of release from the Fire",
+        "ordinal": "THIRD ASHRA"
+      }
+    },
+    "timetableLink": "30-day Ramadan timetable",
+    "timetableLinkSub": "Sehri, Iftar, Fajr and Maghrib for {{place}}",
+    "timetableLinkSubNoPlace": "Sehri, Iftar, Fajr and Maghrib",
+    "todayDua": "TODAY'S DUA",
+    "breakingFast": "Breaking the fast",
+    "shareDua": "Share dua",
+    "qadr": {
+      "title": "Laylatul Qadr",
+      "body": "Seek it in the odd nights of the last ten.",
+      "firstIn": "The first odd night begins in {{n}} days.",
+      "nextIn": "The next odd night begins in {{n}} days.",
+      "tonight": "Night {{night}} begins tonight after Maghrib.",
+      "over": "The odd nights of this Ramadan have passed.",
+      "note": "Nights begin after Maghrib on the evening shown · {{source}}",
+      "nightA11y": "Night {{night}}, begins the evening of {{date}}"
+    },
+    "my": {
+      "title": "My Ramadan",
+      "logToday": "Log today",
+      "fasting": "Fasting",
+      "ofDays": "of {{n}} days",
+      "taraweeh": "Taraweeh",
+      "ofNights": "of {{n}} nights",
+      "khatam": "Quran khatam",
+      "ofParas": "of 30 paras",
+      "ringA11y": "{{label}}, {{done}} of {{total}}"
+    },
+    "log": {
+      "title": "Log today",
+      "subtitle": "Day {{day}} of Ramadan",
+      "fasted": "I fasted today",
+      "fastedCaption": "Counts towards your 30 fasts",
+      "taraweeh": "I prayed Taraweeh",
+      "taraweehCaption": "Tonight's Taraweeh after Isha",
+      "khatamNote": "Quran progress follows your last-read para in the Quran reader."
+    },
+    "compactEyebrow": "DAY {{day}} · {{ashra}}",
+    "compactCountdown": "{{label}} {{time}}",
+    "reminders": {
+      "title": "Ramadan reminders",
+      "subtitle": "Scheduled during Ramadan only",
+      "sehri": "Sehri reminder",
+      "sehriCaption": "{{minutes}} minutes before Sehri ends",
+      "iftar": "Iftar reminder",
+      "iftarCaption": "{{minutes}} minutes before Iftar",
+      "denied": "Allow notifications in Settings to get reminders.",
+      "sehriTitle": "Sehri ends in {{minutes}} minutes",
+      "sehriBody": "Sehri ends at {{time}}. Finish eating and make your intention.",
+      "iftarTitle": "Iftar in {{minutes}} minutes",
+      "iftarBody": "Iftar at {{time}}. Remember the dua for breaking the fast."
+    },
+    "timetable": {
+      "title": "Ramadan Timetable",
+      "subtitle": "{{year}} AH · {{span}}",
+      "share": "Share or save as PDF",
+      "margin": "Sehri ends {{n}} min before Fajr",
+      "day": "Day",
+      "sehri": "Sehri",
+      "iftar": "Iftar",
+      "ashraHead": "{{name}} · {{meaning}}",
+      "qadrDot": "An odd night of the last ten begins at this Iftar",
+      "pdfTitle": "Ramadan {{year}} AH · {{place}}",
+      "rowA11y": "Day {{day}}, {{date}}: Sehri {{sehri}}, Iftar {{iftar}}, Fajr {{fajr}}, Maghrib {{maghrib}}"
+    },
+    "detail": {
+      "eyebrow": "{{ordinal}} · {{days}}",
+      "today": "Today is day {{day}} · {{n}} of {{total}}",
+      "upcoming": "Begins on day {{from}} · {{date}}",
+      "past": "Completed this Ramadan",
+      "progressA11y": "Day {{n}} of {{total}} in this ashra",
+      "fazilat": "FAZILAT",
+      "hadith": "“The first part of this month is mercy, its middle is forgiveness, and its end is release from the Fire.”",
+      "caution": "Widely quoted, but its chain is weak. Seek mercy, forgiveness and release throughout Ramadan, not only in these ten days.",
+      "amolTitle": "Amol for this ashra",
+      "amolProgress": "{{done}} of {{total}} today",
+      "duaOf": "DUA {{n}} OF {{total}}",
+      "count": "Add one to {{item}}"
+    },
+    "collections": {
+      "bukhari": "Bukhari",
+      "muslim": "Muslim",
+      "tirmidhi": "Tirmidhi",
+      "abuDawud": "Abu Dawud",
+      "ibnKhuzaymah": "Ibn Khuzaymah",
+      "quran": "Quran"
+    },
+    "content": {
+      "iftar": {
+        "title": "Breaking the fast",
+        "translation": "The thirst is gone, the veins are moistened, and the reward is certain, if Allah wills."
+      },
+      "taraweeh": "Taraweeh prayer",
+      "sehri": "Eat Sehri, even a little",
+      "hastenIftar": "Break the fast on time",
+      "quranDaily": "Recite Quran every day",
+      "istighfar": "Istighfar 100 times",
+      "sayyidulIstighfar": "Sayyidul Istighfar, morning & evening",
+      "tahajjud": "Tahajjud before Sehri",
+      "feedIftar": "Give Iftar to someone fasting",
+      "seekQadr": "Seek Laylatul Qadr in the odd nights",
+      "striveNights": "Spend the nights in worship",
+      "itikaf": "I'tikaf in the masjid",
+      "fitrah": "Pay Zakat al-Fitr before the Eid prayer",
+      "rahmat1": {
+        "title": "Asking for mercy",
+        "translation": "My Lord, forgive and have mercy, for You are the best of those who show mercy."
+      },
+      "rahmat2": {
+        "title": "Seeking help through His mercy",
+        "translation": "O Ever-Living, O Sustainer of all, by Your mercy I seek help."
+      },
+      "rahmat3": {
+        "title": "Mercy for me and my family",
+        "translation": "My Lord, forgive me and my brother and admit us into Your mercy, for You are the most merciful of the merciful."
+      },
+      "maghfirat1": {
+        "title": "Asking for pardon",
+        "translation": "O Allah, You are the Pardoner and You love to pardon, so pardon me."
+      },
+      "maghfirat2": {
+        "title": "The dua of Adam",
+        "translation": "Our Lord, we have wronged ourselves. If You do not forgive us and have mercy on us, we will surely be among the losers."
+      },
+      "maghfirat3": {
+        "title": "Seeking forgiveness",
+        "translation": "I seek the forgiveness of Allah, there is no god but He, the Ever-Living, the Sustainer of all, and I turn to Him in repentance."
+      },
+      "nijat1": {
+        "title": "Good in both worlds",
+        "translation": "Our Lord, give us good in this world and good in the Hereafter, and protect us from the punishment of the Fire."
+      },
+      "nijat2": {
+        "title": "Asking for Jannah",
+        "translation": "O Allah, I ask You for Paradise and seek refuge in You from the Fire."
+      },
+      "nijat3": {
+        "title": "Protection from the Fire",
+        "translation": "Our Lord, we have believed, so forgive us our sins and protect us from the punishment of the Fire."
+      }
+    }
   }
 }

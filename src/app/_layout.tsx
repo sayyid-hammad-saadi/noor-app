@@ -17,6 +17,7 @@ import { ToastProvider } from '@/components/feedback/Toast';
 import { LocationProvider, useLocation } from '@/features/location/LocationProvider';
 import { AdhanScheduler } from '@/features/prayer/adhanScheduler';
 import { QuranAudioProvider } from '@/features/quran/audio/QuranAudioProvider';
+import { RamadanReminders } from '@/features/ramadan/ramadanReminders';
 import { i18n, LanguageProvider, useLanguage } from '@/i18n';
 import { fontAssets, ThemeProvider, useThemeContext } from '@/theme';
 
@@ -82,6 +83,7 @@ function AppShell({ fontsReady }: { fontsReady: boolean }) {
         <ToastProvider>
           <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
           <AdhanScheduler />
+          <RamadanReminders />
           <Stack
             screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.bg } }}
           >

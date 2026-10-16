@@ -153,8 +153,7 @@ export default function HomeScreen() {
       <Animated.View
         style={[styles.compact, compactStyle]}
         pointerEvents={compactVisible ? 'auto' : 'none'}
-        accessibilityElementsHidden={!compactVisible}
-        importantForAccessibility={compactVisible ? 'auto' : 'no-hide-descendants'}
+        aria-hidden={!compactVisible}
       >
         <CompactHeader now={now} state={state} place={place} onBellPress={comingSoon} />
       </Animated.View>

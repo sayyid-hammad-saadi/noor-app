@@ -1,5 +1,6 @@
 import Svg, { Circle, G, Path, Rect } from 'react-native-svg';
 
+import { hiddenSvgProps } from '@/lib/a11y';
 import { type Palette, useTheme } from '@/theme';
 
 export type MosqueSilhouetteProps = {
@@ -25,8 +26,7 @@ export function MosqueSilhouette({
       viewBox="0 0 390 140"
       preserveAspectRatio="xMidYMax meet"
       style={{ opacity }}
-      accessibilityElementsHidden
-      importantForAccessibility="no-hide-descendants"
+      {...hiddenSvgProps}
     >
       <G fill={colors[color]}>
         {variant === 'front' ? (

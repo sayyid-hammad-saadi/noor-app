@@ -484,5 +484,205 @@
       "stop": "إيقاف التشغيل",
       "playError": "تعذّر تشغيل التلاوة. تحقق من اتصالك أو نزّلها للاستماع دون اتصال."
     }
+  },
+  "ramadan": {
+    "title": "رمضان",
+    "mubarak": "رمضان مبارك",
+    "upcoming": "رمضان {{year}} هـ",
+    "remindersButton": "تذكيرات رمضان",
+    "dayOf": "اليوم {{day}} من {{total}}",
+    "startsIn": "بعد {{n}} يوم",
+    "startsTomorrow": "يبدأ غدًا",
+    "iftarIn": "الإفطار بعد",
+    "sehriEndsIn": "ينتهي السحور بعد",
+    "iftarAt": "الإفطار {{time}}",
+    "sehriAt": "ينتهي السحور {{time}}",
+    "countdownA11y": "{{label}} {{h}} ساعة و{{m}} دقيقة",
+    "beginsIn": "يبدأ رمضان بعد",
+    "days": "{{n}} يوم",
+    "expected": "الأول من رمضان المتوقع: {{date}}",
+    "moonNote": "تعتمد التواريخ على رؤية الهلال.",
+    "fastProgress": "ما مضى من الصيام",
+    "sehriShort": "السحور {{time}}",
+    "iftarShort": "الإفطار {{time}}",
+    "fastPercent": "{{percent}}٪ من صيام اليوم",
+    "fastComplete": "اكتمل صيام اليوم",
+    "beforeSehri": "وقت السحور",
+    "cards": {
+      "sehriEnds": "نهاية السحور",
+      "iftar": "الإفطار",
+      "endedFasting": "انتهى · صائم",
+      "ended": "انتهى",
+      "in": "بعد {{duration}}",
+      "done": "اكتمل الصيام",
+      "tomorrow": "غدًا · بعد {{duration}}"
+    },
+    "ashraTitle": "العشرات الثلاث",
+    "ashraEach": "عشرة أيام لكل منها",
+    "ashraDays": "الأيام {{from}}–{{to}}",
+    "ashraCardSub": "{{days}}",
+    "ashraCardDay": "{{days}} · اليوم {{n}}",
+    "now": "الآن",
+    "ashraDone": "{{name}}، اكتملت",
+    "ashra": {
+      "rahmat": {
+        "name": "الرحمة",
+        "meaning": "الرحمة",
+        "long": "عشر الرحمة",
+        "ordinal": "العشر الأولى"
+      },
+      "maghfirat": {
+        "name": "المغفرة",
+        "meaning": "المغفرة",
+        "long": "عشر المغفرة",
+        "ordinal": "العشر الثانية"
+      },
+      "nijat": {
+        "name": "العتق",
+        "meaning": "العتق من النار",
+        "long": "عشر العتق من النار",
+        "ordinal": "العشر الأخيرة"
+      }
+    },
+    "timetableLink": "إمساكية رمضان لثلاثين يومًا",
+    "timetableLinkSub": "السحور والإفطار والفجر والمغرب في {{place}}",
+    "timetableLinkSubNoPlace": "السحور والإفطار والفجر والمغرب",
+    "todayDua": "دعاء اليوم",
+    "breakingFast": "دعاء الإفطار",
+    "shareDua": "مشاركة الدعاء",
+    "qadr": {
+      "title": "ليلة القدر",
+      "body": "التمسوها في الوتر من العشر الأواخر.",
+      "firstIn": "تبدأ أول ليلة وتر بعد {{n}} يوم.",
+      "nextIn": "تبدأ ليلة الوتر التالية بعد {{n}} يوم.",
+      "tonight": "تبدأ الليلة {{night}} الليلة بعد المغرب.",
+      "over": "انقضت ليالي الوتر من هذا الرمضان.",
+      "note": "تبدأ الليلة بعد مغرب المساء المبيَّن · {{source}}",
+      "nightA11y": "الليلة {{night}}، تبدأ مساء {{date}}"
+    },
+    "my": {
+      "title": "رمضاني",
+      "logToday": "سجّل اليوم",
+      "fasting": "الصيام",
+      "ofDays": "من {{n}} يومًا",
+      "taraweeh": "التراويح",
+      "ofNights": "من {{n}} ليلة",
+      "khatam": "ختم القرآن",
+      "ofParas": "من ٣٠ جزءًا",
+      "ringA11y": "{{label}}، {{done}} من {{total}}"
+    },
+    "log": {
+      "title": "سجّل اليوم",
+      "subtitle": "اليوم {{day}} من رمضان",
+      "fasted": "صمت اليوم",
+      "fastedCaption": "يُحتسب ضمن صيامك الثلاثين",
+      "taraweeh": "صليت التراويح",
+      "taraweehCaption": "تراويح الليلة بعد العشاء",
+      "khatamNote": "يتبع تقدم القرآن آخر جزء قرأته في قارئ القرآن."
+    },
+    "compactEyebrow": "اليوم {{day}} · {{ashra}}",
+    "compactCountdown": "{{label}} {{time}}",
+    "reminders": {
+      "title": "تذكيرات رمضان",
+      "subtitle": "تُجدول في رمضان فقط",
+      "sehri": "تذكير السحور",
+      "sehriCaption": "قبل نهاية السحور بـ{{minutes}} دقيقة",
+      "iftar": "تذكير الإفطار",
+      "iftarCaption": "قبل الإفطار بـ{{minutes}} دقائق",
+      "denied": "اسمح بالإشعارات من الإعدادات لتصلك التذكيرات.",
+      "sehriTitle": "ينتهي السحور بعد {{minutes}} دقيقة",
+      "sehriBody": "ينتهي السحور الساعة {{time}}. أتمَّ سحورك وانوِ الصيام.",
+      "iftarTitle": "الإفطار بعد {{minutes}} دقائق",
+      "iftarBody": "الإفطار الساعة {{time}}. تذكَّر دعاء الإفطار."
+    },
+    "timetable": {
+      "title": "إمساكية رمضان",
+      "subtitle": "{{year}} هـ · {{span}}",
+      "share": "مشاركة أو حفظ PDF",
+      "margin": "ينتهي السحور قبل الفجر بـ{{n}} دقائق",
+      "day": "اليوم",
+      "sehri": "السحور",
+      "iftar": "الإفطار",
+      "ashraHead": "{{name}}",
+      "qadrDot": "تبدأ ليلة وتر من العشر الأواخر عند هذا الإفطار",
+      "pdfTitle": "إمساكية رمضان {{year}} هـ · {{place}}",
+      "rowA11y": "اليوم {{day}}، {{date}}: السحور {{sehri}}، الإفطار {{iftar}}، الفجر {{fajr}}، المغرب {{maghrib}}"
+    },
+    "detail": {
+      "eyebrow": "{{ordinal}} · {{days}}",
+      "today": "اليوم هو {{day}} · {{n}} من {{total}}",
+      "upcoming": "تبدأ في اليوم {{from}} · {{date}}",
+      "past": "اكتملت في هذا الرمضان",
+      "progressA11y": "اليوم {{n}} من {{total}} في هذه العشر",
+      "fazilat": "الفضيلة",
+      "hadith": "«أوله رحمة، وأوسطه مغفرة، وآخره عتق من النار.»",
+      "caution": "مشهور على الألسنة لكن إسناده ضعيف. اطلب الرحمة والمغفرة والعتق في رمضان كله، لا في هذه العشر وحدها.",
+      "amolTitle": "أعمال هذه العشر",
+      "amolProgress": "{{done}} من {{total}} اليوم",
+      "duaOf": "الدعاء {{n}} من {{total}}",
+      "count": "أضف واحدًا إلى {{item}}"
+    },
+    "collections": {
+      "bukhari": "البخاري",
+      "muslim": "مسلم",
+      "tirmidhi": "الترمذي",
+      "abuDawud": "أبو داود",
+      "ibnKhuzaymah": "ابن خزيمة",
+      "quran": "القرآن"
+    },
+    "content": {
+      "iftar": {
+        "title": "دعاء الإفطار",
+        "translation": ""
+      },
+      "taraweeh": "صلاة التراويح",
+      "sehri": "تسحَّر ولو بالقليل",
+      "hastenIftar": "تعجيل الفطر",
+      "quranDaily": "تلاوة القرآن كل يوم",
+      "istighfar": "الاستغفار مئة مرة",
+      "sayyidulIstighfar": "سيد الاستغفار صباحًا ومساءً",
+      "tahajjud": "التهجد قبل السحور",
+      "feedIftar": "تفطير صائم",
+      "seekQadr": "تحرّي ليلة القدر في الوتر",
+      "striveNights": "إحياء الليل بالعبادة",
+      "itikaf": "الاعتكاف في المسجد",
+      "fitrah": "إخراج زكاة الفطر قبل صلاة العيد",
+      "rahmat1": {
+        "title": "طلب الرحمة",
+        "translation": ""
+      },
+      "rahmat2": {
+        "title": "الاستغاثة برحمته",
+        "translation": ""
+      },
+      "rahmat3": {
+        "title": "الرحمة لي ولأهلي",
+        "translation": ""
+      },
+      "maghfirat1": {
+        "title": "طلب العفو",
+        "translation": ""
+      },
+      "maghfirat2": {
+        "title": "دعاء آدم عليه السلام",
+        "translation": ""
+      },
+      "maghfirat3": {
+        "title": "الاستغفار",
+        "translation": ""
+      },
+      "nijat1": {
+        "title": "خير الدنيا والآخرة",
+        "translation": ""
+      },
+      "nijat2": {
+        "title": "سؤال الجنة",
+        "translation": ""
+      },
+      "nijat3": {
+        "title": "الوقاية من النار",
+        "translation": ""
+      }
+    }
   }
 }

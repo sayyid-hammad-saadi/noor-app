@@ -38,6 +38,8 @@ export type Palette = {
   goldTint: string;
   goldText: string;
   goldBorder: string;
+  /** Text on solid gold (NOW badge, current Laylatul Qadr night). */
+  onGold: string;
 
   // status
   danger: string;
@@ -111,6 +113,7 @@ const light: Palette = {
   goldTint: '#FBF3E2',
   goldText: '#7A5410',
   goldBorder: '#F0DDB4',
+  onGold: '#2A1E05',
 
   danger: '#C93A3F',
   dangerTint: '#FDECEC',
@@ -168,6 +171,7 @@ const dark: Palette = {
   goldTint: '#2A2414',
   goldText: '#E3B55A',
   goldBorder: '#4A3D1E',
+  onGold: '#2A1E05',
 
   danger: '#FF6B6B',
   dangerTint: '#3A1A1B',

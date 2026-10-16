@@ -6,13 +6,19 @@ import { Icon, Touchable } from '@/components/ui';
 import { makeStyles } from '@/theme';
 
 /** Translucent round bell button on the gradient header. */
-export function NotificationsButton({ onPress }: { onPress: () => void }) {
+export function NotificationsButton({
+  onPress,
+  accessibilityLabel,
+}: {
+  onPress: () => void;
+  accessibilityLabel?: string;
+}) {
   const styles = useStyles();
   const { t } = useTranslation();
   return (
     <Touchable
       accessibilityRole="button"
-      accessibilityLabel={t('home.notifications')}
+      accessibilityLabel={accessibilityLabel ?? t('home.notifications')}
       onPress={onPress}
       style={styles.bell}
     >
