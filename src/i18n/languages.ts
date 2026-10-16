@@ -16,12 +16,40 @@ export type LanguageMeta = {
   numerals: NumeralSystem;
   /** BCP-47 tag for date formatting. */
   locale: string;
+  /** Short sample of the language's own digits, shown on the language picker. */
+  numeralSample: string;
+  /** Single glyph representing the script, for the language picker. */
+  glyph: string;
 };
 
 export const languageMeta: Record<Language, LanguageMeta> = {
-  bn: { nativeName: 'বাংলা', script: 'bn', rtl: false, numerals: 'beng', locale: 'bn-BD' },
-  en: { nativeName: 'English', script: 'latin', rtl: false, numerals: 'latn', locale: 'en-GB' },
-  ar: { nativeName: 'العربية', script: 'ar', rtl: true, numerals: 'arab', locale: 'ar' },
+  bn: {
+    nativeName: 'বাংলা',
+    script: 'bn',
+    rtl: false,
+    numerals: 'beng',
+    locale: 'bn-BD',
+    numeralSample: 'বাংলা সংখ্যা ১২৩',
+    glyph: 'অ',
+  },
+  en: {
+    nativeName: 'English',
+    script: 'latin',
+    rtl: false,
+    numerals: 'latn',
+    locale: 'en-GB',
+    numeralSample: 'Numerals 123',
+    glyph: 'Aa',
+  },
+  ar: {
+    nativeName: 'العربية',
+    script: 'ar',
+    rtl: true,
+    numerals: 'arab',
+    locale: 'ar',
+    numeralSample: 'الأرقام ١٢٣',
+    glyph: 'ع',
+  },
 };
 
 export function isLanguage(value: unknown): value is Language {

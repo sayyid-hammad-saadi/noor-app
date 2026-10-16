@@ -96,5 +96,44 @@
     "language": "Language",
     "appearance": "Appearance",
     "number": "Number"
+  },
+  "language": {
+    "title": "Choose your language",
+    "note": "You can change this anytime in Settings",
+    "continue": "Continue",
+    "names": {
+      "bn": "Bangla",
+      "en": "English",
+      "ar": "Arabic"
+    },
+    "groupLabel": "App language"
+  },
+  "onboarding": {
+    "progress": "{{current}} of {{total}}",
+    "skip": "Skip",
+    "next": "Next",
+    "getStarted": "Get started",
+    "slides": {
+      "prayer": {
+        "title": "Never miss a prayer",
+        "body": "Accurate prayer times for your exact location, Adhan alerts, and a Qibla compass that works wherever you are.",
+        "art": "Mosque with a prayer time card and a Qibla compass",
+        "cardLabel": "Fajr",
+        "cardValue": "04:31"
+      },
+      "quran": {
+        "title": "The Quran, beautifully read",
+        "body": "Clear Arabic script with transliteration and translation in Bangla or English. Listen ayah by ayah with your favourite reciter.",
+        "art": "An open Quran on a wooden stand with audio waves"
+      },
+      "ramadan": {
+        "title": "Ramadan & Zakat, made simple",
+        "body": "Sehri and Iftar countdowns, a daily amol tracker, and a Zakat calculator that does the maths for you.",
+        "art": "Ramadan lanterns, a crescent moon and a stack of Zakat coins",
+        "cardLabel": "Zakat on savings",
+        "cardValue": "2.5%"
+      }
+    },
+    "slideOf": "Slide {{current}} of {{total}}"
   }
 }

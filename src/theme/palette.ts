@@ -71,6 +71,14 @@ export type Palette = {
   knobOff: string;
   /** Inactive dot in the calendar legend. */
   mutedDot: string;
+
+  // illustrations (onboarding art)
+  /** Dark device/ink details. */
+  illoInk: string;
+  /** Warm lantern glow. */
+  illoGlow: string;
+  /** Darker gold for coin edges. */
+  illoGoldEdge: string;
 };
 
 const light: Palette = {
@@ -122,6 +130,10 @@ const light: Palette = {
   overlay: 'rgba(4,14,12,0.48)',
   knobOff: '#FFFFFF',
   mutedDot: '#8A9894',
+
+  illoInk: '#1A1F1E',
+  illoGlow: '#FCEFC9',
+  illoGoldEdge: '#B98A2E',
 };
 
 const dark: Palette = {
@@ -173,6 +185,10 @@ const dark: Palette = {
   overlay: 'rgba(4,14,12,0.48)',
   knobOff: '#FFFFFF',
   mutedDot: '#6F817C',
+
+  illoInk: '#1A1F1E',
+  illoGlow: '#FCEFC9',
+  illoGoldEdge: '#B98A2E',
 };
 
 export const palettes: Record<ColorScheme, Palette> = { light, dark };

@@ -1,3 +1,1 @@
-// Temporary entry route: shows the shared component gallery until the Splash /
-// onboarding screens are built.
-export { default } from '@/features/dev/ComponentGalleryScreen';
+export { default } from '@/features/splash/SplashScreen';

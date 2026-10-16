@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export const StorageKeys = {
   language: 'noor.language',
   appearance: 'noor.appearance',
+  onboardingDone: 'noor.onboardingDone',
 } as const;
 
 type StorageKey = (typeof StorageKeys)[keyof typeof StorageKeys];

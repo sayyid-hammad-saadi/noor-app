@@ -24,6 +24,7 @@ export const radius = {
 export const size = {
   /** Minimum touch target. */
   touch: 44,
+  buttonLg: 56,
   button: 52,
   buttonSm: 44,
   input: 52,
