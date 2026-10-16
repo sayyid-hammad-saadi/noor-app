@@ -1,6 +1,6 @@
 # Noor
 
-Prayer · Quran · Ramadan, an Expo (SDK 56) app with Expo Router, TypeScript strict, light/dark themes and Bangla / English / Arabic (RTL).
+Prayer · Quran · Ramadan, an Expo (SDK 57) app with Expo Router, TypeScript strict, light/dark themes and Bangla / English / Arabic (RTL).
 
 ## Run on Android (development build)
 
