@@ -1,5 +1,6 @@
 import {
   createContext,
+  useContext,
   type PropsWithChildren,
   useCallback,
   useEffect,
@@ -11,7 +12,7 @@ import { useColorScheme } from 'react-native';
 import { getItem, setItem, StorageKeys } from '@/lib/storage';
 
 import { metrics, type Metrics } from './metrics';
-import { type ColorScheme, type Palette, palettes, shadows, type Shadows } from './palette';
+import { type ColorScheme, type Palette, palettes, sepia, shadows, type Shadows } from './palette';
 
 export type Appearance = 'system' | 'light' | 'dark';
 
@@ -69,5 +70,22 @@ export function ThemeProvider({ children }: PropsWithChildren) {
     [scheme, appearance, setAppearance, ready],
   );
 
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
+}
+
+export type ReadingTheme = 'light' | 'dark' | 'sepia';
+
+/** Re-themes a subtree (the Quran reader) with a reading theme, keeping app settings. */
+export function ThemeOverride({
+  theme,
+  children,
+}: PropsWithChildren<{ theme: ReadingTheme | null }>) {
+  const parent = useContext(ThemeContext);
+  const value = useMemo<ThemeContextValue | null>(() => {
+    if (!parent || !theme) return parent;
+    const scheme: ColorScheme = theme === 'dark' ? 'dark' : 'light';
+    const colors = theme === 'sepia' ? sepia : palettes[scheme];
+    return { ...parent, theme: { ...buildTheme(scheme), colors } };
+  }, [parent, theme]);
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }

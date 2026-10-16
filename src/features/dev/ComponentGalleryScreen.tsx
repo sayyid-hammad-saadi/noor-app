@@ -29,6 +29,7 @@ import {
   TextField,
   UnderlineTabs,
 } from '@/components/ui';
+import { QiblaDial } from '@/features/qibla/QiblaDial';
 import { type Language, useLanguage } from '@/i18n';
 import { type Appearance, makeStyles, useThemeContext } from '@/theme';
 
@@ -254,7 +255,7 @@ export default function ComponentGalleryScreen() {
           </View>
         </Card>
         <Card>
-          <Text script="quran" size={26} align="end">
+          <Text script="quran" size={26} align="right">
             قُلْ هُوَ ٱللَّهُ أَحَدٌ
           </Text>
           <View style={styles.rowEnd}>
@@ -296,6 +297,12 @@ export default function ComponentGalleryScreen() {
         <Skeleton width="80%" height={12} />
       </Card>
 
+      <SectionHeader title={t('qibla.title')} kind="content" />
+      <View style={styles.dials}>
+        <QiblaDial size={150} heading={250} qibla={277} aligned={false} accessibilityLabel="" />
+        <QiblaDial size={150} heading={277} qibla={277} aligned accessibilityLabel="" />
+      </View>
+
       <SectionHeader title={t('gallery.player')} kind="content" />
       <View style={styles.playerFrame}>
         <MiniPlayer
@@ -336,6 +343,7 @@ const useStyles = makeStyles((t) =>
     rowEnd: { flexDirection: 'row', justifyContent: 'flex-end' },
     wrap: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 10 },
     gapTop: { marginTop: t.space.md },
+    dials: { flexDirection: 'row', justifyContent: 'space-around', paddingVertical: t.space.xxl },
     hero: {
       borderRadius: t.radius.card,
       paddingVertical: t.space.xxl,

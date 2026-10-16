@@ -14,6 +14,10 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { ToastProvider } from '@/components/feedback/Toast';
+import { LocationProvider, useLocation } from '@/features/location/LocationProvider';
+import { AdhanScheduler } from '@/features/prayer/adhanScheduler';
+import { QuranAudioProvider } from '@/features/quran/audio/QuranAudioProvider';
+import { RamadanReminders } from '@/features/ramadan/ramadanReminders';
 import { i18n, LanguageProvider, useLanguage } from '@/i18n';
 import { fontAssets, ThemeProvider, useThemeContext } from '@/theme';
 
@@ -28,7 +32,9 @@ export default function RootLayout() {
         <I18nextProvider i18n={i18n}>
           <ThemeProvider>
             <LanguageProvider>
-              <AppShell fontsReady={fontsLoaded || fontError != null} />
+              <LocationProvider>
+                <AppShell fontsReady={fontsLoaded || fontError != null} />
+              </LocationProvider>
             </LanguageProvider>
           </ThemeProvider>
         </I18nextProvider>
@@ -37,11 +43,12 @@ export default function RootLayout() {
   );
 }
 
-/** Waits for fonts, stored appearance and stored language before showing anything. */
+/** Waits for fonts and the stored appearance, language and location before showing anything. */
 function AppShell({ fontsReady }: { fontsReady: boolean }) {
   const { theme, ready: themeReady } = useThemeContext();
   const { ready: languageReady } = useLanguage();
-  const ready = fontsReady && themeReady && languageReady;
+  const { ready: locationReady } = useLocation();
+  const ready = fontsReady && themeReady && languageReady && locationReady;
   const { colors, scheme } = theme;
 
   useEffect(() => {
@@ -72,12 +79,18 @@ function AppShell({ fontsReady }: { fontsReady: boolean }) {
 
   return (
     <NavigationThemeProvider value={navigationTheme}>
-      <ToastProvider>
-        <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
-        <Stack
-          screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.bg } }}
-        />
-      </ToastProvider>
+      <QuranAudioProvider>
+        <ToastProvider>
+          <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
+          <AdhanScheduler />
+          <RamadanReminders />
+          <Stack
+            screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.bg } }}
+          >
+            <Stack.Screen name="quran-player" options={{ presentation: 'modal' }} />
+          </Stack>
+        </ToastProvider>
+      </QuranAudioProvider>
     </NavigationThemeProvider>
   );
 }

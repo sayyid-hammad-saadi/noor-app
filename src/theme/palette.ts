@@ -38,6 +38,8 @@ export type Palette = {
   goldTint: string;
   goldText: string;
   goldBorder: string;
+  /** Text on solid gold (NOW badge, current Laylatul Qadr night). */
+  onGold: string;
 
   // status
   danger: string;
@@ -52,6 +54,8 @@ export type Palette = {
   hdr2: string;
   /** Text and icons drawn on the gradient headers. */
   onHeader: string;
+  /** Translucent chips and buttons on gradient headers. */
+  onHeaderChip: string;
   /** Highlight pill on gradient headers (e.g. "Next prayer"). */
   hlBg: string;
   hlFg: string;
@@ -60,6 +64,9 @@ export type Palette = {
   ramadan2: string;
   /** Gold accents on the Ramadan header. */
   headerGold: string;
+
+  /** Cards that sit on a surface sheet (Home); one step up from surface in dark. */
+  cardRaised: string;
 
   // feedback
   skel1: string;
@@ -79,6 +86,11 @@ export type Palette = {
   illoGlow: string;
   /** Darker gold for coin edges. */
   illoGoldEdge: string;
+  /** Metal swatches on the nisab choice (Zakat). */
+  metalSilver1: string;
+  metalSilver2: string;
+  metalGold1: string;
+  metalGold2: string;
 };
 
 const light: Palette = {
@@ -106,6 +118,7 @@ const light: Palette = {
   goldTint: '#FBF3E2',
   goldText: '#7A5410',
   goldBorder: '#F0DDB4',
+  onGold: '#2A1E05',
 
   danger: '#C93A3F',
   dangerTint: '#FDECEC',
@@ -117,11 +130,13 @@ const light: Palette = {
   hdr1: '#0A6E5E',
   hdr2: '#07564A',
   onHeader: '#FFFFFF',
+  onHeaderChip: 'rgba(255,255,255,0.16)',
   hlBg: '#FFFFFF',
   hlFg: '#0B7A68',
   ramadan1: '#0A544C',
   ramadan2: '#14324D',
   headerGold: '#F3D58E',
+  cardRaised: '#FFFFFF',
 
   skel1: '#E8EEEC',
   skel2: '#F3F7F6',
@@ -134,6 +149,10 @@ const light: Palette = {
   illoInk: '#1A1F1E',
   illoGlow: '#FCEFC9',
   illoGoldEdge: '#B98A2E',
+  metalSilver1: '#E6ECEB',
+  metalSilver2: '#A9B6B3',
+  metalGold1: '#F3D58E',
+  metalGold2: '#C08A2A',
 };
 
 const dark: Palette = {
@@ -161,6 +180,7 @@ const dark: Palette = {
   goldTint: '#2A2414',
   goldText: '#E3B55A',
   goldBorder: '#4A3D1E',
+  onGold: '#2A1E05',
 
   danger: '#FF6B6B',
   dangerTint: '#3A1A1B',
@@ -172,11 +192,13 @@ const dark: Palette = {
   hdr1: '#0F3B34',
   hdr2: '#0B2A25',
   onHeader: '#FFFFFF',
+  onHeaderChip: 'rgba(255,255,255,0.14)',
   hlBg: '#2BC4A8',
   hlFg: '#05211C',
   ramadan1: '#0B2F2B',
   ramadan2: '#0C1A2B',
   headerGold: '#E3B55A',
+  cardRaised: '#182A26',
 
   skel1: '#182623',
   skel2: '#20322E',
@@ -189,13 +211,37 @@ const dark: Palette = {
   illoInk: '#1A1F1E',
   illoGlow: '#FCEFC9',
   illoGoldEdge: '#B98A2E',
+  metalSilver1: '#E6ECEB',
+  metalSilver2: '#A9B6B3',
+  metalGold1: '#F3D58E',
+  metalGold2: '#C08A2A',
 };
 
 export const palettes: Record<ColorScheme, Palette> = { light, dark };
 
+/** Warm paper palette for the Quran reader's Sepia theme. */
+export const sepia: Palette = {
+  ...light,
+  bg: '#EFE4CC',
+  surface: '#F6EEDC',
+  surface2: '#EDE1C6',
+  border: '#E3D5B6',
+  ctl: '#9C8A66',
+  primary: '#8A6A2E',
+  primaryDark: '#6E5322',
+  tint: '#EADBB8',
+  text: '#3B2F1E',
+  text2: '#6B5A3F',
+  link: '#7A5A1F',
+  btn: '#7A5A1F',
+  onBtn: '#FFFFFF',
+  cardRaised: '#F6EEDC',
+};
+
 /** Mode-independent brand colours (logo mark). */
 export const brand = {
   teal: '#14A38B',
+  tealDark: '#0B7A68',
   gold: '#D9A441',
   white: '#FFFFFF',
 } as const;
@@ -212,6 +258,12 @@ export type Shadows = {
   toast: string;
   segment: string | undefined;
   knob: string;
+  /** Lifted item on a gradient header (current prayer). */
+  highlight: string;
+  /** Qibla dial: soft lift in light, hairline ring in dark. */
+  dial: string;
+  /** Green glow around the dial when facing the Qibla. */
+  glow: string;
 };
 
 export const shadows: Record<ColorScheme, Shadows> = {
@@ -223,6 +275,9 @@ export const shadows: Record<ColorScheme, Shadows> = {
     toast: '0px 10px 30px rgba(0,0,0,0.2)',
     segment: '0px 1px 3px rgba(15,31,28,0.12)',
     knob: '0px 1px 3px rgba(0,0,0,0.2)',
+    highlight: '0px 6px 16px rgba(0,0,0,0.12)',
+    dial: '0px 2px 4px rgba(15,31,28,0.04), 0px 18px 40px rgba(15,31,28,0.10)',
+    glow: '0px 0px 0px 8px rgba(31,169,113,0.14), 0px 0px 56px 8px rgba(31,169,113,0.38)',
   },
   dark: {
     card: undefined,
@@ -232,5 +287,8 @@ export const shadows: Record<ColorScheme, Shadows> = {
     toast: '0px 10px 30px rgba(0,0,0,0.2)',
     segment: undefined,
     knob: '0px 1px 3px rgba(0,0,0,0.2)',
+    highlight: '0px 6px 16px rgba(0,0,0,0.12)',
+    dial: '0px 0px 0px 1px #243733',
+    glow: '0px 0px 0px 8px rgba(43,196,138,0.16), 0px 0px 64px 10px rgba(43,196,138,0.32)',
   },
 };

@@ -40,4 +40,6 @@ src/i18n/         i18next setup, locales, numerals, RTL
 src/lib/          storage and other helpers
 ```
 
-First run: Splash → Language → Onboarding. Until the permission and Home screens exist, onboarding hands off to the shared component gallery at `/dev/components` (`src/features/dev`), which has live language and appearance switches. Hand-off targets live in `src/lib/routes.ts`.
+First run: Splash → Language → Onboarding → Location and Notification permissions → Home (tab navigator). Tabs other than Home show a placeholder until their batches land. The shared component gallery is at `/dev/components` (`src/features/dev`). Route hand-offs live in `src/lib/routes.ts`.
+
+Prayer times are calculated on-device with [`adhan`](https://github.com/batoulapps/adhan-js) (Karachi + Hanafi Asr in South Asia, Umm al-Qura in the Gulf, Muslim World League elsewhere). Hijri and Bangla dates come from `src/lib/calendars.ts`.
