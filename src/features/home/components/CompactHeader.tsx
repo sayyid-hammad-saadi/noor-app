@@ -11,7 +11,7 @@ import { makeStyles } from '@/theme';
 
 import { NotificationsButton } from './HeaderButton';
 import { useCountdown } from './HomeHeader';
-import { PRAYER_ICONS } from './prayerIcons';
+import { PRAYER_ICONS } from '@/features/prayer/prayerIcons';
 
 /** 05b collapsed header shown once the sheet scrolls over the full header. */
 export function CompactHeader({

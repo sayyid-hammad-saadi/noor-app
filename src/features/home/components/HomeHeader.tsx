@@ -9,9 +9,9 @@ import type { Place } from '@/features/location/LocationProvider';
 import { useLanguage } from '@/i18n';
 import { makeStyles, useTheme } from '@/theme';
 
-import { banglaLabel, gregorianLabel, hijriLabel } from '../dates';
+import { banglaLabel, gregorianLabel, hijriLabel } from '@/lib/dateLabels';
 import { NotificationsButton } from './HeaderButton';
-import { PRAYER_ICONS } from './prayerIcons';
+import { PRAYER_ICONS } from '@/features/prayer/prayerIcons';
 
 export function useCountdown(now: Date, target: Date): string {
   const { t } = useTranslation();
@@ -32,12 +32,14 @@ export function HomeHeader({
   place,
   onLocationPress,
   onBellPress,
+  onPrayerTimesPress,
 }: {
   now: Date;
   state: PrayerState;
   place: Place;
   onLocationPress: () => void;
   onBellPress: () => void;
+  onPrayerTimesPress: () => void;
 }) {
   const styles = useStyles();
   const { t } = useTranslation();
@@ -109,18 +111,32 @@ export function HomeHeader({
         </View>
       </View>
 
-      <PrayerStrip state={state} place={place} />
+      <PrayerStrip state={state} place={place} onPress={onPrayerTimesPress} />
     </View>
   );
 }
 
-function PrayerStrip({ state, place }: { state: PrayerState; place: Place }) {
+function PrayerStrip({
+  state,
+  place,
+  onPress,
+}: {
+  state: PrayerState;
+  place: Place;
+  onPress: () => void;
+}) {
   const styles = useStyles();
   const { t } = useTranslation();
   const { language } = useLanguage();
   const { shadows } = useTheme();
   return (
-    <View style={styles.strip} accessibilityLabel={t('home.prayerTimes')}>
+    <Touchable
+      style={styles.strip}
+      accessibilityRole="button"
+      accessibilityLabel={t('home.prayerTimes')}
+      onPress={onPress}
+      pressedOpacity={0.85}
+    >
       {PRAYERS.map((p) => {
         const current = state.current === p;
         const fg = current ? 'hlFg' : 'onHeader';
@@ -128,7 +144,6 @@ function PrayerStrip({ state, place }: { state: PrayerState; place: Place }) {
         return (
           <View
             key={p}
-            accessible
             accessibilityLabel={
               current
                 ? t('home.currentPrayer', { prayer: t(`prayers.${p}`), time })
@@ -162,7 +177,7 @@ function PrayerStrip({ state, place }: { state: PrayerState; place: Place }) {
           </View>
         );
       })}
-    </View>
+    </Touchable>
   );
 }
 

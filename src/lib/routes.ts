@@ -8,5 +8,8 @@ export const routes = {
   permissionNotifications: '/permissions/notifications',
   afterOnboarding: '/permissions/location',
   home: '/home',
+  prayerTimes: '/prayer',
+  timetable: '/prayer/timetable',
+  qibla: '/qibla',
   explore: '/explore',
 } as const satisfies Record<string, Href>;

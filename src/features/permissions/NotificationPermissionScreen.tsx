@@ -9,6 +9,7 @@ import { Platform, StyleSheet, useWindowDimensions, View } from 'react-native';
 import { Logo } from '@/components/layout';
 import { Button, Text } from '@/components/ui';
 import { markOnboardingDone } from '@/features/onboarding/onboardingState';
+import { PRAYER_CHANNEL_ID } from '@/features/prayer/adhanScheduler';
 import { clockParts } from '@/features/prayer/formatTime';
 import { usePrayerTimes } from '@/features/prayer/usePrayerTimes';
 import { useLanguage } from '@/i18n';
@@ -17,8 +18,6 @@ import { brand, makeStyles, useTheme } from '@/theme';
 
 import { BellArt } from './illustrations/BellArt';
 import { PermissionLayout } from './PermissionLayout';
-
-export const PRAYER_CHANNEL_ID = 'prayer-times';
 
 /** 04b Permission — Notifications. Last step of first run; then Home. */
 export default function NotificationPermissionScreen() {

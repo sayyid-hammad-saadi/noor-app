@@ -8,6 +8,8 @@ export const StorageKeys = {
   location: 'noor.location',
   amol: 'noor.amol',
   dailyBookmarks: 'noor.dailyBookmarks',
+  adhan: 'noor.adhan',
+  qiblaVibrate: 'noor.qiblaVibrate',
 } as const;
 
 type BaseKey = (typeof StorageKeys)[keyof typeof StorageKeys];

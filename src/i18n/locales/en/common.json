@@ -197,7 +197,39 @@
       "Nov",
       "Dec"
     ],
-    "short": "{{weekday}}, {{day}} {{month}} {{year}}"
+    "short": "{{weekday}}, {{day}} {{month}} {{year}}",
+    "months": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
+    "hijriMonths": [
+      "Muharram",
+      "Safar",
+      "Rabi al-Awwal",
+      "Rabi al-Thani",
+      "Jumada al-Ula",
+      "Jumada al-Akhirah",
+      "Rajab",
+      "Sha'ban",
+      "Ramadan",
+      "Shawwal",
+      "Dhu al-Qa'dah",
+      "Dhu al-Hijjah"
+    ],
+    "dayMonth": "{{weekday}}, {{day}} {{month}}",
+    "hijri": "{{day}} {{month}} {{year}}",
+    "monthYear": "{{month}} {{year}}",
+    "today": "Today"
   },
   "home": {
     "nextPrayer": "Next prayer · {{prayer}}",
@@ -263,5 +295,89 @@
   "placeholder": {
     "title": "Coming soon",
     "body": "This section arrives in a later update."
+  },
+  "prayerTimes": {
+    "title": "Prayer Times",
+    "pickDate": "Pick a date",
+    "method": "Calculation method: {{method}}",
+    "start": "Start",
+    "end": "End",
+    "now": "Now",
+    "adhanOn": "{{prayer}} Adhan on",
+    "adhanOff": "{{prayer}} Adhan off",
+    "elapsed": "{{prayer}} time elapsed",
+    "endsIn": "Ends in {{duration}}",
+    "forbidden": "Forbidden (Makruh) times",
+    "sunrise": "Sunrise",
+    "zawal": "Zawal (midday)",
+    "sunset": "Sunset",
+    "monthly": "Monthly timetable",
+    "backToToday": "Back to today",
+    "methods": {
+      "karachi": "Karachi",
+      "mwl": "Muslim World League",
+      "ummAlQura": "Umm al-Qura"
+    },
+    "madhabs": {
+      "hanafi": "Hanafi",
+      "shafi": "Shafi'i"
+    },
+    "methodSoon": "Calculation settings are coming soon",
+    "notificationsOff": "Turn on notifications to hear the Adhan",
+    "adhanTitle": "{{prayer}} · {{time}}",
+    "adhanBody": "It's time for {{prayer}}."
+  },
+  "timetable": {
+    "title": "Monthly Timetable",
+    "share": "Share or save as PDF",
+    "previous": "Previous month",
+    "next": "Next month",
+    "date": "Date",
+    "shareFailed": "Couldn't create the PDF",
+    "pdfTitle": "{{month}} · {{place}}"
+  },
+  "qibla": {
+    "title": "Qibla",
+    "howItWorks": "How the compass works",
+    "calibrateTitle": "Calibrate your compass",
+    "calibrateBody": "Move your phone in a figure-8, away from metal and magnets.",
+    "distance": "{{place}} · Makkah is {{km}} km away",
+    "turnRight": "Turn {{deg}}° right to face the Qibla",
+    "turnLeft": "Turn {{deg}}° left to face the Qibla",
+    "facing": "You're facing the Qibla",
+    "accuracyLow": "Low accuracy · Qibla {{deg}}°",
+    "accuracyMedium": "Medium accuracy · Qibla {{deg}}°",
+    "accuracyHigh": "High accuracy",
+    "vibrate": "Vibrate when aligned",
+    "vibrateCaption": "A gentle tap tells you you're facing Makkah",
+    "dialLabel": "Qibla compass. Heading {{heading}} degrees, Qibla at {{qibla}} degrees.",
+    "noSensor": "Compass not available",
+    "noSensorBody": "This device doesn't report a heading. Face {{deg}}° from north to pray towards Makkah.",
+    "needsLocation": "Allow location for an accurate Qibla",
+    "needsLocationBody": "True north needs your location. Without it the compass uses magnetic north, which can be a few degrees off.",
+    "allow": "Allow location",
+    "infoTitle": "How the compass works",
+    "info1": "Noor works out the Qibla direction from your location to the Kaaba in Makkah.",
+    "info2": "Hold your phone flat and turn until the arrow points up and the ring turns green.",
+    "info3": "Phone cases with magnets, metal desks and electronics can disturb the compass. Calibrate by moving the phone in a figure-8.",
+    "cardinals": ["N", "E", "S", "W"],
+    "points": [
+      "N",
+      "NNE",
+      "NE",
+      "ENE",
+      "E",
+      "ESE",
+      "SE",
+      "SSE",
+      "S",
+      "SSW",
+      "SW",
+      "WSW",
+      "W",
+      "WNW",
+      "NW",
+      "NNW"
+    ]
   }
 }

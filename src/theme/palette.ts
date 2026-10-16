@@ -224,6 +224,10 @@ export type Shadows = {
   knob: string;
   /** Lifted item on a gradient header (current prayer). */
   highlight: string;
+  /** Qibla dial: soft lift in light, hairline ring in dark. */
+  dial: string;
+  /** Green glow around the dial when facing the Qibla. */
+  glow: string;
 };
 
 export const shadows: Record<ColorScheme, Shadows> = {
@@ -236,6 +240,8 @@ export const shadows: Record<ColorScheme, Shadows> = {
     segment: '0px 1px 3px rgba(15,31,28,0.12)',
     knob: '0px 1px 3px rgba(0,0,0,0.2)',
     highlight: '0px 6px 16px rgba(0,0,0,0.12)',
+    dial: '0px 2px 4px rgba(15,31,28,0.04), 0px 18px 40px rgba(15,31,28,0.10)',
+    glow: '0px 0px 0px 8px rgba(31,169,113,0.14), 0px 0px 56px 8px rgba(31,169,113,0.38)',
   },
   dark: {
     card: undefined,
@@ -246,5 +252,7 @@ export const shadows: Record<ColorScheme, Shadows> = {
     segment: undefined,
     knob: '0px 1px 3px rgba(0,0,0,0.2)',
     highlight: '0px 6px 16px rgba(0,0,0,0.12)',
+    dial: '0px 0px 0px 1px #243733',
+    glow: '0px 0px 0px 8px rgba(43,196,138,0.16), 0px 0px 64px 10px rgba(43,196,138,0.32)',
   },
 };

@@ -81,6 +81,7 @@ export default function HomeScreen() {
 
   const onFeature = (key: FeatureKey) => {
     if (key === 'more') router.navigate(routes.explore);
+    else if (key === 'qibla') router.push(routes.qibla);
     else comingSoon();
   };
 
@@ -118,6 +119,7 @@ export default function HomeScreen() {
             place={place}
             onLocationPress={() => setPickerOpen(true)}
             onBellPress={comingSoon}
+            onPrayerTimesPress={() => router.push(routes.prayerTimes)}
           />
           <View style={styles.headerSpacer} />
         </Animated.View>

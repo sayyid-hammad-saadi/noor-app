@@ -10,7 +10,7 @@ import { computeDay } from '@/features/prayer/prayerTimes';
 import { useLanguage } from '@/i18n';
 import { makeStyles, useTheme } from '@/theme';
 
-import { dayKey, weekdayName } from '../dates';
+import { dayKey, weekdayName } from '@/lib/dateLabels';
 import { type AmolItemId, SALAWAT_TARGET, useAmol } from '../useAmol';
 import { ProgressRing } from './ProgressRing';
 

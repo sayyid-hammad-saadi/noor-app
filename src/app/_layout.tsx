@@ -15,6 +15,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { ToastProvider } from '@/components/feedback/Toast';
 import { LocationProvider, useLocation } from '@/features/location/LocationProvider';
+import { AdhanScheduler } from '@/features/prayer/adhanScheduler';
 import { i18n, LanguageProvider, useLanguage } from '@/i18n';
 import { fontAssets, ThemeProvider, useThemeContext } from '@/theme';
 
@@ -78,6 +79,7 @@ function AppShell({ fontsReady }: { fontsReady: boolean }) {
     <NavigationThemeProvider value={navigationTheme}>
       <ToastProvider>
         <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
+        <AdhanScheduler />
         <Stack
           screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.bg } }}
         />

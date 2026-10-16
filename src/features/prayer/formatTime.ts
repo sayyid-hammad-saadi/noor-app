@@ -1,3 +1,5 @@
+import type { TFunction } from 'i18next';
+
 import { type Language, localizeDigits } from '@/i18n';
 
 /** Hours and minutes of `date` in `timeZone` (or the device zone). */
@@ -42,4 +44,15 @@ export function clockParts(
 export function untilParts(now: Date, target: Date): { hours: number; minutes: number } {
   const total = Math.max(0, Math.ceil((target.getTime() - now.getTime()) / 60000));
   return { hours: Math.floor(total / 60), minutes: total % 60 };
+}
+
+/** "4:31 AM" with localized digits and period. */
+export function clockLabel(
+  date: Date,
+  language: Language,
+  timeZone: string | null,
+  t: TFunction,
+): string {
+  const c = clockParts(date, language, timeZone);
+  return `${c.time} ${t(`time.${c.period}`)}`;
 }
