@@ -23,7 +23,6 @@ import { PageDots } from './components/PageDots';
 import { PrayerArt } from './illustrations/PrayerArt';
 import { QuranArt } from './illustrations/QuranArt';
 import { RamadanArt } from './illustrations/RamadanArt';
-import { markOnboardingDone } from './onboardingState';
 
 type SlideKey = 'prayer' | 'quran' | 'ramadan';
 
@@ -48,13 +47,13 @@ export default function OnboardingScreen() {
   // 300px in the design; shrink on narrow or short screens so the copy stays visible.
   const artSize = Math.min(300, width - 48, height * 0.36);
 
-  const finish = useCallback(async () => {
-    await markOnboardingDone();
+  // First run continues to the permission screens, which mark onboarding as done.
+  const finish = useCallback(() => {
     router.replace(routes.afterOnboarding);
   }, [router]);
 
   const next = useCallback(() => {
-    if (isLast) void finish();
+    if (isLast) finish();
     else setIndex((i) => Math.min(i + 1, total - 1));
   }, [isLast, finish, total]);
 
@@ -97,7 +96,7 @@ export default function OnboardingScreen() {
         {isLast ? (
           <View style={styles.skip} />
         ) : (
-          <Touchable accessibilityRole="button" onPress={() => void finish()} style={styles.skip}>
+          <Touchable accessibilityRole="button" onPress={finish} style={styles.skip}>
             <Text variant="bodyStrong" color="link" numberOfLines={1}>
               {t('onboarding.skip')}
             </Text>

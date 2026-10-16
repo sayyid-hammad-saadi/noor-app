@@ -254,7 +254,7 @@ export default function ComponentGalleryScreen() {
           </View>
         </Card>
         <Card>
-          <Text script="quran" size={26} align="end">
+          <Text script="quran" size={26} align="right">
             قُلْ هُوَ ٱللَّهُ أَحَدٌ
           </Text>
           <View style={styles.rowEnd}>

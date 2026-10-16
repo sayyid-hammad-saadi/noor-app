@@ -6,17 +6,21 @@ import { brand } from '@/theme';
 export function Logo({
   size = 120,
   accessibilityLabel,
+  sparkle = true,
 }: {
   size?: number;
   accessibilityLabel?: string;
+  /** The gold sparkle; dropped at app-icon sizes. */
+  sparkle?: boolean;
 }) {
   return (
     <Svg
       width={size}
       height={size}
       viewBox="0 0 120 120"
-      accessibilityRole="image"
+      accessibilityRole={accessibilityLabel ? 'image' : undefined}
       accessibilityLabel={accessibilityLabel}
+      accessibilityElementsHidden={!accessibilityLabel}
     >
       <G fill={brand.white}>
         <Rect x={24} y={24} width={72} height={72} rx={22} />
@@ -24,7 +28,9 @@ export function Logo({
       </G>
       <Circle cx={57} cy={62} r={22} fill={brand.teal} />
       <Circle cx={67} cy={54} r={19} fill={brand.white} />
-      <Path d="M78 44l1.6 4.4L84 50l-4.4 1.6L78 56l-1.6-4.4L72 50l4.4-1.6z" fill={brand.gold} />
+      {sparkle ? (
+        <Path d="M78 44l1.6 4.4L84 50l-4.4 1.6L78 56l-1.6-4.4L72 50l4.4-1.6z" fill={brand.gold} />
+      ) : null}
     </Svg>
   );
 }

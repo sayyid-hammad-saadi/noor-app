@@ -1,13 +1,12 @@
 import type { Href } from 'expo-router';
 
-/**
- * Where the first-run flow hands off. Onboarding will hand off to the permission
- * screens (04a/04b) and then Home (05a) once those batches are built; until then,
- * both point at the component gallery.
- */
+/** Named routes for the first-run flow and hand-offs between features. */
 export const routes = {
   language: '/language',
   onboarding: '/onboarding',
-  afterOnboarding: '/dev/components',
-  home: '/dev/components',
+  permissionLocation: '/permissions/location',
+  permissionNotifications: '/permissions/notifications',
+  afterOnboarding: '/permissions/location',
+  home: '/home',
+  explore: '/explore',
 } as const satisfies Record<string, Href>;

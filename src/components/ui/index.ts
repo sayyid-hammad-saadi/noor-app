@@ -11,6 +11,7 @@ export * from './IconButton';
 export * from './IconTile';
 export * from './List';
 export * from './OctagonBadge';
+export * from './PillTabs';
 export * from './Radio';
 export * from './SearchField';
 export * from './SectionHeader';

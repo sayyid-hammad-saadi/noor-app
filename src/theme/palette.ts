@@ -52,6 +52,8 @@ export type Palette = {
   hdr2: string;
   /** Text and icons drawn on the gradient headers. */
   onHeader: string;
+  /** Translucent chips and buttons on gradient headers. */
+  onHeaderChip: string;
   /** Highlight pill on gradient headers (e.g. "Next prayer"). */
   hlBg: string;
   hlFg: string;
@@ -60,6 +62,9 @@ export type Palette = {
   ramadan2: string;
   /** Gold accents on the Ramadan header. */
   headerGold: string;
+
+  /** Cards that sit on a surface sheet (Home); one step up from surface in dark. */
+  cardRaised: string;
 
   // feedback
   skel1: string;
@@ -117,11 +122,13 @@ const light: Palette = {
   hdr1: '#0A6E5E',
   hdr2: '#07564A',
   onHeader: '#FFFFFF',
+  onHeaderChip: 'rgba(255,255,255,0.16)',
   hlBg: '#FFFFFF',
   hlFg: '#0B7A68',
   ramadan1: '#0A544C',
   ramadan2: '#14324D',
   headerGold: '#F3D58E',
+  cardRaised: '#FFFFFF',
 
   skel1: '#E8EEEC',
   skel2: '#F3F7F6',
@@ -172,11 +179,13 @@ const dark: Palette = {
   hdr1: '#0F3B34',
   hdr2: '#0B2A25',
   onHeader: '#FFFFFF',
+  onHeaderChip: 'rgba(255,255,255,0.14)',
   hlBg: '#2BC4A8',
   hlFg: '#05211C',
   ramadan1: '#0B2F2B',
   ramadan2: '#0C1A2B',
   headerGold: '#E3B55A',
+  cardRaised: '#182A26',
 
   skel1: '#182623',
   skel2: '#20322E',
@@ -196,6 +205,7 @@ export const palettes: Record<ColorScheme, Palette> = { light, dark };
 /** Mode-independent brand colours (logo mark). */
 export const brand = {
   teal: '#14A38B',
+  tealDark: '#0B7A68',
   gold: '#D9A441',
   white: '#FFFFFF',
 } as const;
@@ -212,6 +222,8 @@ export type Shadows = {
   toast: string;
   segment: string | undefined;
   knob: string;
+  /** Lifted item on a gradient header (current prayer). */
+  highlight: string;
 };
 
 export const shadows: Record<ColorScheme, Shadows> = {
@@ -223,6 +235,7 @@ export const shadows: Record<ColorScheme, Shadows> = {
     toast: '0px 10px 30px rgba(0,0,0,0.2)',
     segment: '0px 1px 3px rgba(15,31,28,0.12)',
     knob: '0px 1px 3px rgba(0,0,0,0.2)',
+    highlight: '0px 6px 16px rgba(0,0,0,0.12)',
   },
   dark: {
     card: undefined,
@@ -232,5 +245,6 @@ export const shadows: Record<ColorScheme, Shadows> = {
     toast: '0px 10px 30px rgba(0,0,0,0.2)',
     segment: undefined,
     knob: '0px 1px 3px rgba(0,0,0,0.2)',
+    highlight: '0px 6px 16px rgba(0,0,0,0.12)',
   },
 };

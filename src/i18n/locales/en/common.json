@@ -135,5 +135,133 @@
       }
     },
     "slideOf": "Slide {{current}} of {{total}}"
+  },
+  "location": {
+    "pickerTitle": "Choose your city",
+    "searchPlaceholder": "Search cities",
+    "change": "Change location, {{place}}",
+    "setLocation": "Set your location",
+    "useCurrent": "Use my current location"
+  },
+  "permissions": {
+    "location": {
+      "title": "Find prayer times near you",
+      "body": "Noor uses your location to calculate accurate prayer times and the Qibla direction for wherever you are.",
+      "privacy": "Stays on your device · never shared",
+      "allow": "Allow location access",
+      "notNow": "Not now",
+      "manual": "Choose city manually",
+      "art": "A map with a location pin",
+      "denied": "Location access is off. You can choose your city instead.",
+      "unavailable": "Couldn't find your location. You can choose your city instead."
+    },
+    "notifications": {
+      "title": "Hear the Adhan on time",
+      "body": "Get the Adhan at every prayer time, plus gentle reminders for Sehri, Iftar and your daily amol. You choose which ones.",
+      "turnOn": "Turn on notifications",
+      "later": "Maybe later",
+      "art": "A bell ringing with sound waves",
+      "appName": "NOOR",
+      "now": "now",
+      "previewTitle": "{{prayer}} · {{time}}",
+      "previewBody": "It's time for Fajr. Prayer is better than sleep.",
+      "channelName": "Prayer times"
+    }
+  },
+  "prayers": {
+    "fajr": "Fajr",
+    "sunrise": "Sunrise",
+    "dhuhr": "Dhuhr",
+    "asr": "Asr",
+    "maghrib": "Maghrib",
+    "isha": "Isha"
+  },
+  "time": {
+    "am": "AM",
+    "pm": "PM"
+  },
+  "date": {
+    "weekdays": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "weekdaysShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    "monthsShort": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ],
+    "short": "{{weekday}}, {{day}} {{month}} {{year}}"
+  },
+  "home": {
+    "nextPrayer": "Next prayer · {{prayer}}",
+    "countdown": "{{prayer}} in {{duration}}",
+    "compactSub": "in {{duration}} · {{place}}",
+    "durationHM": "{{h}}h {{m}}m",
+    "durationM": "{{m}}m",
+    "notifications": "Notifications",
+    "allFeatures": "All Features",
+    "seeAll": "See all",
+    "comingSoon": "Coming soon",
+    "prayerTimes": "Today's prayer times",
+    "currentPrayer": "{{prayer}}, {{time}}, now",
+    "features": {
+      "quran": "Quran",
+      "qibla": "Qibla",
+      "zakat": "Zakat",
+      "calendar": "Calendar",
+      "hadith": "Hadith",
+      "masail": "Masail",
+      "names": "Names",
+      "tasbih": "Tasbih",
+      "dua": "Dua",
+      "more": "More"
+    },
+    "daily": {
+      "group": "Daily content",
+      "ayah": "Daily Ayah",
+      "hadith": "Hadith",
+      "bookmark": "Bookmark",
+      "removeBookmark": "Remove bookmark",
+      "share": "Share",
+      "saved": "Bookmark saved",
+      "removed": "Bookmark removed",
+      "readInContext": "Read in context",
+      "ayahRef": "Al-Baqarah · 2:286",
+      "hadithRef": "Sahih al-Bukhari · 1",
+      "ayahTranslation": "Allah does not burden a soul beyond what it can bear.",
+      "hadithTranslation": "Actions are judged only by their intentions."
+    },
+    "amol": {
+      "title": "Today's Amol",
+      "progress": "{{day}} · {{done}} of {{total}} done",
+      "ring": "{{percent}} percent complete",
+      "now": "Now",
+      "markDone": "Mark {{item}} done",
+      "done": "{{item}}, done",
+      "addOne": "Add one to {{item}}",
+      "items": {
+        "isha": "Isha with jama'ah",
+        "witr": "Witr prayer",
+        "tahajjud": "Tahajjud",
+        "tahajjudNow": "The last third of the night has begun",
+        "tahajjudLater": "The last third of the night starts at {{time}}",
+        "kahf": "Surah Al-Kahf",
+        "kahfCaption": "Sunnah on Fridays · about 18 min",
+        "mulk": "Surah Al-Mulk",
+        "mulkCaption": "Before sleep · about 10 min",
+        "salawat": "Salawat 100×"
+      }
+    }
+  },
+  "placeholder": {
+    "title": "Coming soon",
+    "body": "This section arrives in a later update."
   }
 }

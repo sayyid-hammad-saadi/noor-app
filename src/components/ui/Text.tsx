@@ -1,5 +1,10 @@
 import { forwardRef, useMemo } from 'react';
-import { Text as RNText, type TextProps as RNTextProps, type TextStyle } from 'react-native';
+import {
+  I18nManager,
+  Text as RNText,
+  type TextProps as RNTextProps,
+  type TextStyle,
+} from 'react-native';
 
 import { useLanguage } from '@/i18n';
 import {
@@ -21,18 +26,23 @@ export type TextProps = RNTextProps & {
   weight?: Weight;
   size?: number;
   color?: ColorToken;
-  /** Defaults to 'start' (follows the layout direction, not the text's script). */
-  align?: 'auto' | 'start' | 'center' | 'end';
+  /**
+   * Defaults to 'start' (follows the layout direction, not the text's script).
+   * 'right' is the physical right edge in every layout direction; use it for Arabic
+   * and Quran text, which always reads from the right.
+   */
+  align?: 'auto' | 'start' | 'center' | 'end' | 'right';
   /** Tabular figures for times and amounts. */
   tabular?: boolean;
 };
 
+// React Native mirrors left/right when the layout is RTL, so 'left' means start.
 const ALIGN: Record<NonNullable<TextProps['align']>, TextStyle['textAlign']> = {
   auto: 'auto',
-  // React Native mirrors left/right when the layout is RTL.
   start: 'left',
   center: 'center',
   end: 'right',
+  right: I18nManager.isRTL ? 'left' : 'right',
 };
 
 /**

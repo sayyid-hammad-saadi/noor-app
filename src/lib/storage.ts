@@ -5,9 +5,14 @@ export const StorageKeys = {
   language: 'noor.language',
   appearance: 'noor.appearance',
   onboardingDone: 'noor.onboardingDone',
+  location: 'noor.location',
+  amol: 'noor.amol',
+  dailyBookmarks: 'noor.dailyBookmarks',
 } as const;
 
-type StorageKey = (typeof StorageKeys)[keyof typeof StorageKeys];
+type BaseKey = (typeof StorageKeys)[keyof typeof StorageKeys];
+/** A base key, or a base key scoped with a suffix (e.g. `noor.amol.2026-10-16`). */
+type StorageKey = BaseKey | `${BaseKey}.${string}`;
 
 export async function getItem(key: StorageKey): Promise<string | null> {
   try {
