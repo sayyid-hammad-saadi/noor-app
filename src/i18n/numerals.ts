@@ -36,13 +36,15 @@ export type NumberFormatOptions = {
   /** Fixed number of decimals; defaults to as many as needed, up to 2. */
   decimals?: number;
   grouping?: boolean;
+  /** Lakh/crore grouping (3,25,000); defaults to on for Bangla. Taka and rupee amounts use it in every language. */
+  lakh?: boolean;
 };
 
 /** Formats a number with grouping and the language's digits, without relying on Intl. */
 export function formatNumber(
   value: number,
   language: Language,
-  { decimals, grouping = true }: NumberFormatOptions = {},
+  { decimals, grouping = true, lakh = language === 'bn' }: NumberFormatOptions = {},
 ): string {
   const system = languageMeta[language].numerals;
   const { group, decimal } = SEPARATORS[system];
@@ -50,7 +52,7 @@ export function formatNumber(
     decimals === undefined ? String(Math.round(value * 100) / 100) : value.toFixed(decimals);
   const negative = fixed.startsWith('-');
   const [int = '0', frac] = (negative ? fixed.slice(1) : fixed).split('.');
-  const grouped = grouping ? groupInteger(int, language === 'bn', group) : int;
+  const grouped = grouping ? groupInteger(int, lakh, group) : int;
   const out = `${negative ? '-' : ''}${grouped}${frac ? decimal + frac : ''}`;
   return localizeDigits(out, language);
 }

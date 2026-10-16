@@ -16,21 +16,6 @@ const ID_PREFIX = 'ramadan:';
 /** Two reminders × 7 days, alongside 35 Adhan notifications, stays under iOS's 64 cap. */
 const DAYS_AHEAD = 7;
 
-/** Asks for notification permission; true when reminders can be delivered. */
-export async function ensureNotificationPermission(channelName: string): Promise<boolean> {
-  if (Platform.OS === 'web') return false;
-  const current = await Notifications.getPermissionsAsync();
-  if (current.granted) return true;
-  if (!current.canAskAgain) return false;
-  if (Platform.OS === 'android') {
-    await Notifications.setNotificationChannelAsync(PRAYER_CHANNEL_ID, {
-      name: channelName,
-      importance: Notifications.AndroidImportance.HIGH,
-    });
-  }
-  return (await Notifications.requestPermissionsAsync()).granted;
-}
-
 /**
  * Keeps Sehri and Iftar reminders scheduled for the coming week of Ramadan.
  * Renders nothing; mounted once at the root next to the Adhan scheduler.

@@ -1,6 +1,7 @@
 import Svg, { Circle, G, Path, Rect } from 'react-native-svg';
 
 import { brand } from '@/theme';
+import { hiddenSvgProps } from '@/lib/a11y';
 
 /** Noor mark: eight-point star with crescent and gold sparkle. */
 export function Logo({
@@ -18,9 +19,9 @@ export function Logo({
       width={size}
       height={size}
       viewBox="0 0 120 120"
-      accessibilityRole={accessibilityLabel ? 'image' : undefined}
-      accessibilityLabel={accessibilityLabel}
-      accessibilityElementsHidden={!accessibilityLabel}
+      {...(accessibilityLabel
+        ? { accessibilityRole: 'image' as const, accessibilityLabel }
+        : hiddenSvgProps)}
     >
       <G fill={brand.white}>
         <Rect x={24} y={24} width={72} height={72} rx={22} />

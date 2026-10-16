@@ -701,5 +701,173 @@
         "translation": "Our Lord, we have believed, so forgive us our sins and protect us from the punishment of the Fire."
       }
     }
+  },
+  "zakat": {
+    "title": "Zakat Calculator",
+    "close": "Close calculator",
+    "help": {
+      "title": "How Zakat is calculated",
+      "steps": [
+        "Add up what you own: cash, gold, silver, business stock, money owed to you and investments.",
+        "Subtract debts and bills that are due now.",
+        "If what remains is at least the nisab and you have held it for one lunar year, pay 2.5% of it.",
+        "Things you use personally, such as your home, car and furniture, are not counted. Gold and silver jewellery is included."
+      ]
+    },
+    "startOver": "Start over",
+    "back": "Back",
+    "stepOf": "Step {{n}} of {{total}}",
+    "steps": {
+      "nisab": "Nisab",
+      "assets": "Assets",
+      "liabilities": "Liabilities",
+      "result": "Result"
+    },
+    "metals": {
+      "silver": "Silver",
+      "gold": "Gold"
+    },
+    "nisab": {
+      "title": "Choose your nisab basis",
+      "body": "Zakat is due when your net wealth reaches the nisab and you have held it for one lunar year.",
+      "basis": "Nisab basis",
+      "recommended": "Recommended",
+      "weight": "{{grams}} g · {{tola}} tola",
+      "silverNote": "The lower threshold, so more Zakat reaches people in need.",
+      "goldNote": "Use if most of your wealth is held in gold.",
+      "rateTitle": "Today's rate per gram",
+      "rateNote": "22K · your local market",
+      "rateLabel": "{{metal}} rate per gram",
+      "perGram": "/g",
+      "threshold": "Your nisab threshold",
+      "enterRate": "Enter today's {{metal}} rate",
+      "next": "Next: Assets",
+      "history": "Past Zakat reports",
+      "historyCaption": "Saved calculations and payments"
+    },
+    "assets": {
+      "title": "What do you own?",
+      "body": "Enter today's value. Leave anything you don't have at 0.",
+      "items": {
+        "cash": {
+          "label": "Cash & bank",
+          "caption": "Savings, bKash, current accounts"
+        },
+        "gold": {
+          "label": "Gold",
+          "caption": "Grams you own"
+        },
+        "silver": {
+          "label": "Silver",
+          "caption": "Grams you own"
+        },
+        "business": {
+          "label": "Business goods",
+          "caption": "Stock at selling price"
+        },
+        "receivables": {
+          "label": "Receivables",
+          "caption": "Money owed to you, likely repaid"
+        },
+        "investments": {
+          "label": "Investments",
+          "caption": "Shares, sanchaypatra, funds"
+        }
+      },
+      "gramValue": "{{grams}} g × {{rate}} = {{value}}",
+      "noRate": "Add the {{metal}} rate in step 1",
+      "grams": "g",
+      "total": "Total assets",
+      "next": "Next: Liabilities"
+    },
+    "liabilities": {
+      "title": "What do you owe?",
+      "body": "Only amounts that are due now are deducted from your wealth.",
+      "items": {
+        "debts": {
+          "label": "Debts due now",
+          "caption": "Personal loans you must repay"
+        },
+        "bills": {
+          "label": "Bills & rent due",
+          "caption": "Utilities, rent, school fees"
+        },
+        "payables": {
+          "label": "Business payables",
+          "caption": "Suppliers and wages owed"
+        }
+      },
+      "note": "For long-term loans such as a home loan, scholars differ. A common approach is to deduct only the instalments due in the next 12 months.",
+      "total": "Total liabilities",
+      "calculate": "Calculate Zakat"
+    },
+    "result": {
+      "due": "Above nisab · Zakat is due",
+      "notDue": "Below nisab · no Zakat due",
+      "payable": "Zakat payable",
+      "rateNote": "2.5% of your net zakatable wealth",
+      "notDueNote": "Your net wealth is below the nisab of {{nisab}}.",
+      "breakdown": "Breakdown",
+      "totalAssets": "Total assets",
+      "lessLiabilities": "Less liabilities",
+      "net": "Net zakatable wealth",
+      "nisabRow": "Nisab · {{metal}} {{grams}} g",
+      "remind": "Remind me next year",
+      "remindCaption": "One lunar year (hawl) · {{date}}",
+      "denied": "Allow notifications in Settings to get a reminder.",
+      "disclaimer": "This is a guide based on the figures you entered. For complex holdings, please ask a qualified scholar.",
+      "share": "Share result",
+      "download": "Download PDF report",
+      "shareText": "Zakat for {{year}} AH: {{amount}}\nNet zakatable wealth: {{net}}\nNisab ({{metal}}): {{nisab}}",
+      "reminderTitle": "Time to calculate your Zakat",
+      "reminderBody": "A lunar year has passed since your last calculation."
+    },
+    "report": {
+      "title": "Report preview",
+      "file": "Zakat-Report-{{year}}.pdf · A4",
+      "close": "Close preview",
+      "print": "Print",
+      "preview": "Preview of the Zakat calculation report, page 1 of 1",
+      "heading": "Zakat Calculation Report",
+      "ref": "Ref. {{ref}}",
+      "date": "Date",
+      "dateValue": "{{date}} · {{hijri}} AH",
+      "basis": "Nisab basis",
+      "basisValue": "{{metal}} · {{grams}} g × {{rate}}/g = {{nisab}}",
+      "assets": "ASSETS",
+      "liabilities": "LIABILITIES",
+      "cash": "Cash & bank balances",
+      "gramLine": "{{metal}} · {{grams}} g × {{rate}}",
+      "aboveNisab": "Above nisab ({{nisab}})",
+      "yes": "Yes",
+      "no": "No",
+      "payableLine": "Zakat payable (2.5%)",
+      "footer": "Generated by Noor. This report is a guide based on figures entered by the user and is not a fatwa. Please consult a qualified scholar for complex holdings.",
+      "page": "Page 1 of 1",
+      "share": "Share",
+      "download": "Download PDF",
+      "failed": "Couldn't create the PDF. Please try again.",
+      "missing": "This report is no longer available."
+    },
+    "history": {
+      "title": "Zakat reports",
+      "new": "New calculation",
+      "totalPaid": "Total paid",
+      "dueThisYear": "Due this year",
+      "yearAh": "{{year}} AH",
+      "notPaid": "Not yet paid",
+      "paid": "Paid",
+      "noZakat": "No Zakat due",
+      "net": "Net wealth",
+      "nisab": "Nisab",
+      "viewPdf": "View PDF",
+      "markPaid": "Mark as paid",
+      "markUnpaid": "Mark as not paid",
+      "paidToast": "Marked as paid",
+      "shareYear": "Share {{year}} AH report",
+      "emptyTitle": "No saved reports yet",
+      "emptyBody": "Each year's calculation is saved here so you can keep track of what you have paid.",
+      "start": "Calculate Zakat"
+    }
   }
 }

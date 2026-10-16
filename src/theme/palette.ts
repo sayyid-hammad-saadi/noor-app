@@ -86,6 +86,11 @@ export type Palette = {
   illoGlow: string;
   /** Darker gold for coin edges. */
   illoGoldEdge: string;
+  /** Metal swatches on the nisab choice (Zakat). */
+  metalSilver1: string;
+  metalSilver2: string;
+  metalGold1: string;
+  metalGold2: string;
 };
 
 const light: Palette = {
@@ -144,6 +149,10 @@ const light: Palette = {
   illoInk: '#1A1F1E',
   illoGlow: '#FCEFC9',
   illoGoldEdge: '#B98A2E',
+  metalSilver1: '#E6ECEB',
+  metalSilver2: '#A9B6B3',
+  metalGold1: '#F3D58E',
+  metalGold2: '#C08A2A',
 };
 
 const dark: Palette = {
@@ -202,6 +211,10 @@ const dark: Palette = {
   illoInk: '#1A1F1E',
   illoGlow: '#FCEFC9',
   illoGoldEdge: '#B98A2E',
+  metalSilver1: '#E6ECEB',
+  metalSilver2: '#A9B6B3',
+  metalGold1: '#F3D58E',
+  metalGold2: '#C08A2A',
 };
 
 export const palettes: Record<ColorScheme, Palette> = { light, dark };

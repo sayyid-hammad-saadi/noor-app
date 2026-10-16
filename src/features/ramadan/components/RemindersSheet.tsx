@@ -5,9 +5,9 @@ import { StyleSheet, View } from 'react-native';
 import { BottomSheet, useToast } from '@/components/feedback';
 import { Switch, Text } from '@/components/ui';
 import { useLanguage } from '@/i18n';
+import { ensureNotificationPermission } from '@/lib/notifications';
 import { makeStyles } from '@/theme';
 
-import { ensureNotificationPermission } from '../ramadanReminders';
 import { REMINDER_LEAD_MIN, reminderPrefs } from '../ramadanStore';
 
 /** Sehri and Iftar reminder switches. */
