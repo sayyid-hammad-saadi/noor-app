@@ -1,0 +1,56 @@
+{
+  "expo": {
+    "name": "Noor",
+    "slug": "noor",
+    "scheme": "noor",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "bundleIdentifier": "com.noor.app",
+      "supportsTablet": false
+    },
+    "android": {
+      "package": "com.noor.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0A6E5E",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-dev-client",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 120,
+          "resizeMode": "contain",
+          "backgroundColor": "#0A6E5E",
+          "dark": {
+            "backgroundColor": "#0F3B34"
+          }
+        }
+      ],
+      [
+        "expo-localization",
+        {
+          "supportsRTL": true,
+          "supportedLocales": ["bn", "en", "ar"]
+        }
+      ],
+      "expo-status-bar"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
