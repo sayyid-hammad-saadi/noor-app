@@ -16,4 +16,6 @@ export const routes = {
   ramadan: '/ramadan',
   zakat: '/zakat',
   calendar: '/calendar',
+  hadith: '/hadith',
+  dua: '/dua',
 } as const satisfies Record<string, Href>;

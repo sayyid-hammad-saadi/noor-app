@@ -22,6 +22,9 @@ export const StorageKeys = {
   zakatRecords: 'noor.zakat.records',
   myAmol: 'noor.calendar.myAmol',
   calendarReminders: 'noor.calendar.reminders',
+  hadithBookmarks: 'noor.hadith.bookmarks',
+  duaBookmarks: 'noor.dua.bookmarks',
+  readingPrefs: 'noor.reading.prefs',
 } as const;
 
 type BaseKey = (typeof StorageKeys)[keyof typeof StorageKeys];

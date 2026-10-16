@@ -1098,5 +1098,237 @@
         "body": "أيام التشريق أيام أكل وشرب وذكر لله."
       }
     }
+  },
+  "hadith": {
+    "title": "الحديث",
+    "subtitle": "الكتب الستة · أكثر من {{count}} حديث",
+    "search": "ابحث في الأحاديث",
+    "searchPlaceholder": "ابحث في هذه الأحاديث",
+    "noResults": "لا أحاديث تطابق «{{q}}».",
+    "topics": {
+      "all": "الكل",
+      "iman": "الإيمان",
+      "salah": "الصلاة",
+      "sawm": "الصيام",
+      "zakat": "الزكاة",
+      "hajj": "الحج",
+      "akhlaq": "الأخلاق"
+    },
+    "categories": "الموضوعات",
+    "listHead": "{{topic}} · {{count}} حديثًا",
+    "allBooks": "كل الكتب",
+    "filterTitle": "تصفية حسب الكتاب",
+    "books": {
+      "bukhari": "صحيح البخاري",
+      "muslim": "صحيح مسلم",
+      "abudawud": "سنن أبي داود",
+      "tirmidhi": "جامع الترمذي",
+      "nasai": "سنن النسائي",
+      "ibnmajah": "سنن ابن ماجه"
+    },
+    "browse": "تصفح الكتب الستة",
+    "browseSub": "كل الأحاديث ({{count}}) حسب الكتب والأبواب",
+    "booksTitle": "الكتب الستة",
+    "booksSub": "أمهات كتب الحديث",
+    "bookMeta": "{{count}} حديث · {{chapters}} كتابًا",
+    "chapter": "الكتاب {{n}}",
+    "chapterMeta": "{{count}} حديث",
+    "offlineNote": "يُنزَّل الكتاب عند فتحه ويبقى محفوظًا للقراءة دون اتصال.",
+    "loadError": "تعذّر تحميل هذا الكتاب",
+    "loadErrorBody": "تحقق من اتصالك بالإنترنت وحاول مرة أخرى.",
+    "ref": "{{book}} · {{n}}",
+    "detailRef": "{{book}} · الحديث {{n}}",
+    "position": "{{n}} من {{total}}",
+    "narratedBy": "الراوي: {{name}}",
+    "translation": "الترجمة",
+    "both": "كلاهما",
+    "gradeNote": "الدرجة من المصنِّف ومن العلماء بعده. اضغط على الشارة لمعرفة من حكم عليه.",
+    "gradesTitle": "من حكم عليه",
+    "consensus": "أحاديث {{book}} كلها مقبولة صحيحة عند أهل الحديث.",
+    "showFull": "عرض الرواية كاملة بالإسناد",
+    "hideFull": "إخفاء الرواية الكاملة",
+    "save": "حفظ",
+    "saved": "محفوظ",
+    "share": "مشاركة",
+    "copy": "نسخ",
+    "copied": "تم النسخ",
+    "textSize": "حجم الخط",
+    "textSizes": {
+      "sm": "خط صغير",
+      "md": "خط متوسط",
+      "lg": "خط كبير"
+    },
+    "previous": "الحديث السابق",
+    "next": "الحديث التالي",
+    "missing": "تعذّر العثور على الحديث."
+  },
+  "dua": {
+    "title": "الأدعية",
+    "subtitle": "حصن المسلم والقرآن · {{count}} دعاءً",
+    "search": "ابحث في الأدعية",
+    "searchPlaceholder": "ابحث في الأدعية",
+    "noResults": "لا أدعية تطابق «{{q}}».",
+    "categories": {
+      "daily": "الحياة اليومية",
+      "morning": "الصباح والمساء",
+      "salah": "الصلاة",
+      "travel": "السفر",
+      "ramadan": "رمضان"
+    },
+    "position": "{{category}} · {{n}} من {{total}}",
+    "repeat": "يُقال {{n}} مرات",
+    "save": "حفظ",
+    "saved": "محفوظ",
+    "copy": "نسخ",
+    "copied": "تم النسخ",
+    "share": "مشاركة",
+    "textSize": "حجم الخط",
+    "previous": "الدعاء السابق",
+    "next": "الدعاء التالي",
+    "items": {
+      "leaveHome": {
+        "title": "عند الخروج من المنزل",
+        "translation": "",
+        "virtue": "يُقال لمن قاله: هُديت وكُفيت ووُقيت."
+      },
+      "beforeEating": {
+        "title": "قبل الطعام",
+        "translation": ""
+      },
+      "forgotBismillah": {
+        "title": "إذا نسي التسمية",
+        "translation": ""
+      },
+      "afterEating": {
+        "title": "بعد الطعام",
+        "translation": "",
+        "virtue": "من قاله غُفر له ما تقدم من ذنبه."
+      },
+      "enterMasjid": {
+        "title": "عند دخول المسجد",
+        "translation": ""
+      },
+      "leaveMasjid": {
+        "title": "عند الخروج من المسجد",
+        "translation": ""
+      },
+      "enterToilet": {
+        "title": "عند دخول الخلاء",
+        "translation": ""
+      },
+      "beforeSleeping": {
+        "title": "قبل النوم",
+        "translation": ""
+      },
+      "waking": {
+        "title": "عند الاستيقاظ",
+        "translation": ""
+      },
+      "parents": {
+        "title": "للوالدين",
+        "translation": ""
+      },
+      "sayyidulIstighfar": {
+        "title": "سيد الاستغفار",
+        "translation": "",
+        "virtue": "من قاله موقنًا به من النهار فمات قبل أن يمسي، أو من الليل فمات قبل أن يصبح، فهو من أهل الجنة."
+      },
+      "noHarm": {
+        "title": "الحفظ من الضرر",
+        "translation": "",
+        "virtue": "من قاله ثلاثًا صباحًا ومساءً لم يضره شيء."
+      },
+      "subhanallah": {
+        "title": "التسبيح",
+        "translation": "",
+        "virtue": "لم يأتِ أحد يوم القيامة بأفضل مما جاء به إلا أحد قال مثل ما قال أو زاد."
+      },
+      "tahlil": {
+        "title": "التهليل",
+        "translation": "",
+        "virtue": "من قالها مئة مرة في يوم كانت له عدل عشر رقاب، وكانت له حرزًا من الشيطان حتى يمسي."
+      },
+      "afiyah": {
+        "title": "سؤال العافية",
+        "translation": "",
+        "virtue": "مطلع دعاء أطول يُقال صباحًا ومساءً."
+      },
+      "afterWudu": {
+        "title": "بعد الوضوء",
+        "translation": "",
+        "virtue": "تُفتح له أبواب الجنة الثمانية يدخل من أيها شاء."
+      },
+      "afterAdhan": {
+        "title": "بعد الأذان",
+        "translation": "",
+        "virtue": "من قاله غُفر له ذنبه."
+      },
+      "opening": {
+        "title": "دعاء الاستفتاح",
+        "translation": ""
+      },
+      "ruku": {
+        "title": "في الركوع",
+        "translation": ""
+      },
+      "sujud": {
+        "title": "في السجود",
+        "translation": ""
+      },
+      "betweenSujud": {
+        "title": "بين السجدتين",
+        "translation": ""
+      },
+      "afterSalam": {
+        "title": "بعد السلام",
+        "translation": ""
+      },
+      "helpMe": {
+        "title": "الإعانة على العبادة",
+        "translation": ""
+      },
+      "travel": {
+        "title": "دعاء السفر",
+        "translation": "",
+        "virtue": "مطلع دعاء السفر، يُقال بعد ثلاث تكبيرات."
+      },
+      "stopping": {
+        "title": "عند نزول منزل",
+        "translation": "",
+        "virtue": "لم يضره شيء حتى يرتحل من منزله ذلك."
+      },
+      "ascending": {
+        "title": "عند الصعود والنزول",
+        "translation": ""
+      },
+      "farewell": {
+        "title": "توديع المسافر",
+        "translation": ""
+      },
+      "returning": {
+        "title": "عند الرجوع من السفر",
+        "translation": ""
+      },
+      "iftar": {
+        "title": "دعاء الإفطار",
+        "translation": ""
+      },
+      "qadr": {
+        "title": "ليلة القدر",
+        "translation": ""
+      },
+      "fasting": {
+        "title": "إذا شوتم الصائم",
+        "translation": ""
+      },
+      "host": {
+        "title": "الدعاء لمن فطّرك",
+        "translation": ""
+      },
+      "newMoon": {
+        "title": "عند رؤية الهلال",
+        "translation": ""
+      }
+    }
   }
 }

@@ -1115,5 +1115,237 @@
         "body": "The days of Tashreeq are for eating, drinking and remembering Allah."
       }
     }
+  },
+  "hadith": {
+    "title": "Hadith",
+    "subtitle": "6 books · {{count}}+ hadith",
+    "search": "Search hadith",
+    "searchPlaceholder": "Search these hadith",
+    "noResults": "No hadith match “{{q}}”.",
+    "topics": {
+      "all": "All",
+      "iman": "Iman",
+      "salah": "Salah",
+      "sawm": "Sawm",
+      "zakat": "Zakat",
+      "hajj": "Hajj",
+      "akhlaq": "Akhlaq"
+    },
+    "categories": "Categories",
+    "listHead": "{{topic}} · {{count}} hadith",
+    "allBooks": "All books",
+    "filterTitle": "Filter by book",
+    "books": {
+      "bukhari": "Sahih al-Bukhari",
+      "muslim": "Sahih Muslim",
+      "abudawud": "Sunan Abi Dawud",
+      "tirmidhi": "Jami' at-Tirmidhi",
+      "nasai": "Sunan an-Nasa'i",
+      "ibnmajah": "Sunan Ibn Majah"
+    },
+    "browse": "Browse the six books",
+    "browseSub": "All {{count}} hadith by chapter",
+    "booksTitle": "The six books",
+    "booksSub": "Kutub al-Sittah",
+    "bookMeta": "{{count}} hadith · {{chapters}} chapters",
+    "chapter": "Chapter {{n}}",
+    "chapterMeta": "{{count}} hadith",
+    "offlineNote": "Chapters download when you open them and stay saved for offline reading.",
+    "loadError": "Couldn't load this chapter",
+    "loadErrorBody": "Check your internet connection and try again.",
+    "ref": "{{book}} · {{n}}",
+    "detailRef": "{{book}} · Hadith {{n}}",
+    "position": "{{n}} of {{total}}",
+    "narratedBy": "Narrated by {{name}}",
+    "translation": "Translation",
+    "both": "Both",
+    "gradeNote": "Grade from the collector and later scholars. Tap the badge to see who graded it.",
+    "gradesTitle": "Who graded it",
+    "consensus": "Every hadith in {{book}} is accepted as authentic by the scholars of hadith.",
+    "showFull": "Show full narration with chain",
+    "hideFull": "Hide full narration",
+    "save": "Save",
+    "saved": "Saved",
+    "share": "Share",
+    "copy": "Copy",
+    "copied": "Copied",
+    "textSize": "Text size",
+    "textSizes": {
+      "sm": "Small text",
+      "md": "Medium text",
+      "lg": "Large text"
+    },
+    "previous": "Previous hadith",
+    "next": "Next hadith",
+    "missing": "This hadith couldn't be found."
+  },
+  "dua": {
+    "title": "Dua",
+    "subtitle": "Hisnul Muslim & Quran · {{count}} duas",
+    "search": "Search duas",
+    "searchPlaceholder": "Search duas",
+    "noResults": "No duas match “{{q}}”.",
+    "categories": {
+      "daily": "Daily life",
+      "morning": "Morning & evening",
+      "salah": "Salah",
+      "travel": "Travel",
+      "ramadan": "Ramadan"
+    },
+    "position": "{{category}} · {{n}} of {{total}}",
+    "repeat": "Say it {{n}} times",
+    "save": "Save",
+    "saved": "Saved",
+    "copy": "Copy",
+    "copied": "Copied",
+    "share": "Share",
+    "textSize": "Text size",
+    "previous": "Previous dua",
+    "next": "Next dua",
+    "items": {
+      "leaveHome": {
+        "title": "Leaving the home",
+        "translation": "In the name of Allah, I place my trust in Allah, and there is no might nor power except with Allah.",
+        "virtue": "Whoever says this is told: you are guided, sufficed and protected."
+      },
+      "beforeEating": {
+        "title": "Before eating",
+        "translation": "In the name of Allah."
+      },
+      "forgotBismillah": {
+        "title": "If you forgot to say Bismillah",
+        "translation": "In the name of Allah, at its beginning and its end."
+      },
+      "afterEating": {
+        "title": "After eating",
+        "translation": "All praise is for Allah who fed me this and provided it for me without any might or power from me.",
+        "virtue": "Whoever says this has his past sins forgiven."
+      },
+      "enterMasjid": {
+        "title": "Entering the masjid",
+        "translation": "O Allah, open for me the doors of Your mercy."
+      },
+      "leaveMasjid": {
+        "title": "Leaving the masjid",
+        "translation": "O Allah, I ask You of Your bounty."
+      },
+      "enterToilet": {
+        "title": "Entering the toilet",
+        "translation": "O Allah, I seek refuge in You from the male and female evil ones."
+      },
+      "beforeSleeping": {
+        "title": "Before sleeping",
+        "translation": "In Your name, O Allah, I die and I live."
+      },
+      "waking": {
+        "title": "On waking up",
+        "translation": "All praise is for Allah who gave us life after He caused us to die, and to Him is the return."
+      },
+      "parents": {
+        "title": "For parents",
+        "translation": "My Lord, have mercy on them as they raised me when I was small."
+      },
+      "sayyidulIstighfar": {
+        "title": "Sayyidul Istighfar",
+        "translation": "O Allah, You are my Lord; there is no god but You. You created me and I am Your servant, and I keep Your covenant and promise as best I can. I seek refuge in You from the evil of what I have done. I acknowledge Your favour upon me and I acknowledge my sin, so forgive me, for none forgives sins but You.",
+        "virtue": "Whoever says it with certainty in the day and dies before evening, or at night and dies before morning, is of the people of Paradise."
+      },
+      "noHarm": {
+        "title": "Protection from harm",
+        "translation": "In the name of Allah, with whose name nothing on earth or in the heavens can cause harm, and He is the All-Hearing, the All-Knowing.",
+        "virtue": "Whoever says it three times in the morning and evening, nothing will harm him."
+      },
+      "subhanallah": {
+        "title": "Glorifying Allah",
+        "translation": "Glory be to Allah and praise be to Him.",
+        "virtue": "No one brings anything better on the Day of Resurrection, except one who said the same or more."
+      },
+      "tahlil": {
+        "title": "Declaring Allah's oneness",
+        "translation": "There is no god but Allah alone, without partner. His is the dominion and His is the praise, and He is able to do all things.",
+        "virtue": "Said 100 times a day, it equals freeing ten slaves and is a protection from Shaytan until evening."
+      },
+      "afiyah": {
+        "title": "Asking for well-being",
+        "translation": "O Allah, I ask You for well-being in this world and the Hereafter.",
+        "virtue": "The opening of a longer morning and evening dua."
+      },
+      "afterWudu": {
+        "title": "After wudu",
+        "translation": "I bear witness that there is no god but Allah alone, without partner, and I bear witness that Muhammad is His servant and Messenger.",
+        "virtue": "The eight gates of Paradise are opened for him to enter by whichever he wishes."
+      },
+      "afterAdhan": {
+        "title": "After the adhan",
+        "translation": "I bear witness that there is no god but Allah alone, without partner, and that Muhammad is His servant and Messenger. I am pleased with Allah as Lord, with Muhammad as Messenger and with Islam as religion.",
+        "virtue": "Whoever says this has his sins forgiven."
+      },
+      "opening": {
+        "title": "Opening the prayer",
+        "translation": "Glory and praise be to You, O Allah. Blessed is Your name and exalted is Your majesty, and there is no god but You."
+      },
+      "ruku": {
+        "title": "In ruku",
+        "translation": "Glory be to my Lord, the Most Great."
+      },
+      "sujud": {
+        "title": "In sujud",
+        "translation": "Glory be to my Lord, the Most High."
+      },
+      "betweenSujud": {
+        "title": "Between the two prostrations",
+        "translation": "My Lord, forgive me. My Lord, forgive me."
+      },
+      "afterSalam": {
+        "title": "After the salam",
+        "translation": "I seek Allah's forgiveness (three times). O Allah, You are Peace and from You is peace. Blessed are You, O Possessor of majesty and honour."
+      },
+      "helpMe": {
+        "title": "Help in worship",
+        "translation": "O Allah, help me to remember You, to thank You and to worship You well."
+      },
+      "travel": {
+        "title": "Setting out on a journey",
+        "translation": "Glory be to Him who has subjected this to us, and we could never have done it ourselves, and to our Lord we will surely return.",
+        "virtue": "The opening of the travel dua, said after three takbirs."
+      },
+      "stopping": {
+        "title": "Stopping at a place",
+        "translation": "I seek refuge in the perfect words of Allah from the evil of what He has created.",
+        "virtue": "Nothing will harm him until he leaves that place."
+      },
+      "ascending": {
+        "title": "Going up and coming down",
+        "translation": "Allah is the Greatest when going up; glory be to Allah when coming down."
+      },
+      "farewell": {
+        "title": "Seeing off a traveller",
+        "translation": "I entrust to Allah your religion, your trust and the end of your deeds."
+      },
+      "returning": {
+        "title": "Returning from a journey",
+        "translation": "Returning, repenting, worshipping, and praising our Lord."
+      },
+      "iftar": {
+        "title": "Breaking the fast",
+        "translation": "The thirst is gone, the veins are moistened, and the reward is certain, if Allah wills."
+      },
+      "qadr": {
+        "title": "Laylatul Qadr",
+        "translation": "O Allah, You are the Pardoner and You love to pardon, so pardon me."
+      },
+      "fasting": {
+        "title": "When provoked while fasting",
+        "translation": "I am fasting."
+      },
+      "host": {
+        "title": "Thanking an iftar host",
+        "translation": "May the fasting break their fast with you, may the righteous eat your food, and may the angels send blessings upon you."
+      },
+      "newMoon": {
+        "title": "Seeing the new moon",
+        "translation": "O Allah, bring it over us with blessing and faith, safety and Islam. My Lord and your Lord is Allah."
+      }
+    }
   }
 }
