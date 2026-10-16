@@ -2,13 +2,13 @@ import { Share2 } from 'lucide-react-native';
 import { useTranslation } from 'react-i18next';
 import { Share, StyleSheet, View } from 'react-native';
 
+import { SourceLine } from '@/components/content';
 import { IconButton, Text } from '@/components/ui';
 import { makeStyles, useTheme } from '@/theme';
 
 import type { Dua } from '../content';
-import { sourceLabel } from '../format';
 import { useLanguage } from '@/i18n';
-import { SourceLine } from './SourceLine';
+import { sourceLabel } from '@/lib/sources';
 
 /** A dua: Arabic, transliteration, translation and source (13b, 15). */
 export function DuaCard({

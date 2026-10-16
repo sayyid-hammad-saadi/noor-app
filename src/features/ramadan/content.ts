@@ -1,4 +1,4 @@
-import type { HadithGrade } from '@/components/ui';
+import type { Source } from '@/lib/sources';
 
 import type { AshraKey } from './ramadanCalendar';
 
@@ -7,7 +7,7 @@ import type { AshraKey } from './ramadanCalendar';
  * i18n keys under ramadan.content.<id>. Grades follow al-Albani where the collection
  * itself doesn't grade the hadith. Quran references carry no grade.
  */
-export type Source = { ref: string; grade?: HadithGrade };
+export type { Source };
 
 export type Dua = {
   id: string;

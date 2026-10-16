@@ -7,8 +7,8 @@ export const SALAWAT_TARGET = 100;
 export type AmolItemId = 'isha' | 'witr' | 'tahajjud' | 'kahf' | 'mulk' | 'salawat';
 
 type AmolDay = {
-  /** Completion time (ms) per item. */
-  done: Partial<Record<AmolItemId, number>>;
+  /** Completion time (ms) per item; extra items from Month Amol use "cal:<id>". */
+  done: Partial<Record<string, number>>;
   salawat: number;
 };
 
@@ -49,7 +49,7 @@ export function useAmol(day: string) {
   );
 
   const toggle = useCallback(
-    (id: AmolItemId) =>
+    (id: AmolItemId | `cal:${string}`) =>
       update((s) => {
         const done = { ...s.done };
         if (done[id]) delete done[id];

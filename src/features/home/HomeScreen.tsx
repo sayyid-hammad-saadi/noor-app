@@ -85,6 +85,7 @@ export default function HomeScreen() {
     else if (key === 'qibla') router.push(routes.qibla);
     else if (key === 'quran') router.navigate(routes.quran);
     else if (key === 'zakat') router.push(routes.zakat);
+    else if (key === 'calendar') router.push(routes.calendar);
     else comingSoon();
   };
 

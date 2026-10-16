@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { SourceLine } from '@/components/content';
 import { GradientHeader } from '@/components/layout';
 import { Icon, IconButton, Text, Touchable } from '@/components/ui';
 import { useNow } from '@/features/prayer/usePrayerTimes';
@@ -14,7 +15,6 @@ import { routes } from '@/lib/routes';
 import { makeStyles, useTheme } from '@/theme';
 
 import { DuaCard } from './components/DuaCard';
-import { SourceLine } from './components/SourceLine';
 import { ASHRA_AMOL, ASHRA_AR, ASHRA_DUAS, ASHRA_HADITH, type AmolItem } from './content';
 import { ASHRAS, type AshraKey, ashraDays, ramadanDate, ramadanInfo } from './ramadanCalendar';
 import { EMPTY_DAY, ramadanAmol, updateAmolDay } from './ramadanStore';

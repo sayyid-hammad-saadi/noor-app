@@ -42,6 +42,17 @@
     "hasan": "Hasan",
     "daif": "Da'if"
   },
+  "sources": {
+    "bukhari": "Bukhari",
+    "muslim": "Muslim",
+    "tirmidhi": "Tirmidhi",
+    "abuDawud": "Abu Dawud",
+    "ibnKhuzaymah": "Ibn Khuzaymah",
+    "quran": "Quran",
+    "nasai": "Nasa'i",
+    "ibnMajah": "Ibn Majah",
+    "ahmad": "Musnad Ahmad"
+  },
   "appearance": {
     "system": "System",
     "light": "Light",
@@ -639,14 +650,6 @@
       "duaOf": "DUA {{n}} OF {{total}}",
       "count": "Add one to {{item}}"
     },
-    "collections": {
-      "bukhari": "Bukhari",
-      "muslim": "Muslim",
-      "tirmidhi": "Tirmidhi",
-      "abuDawud": "Abu Dawud",
-      "ibnKhuzaymah": "Ibn Khuzaymah",
-      "quran": "Quran"
-    },
     "content": {
       "iftar": {
         "title": "Breaking the fast",
@@ -868,6 +871,249 @@
       "emptyTitle": "No saved reports yet",
       "emptyBody": "Each year's calculation is saved here so you can keep track of what you have paid.",
       "start": "Calculate Zakat"
+    }
+  },
+  "calendar": {
+    "title": "Islamic Calendar",
+    "today": "Today",
+    "previous": "Previous month, {{month}}",
+    "next": "Next month, {{month}}",
+    "legend": {
+      "night": "Special night",
+      "fast": "Sunnah fast / sacred",
+      "holiday": "Holiday"
+    },
+    "cellToday": "today",
+    "noEvents": "No special days. The Monday and Thursday fasts are sunnah in every month.",
+    "nightFrom": "Begins at Maghrib on {{date}}.",
+    "remind": "Set a reminder for {{event}}",
+    "unremind": "Remove the reminder for {{event}}",
+    "reminderSet": "Reminder set",
+    "reminderRemoved": "Reminder removed",
+    "reminderDenied": "Allow notifications in Settings to get reminders.",
+    "monthLink": "{{month}}: fazilat & amol",
+    "monthLinkSub": "Practices with hadith grades",
+    "events": {
+      "newYear": {
+        "title": "Islamic New Year",
+        "body": "1 Muharram begins the Hijri year and the sacred month of Muharram."
+      },
+      "sacredStart": {
+        "title": "A sacred month begins",
+        "body": "One of the four sacred months, when good deeds and wrongs both weigh more."
+      },
+      "tasua": {
+        "title": "Tasu'a fast",
+        "body": "Fasting the 9th alongside Ashura, as the Prophet ﷺ intended."
+      },
+      "ashura": {
+        "title": "Day of Ashura",
+        "body": "Fasting Ashura expiates the sins of the previous year."
+      },
+      "mawlid": {
+        "title": "12 Rabi al-Awwal",
+        "body": "Commonly given as the date of the Prophet's ﷺ birth. A public holiday in Bangladesh."
+      },
+      "bid": {
+        "title": "Ayyam al-Bid fast",
+        "body": "Fasting the 13th, 14th and 15th of each Hijri month is sunnah."
+      },
+      "miraj": {
+        "title": "Shab-e-Miraj · Isra & Mi'raj",
+        "body": "Observed on the night of 26–27 Rajab. Historians differ on the exact date."
+      },
+      "barat": {
+        "title": "Shab-e-Barat · Mid-Sha'ban",
+        "body": "Allah looks upon His creation on this night and forgives all but those who associate partners with Him or hold enmity."
+      },
+      "ramadanStart": {
+        "title": "Ramadan begins",
+        "body": "The month of fasting. Dates depend on the moon sighting."
+      },
+      "qadr": {
+        "title": "27th night of Ramadan",
+        "body": "One of the odd nights of the last ten, when Laylatul Qadr is sought."
+      },
+      "eidFitr": {
+        "title": "Eid al-Fitr",
+        "body": "Pay Zakat al-Fitr before the Eid prayer. Fasting is not allowed today."
+      },
+      "arafah": {
+        "title": "Day of Arafah",
+        "body": "Fasting Arafah expiates the sins of the previous year and the coming year."
+      },
+      "eidAdha": {
+        "title": "Eid al-Adha",
+        "body": "The day of sacrifice. Fasting is not allowed today."
+      },
+      "tashreeq": {
+        "title": "Days of Tashreeq",
+        "body": "Days of eating, drinking and remembering Allah. Fasting is not allowed."
+      },
+      "motherLanguage": {
+        "title": "International Mother Language Day",
+        "body": "Shaheed Dibosh, a national day in Bangladesh."
+      },
+      "independence": {
+        "title": "Independence Day",
+        "body": "A national day in Bangladesh."
+      },
+      "boishakh": {
+        "title": "Pohela Boishakh",
+        "body": "Bangla New Year, a national holiday in Bangladesh."
+      },
+      "mayDay": {
+        "title": "May Day",
+        "body": "A public holiday in Bangladesh."
+      },
+      "victory": {
+        "title": "Victory Day",
+        "body": "A national day in Bangladesh."
+      }
+    },
+    "month": {
+      "eyebrow": "{{ordinal}} Hijri month",
+      "sacred": "Sacred",
+      "ordinals": [
+        "1st",
+        "2nd",
+        "3rd",
+        "4th",
+        "5th",
+        "6th",
+        "7th",
+        "8th",
+        "9th",
+        "10th",
+        "11th",
+        "12th"
+      ],
+      "span": "{{n}} days · {{from}} – {{to}}",
+      "back": "Back to calendar",
+      "share": "Share",
+      "fazilat": "FAZILAT",
+      "grades": "Hadith grades",
+      "gradeMeaning": {
+        "sahih": "authentic",
+        "hasan": "good",
+        "daif": "weak"
+      },
+      "amolTitle": "Amol for {{month}}",
+      "add": "Add {{item}} to my amol",
+      "remove": "Remove {{item}} from my amol",
+      "addedToast": "Added to Today's Amol on the days it applies",
+      "removedToast": "Removed from Today's Amol",
+      "bidDates": "13–15 {{month}} · {{dates}}",
+      "openRamadan": "Open Ramadan",
+      "fromMonth": "From {{month}} amol"
+    },
+    "months": {
+      "muharram": "“…of them, four are sacred.” Muharram is one of the four. The best fasting after Ramadan is in Allah's month, Muharram.",
+      "safar": "No special acts of worship are tied to Safar. The Prophet ﷺ rejected the belief that Safar brings bad luck.",
+      "rabiAwwal": "The month the Prophet ﷺ was born. Asked about fasting on Mondays, he said: “That is the day I was born.”",
+      "rabiAkhir": "No special acts of worship are tied to this month. Keep up the sunnah practices of every month.",
+      "jumadaUla": "No special acts of worship are tied to this month. Keep up the sunnah practices of every month.",
+      "jumadaAkhirah": "No special acts of worship are tied to this month. Keep up the sunnah practices of every month.",
+      "rajab": "“…of them, four are sacred.” Rajab is one of the four. Good deeds weigh more in these months, and so do wrongs.",
+      "shaban": "The Prophet ﷺ fasted more in Sha'ban than in any month besides Ramadan. It is a month people neglect, when deeds are raised to Allah.",
+      "ramadan": "“The month of Ramadan, in which the Quran was revealed.” Whoever fasts it with faith, seeking reward, is forgiven his past sins.",
+      "shawwal": "Whoever fasts Ramadan and follows it with six days of Shawwal, it is as if he fasted the whole year.",
+      "dhulQadah": "“…of them, four are sacred.” Dhul-Qa'dah is one of the four. The Prophet ﷺ performed his Umrahs in this month.",
+      "dhulHijjah": "No days are better for good deeds than the first ten days of Dhul-Hijjah."
+    },
+    "practices": {
+      "monThu": {
+        "title": "Fast on Mondays & Thursdays",
+        "body": "Deeds are presented to Allah on these two days."
+      },
+      "bid": {
+        "title": "Fast Ayyam al-Bid",
+        "body": "13, 14 and 15 of the Hijri month."
+      },
+      "guard": {
+        "title": "Guard against wrongdoing",
+        "body": "Sins and good deeds both carry more weight in the sacred months."
+      },
+      "muharramFast": {
+        "title": "Fast often in Muharram",
+        "body": "The best fasting after Ramadan."
+      },
+      "ashura": {
+        "title": "Fast on Ashura",
+        "body": "10 Muharram. It expiates the previous year."
+      },
+      "tasua": {
+        "title": "Fast the 9th as well",
+        "body": "9 Muharram, alongside Ashura."
+      },
+      "mondayBirth": {
+        "title": "Fast on Mondays",
+        "body": "The day the Prophet ﷺ was born, and Thursdays too."
+      },
+      "salawat": {
+        "title": "Send salawat on the Prophet ﷺ",
+        "body": "Whoever sends one, Allah sends ten upon him."
+      },
+      "rajabDua": {
+        "title": "Dua for Rajab & Sha'ban",
+        "body": "Weak chain. Fine to say as a general dua."
+      },
+      "sacredFasts": {
+        "title": "Extra fasts in the sacred months",
+        "body": "Voluntary fasting, without singling out Rajab alone."
+      },
+      "shabanFast": {
+        "title": "Fast more in Sha'ban",
+        "body": "As the Prophet ﷺ did, to prepare for Ramadan."
+      },
+      "barat": {
+        "title": "Worship on the night of mid-Sha'ban",
+        "body": "Night of 14–15 Sha'ban. Seek forgiveness and mend broken ties."
+      },
+      "makeUp": {
+        "title": "Make up missed Ramadan fasts",
+        "body": "'A'ishah would complete hers in Sha'ban."
+      },
+      "ramadanFast": {
+        "title": "Fast Ramadan",
+        "body": "With faith and seeking reward."
+      },
+      "taraweeh": {
+        "title": "Pray Taraweeh",
+        "body": "Standing in prayer at night in Ramadan."
+      },
+      "qadr": {
+        "title": "Seek Laylatul Qadr",
+        "body": "In the odd nights of the last ten."
+      },
+      "shawwalSix": {
+        "title": "Fast six days of Shawwal",
+        "body": "Any six days after Eid, together or apart."
+      },
+      "fitrah": {
+        "title": "Pay Zakat al-Fitr",
+        "body": "Before the Eid prayer."
+      },
+      "eidDates": {
+        "title": "Eat dates before the Eid prayer",
+        "body": "An odd number, as the Prophet ﷺ did on Eid al-Fitr."
+      },
+      "tenDays": {
+        "title": "Increase good deeds",
+        "body": "1–10 Dhul-Hijjah: dhikr, fasting, charity and prayer."
+      },
+      "arafah": {
+        "title": "Fast on the Day of Arafah",
+        "body": "9 Dhul-Hijjah, if you are not on Hajj."
+      },
+      "udhiyah": {
+        "title": "Offer the Udhiyah",
+        "body": "After the Eid prayer on 10 Dhul-Hijjah."
+      },
+      "tashreeq": {
+        "title": "Don't fast on 11–13 Dhul-Hijjah",
+        "body": "The days of Tashreeq are for eating, drinking and remembering Allah."
+      }
     }
   }
 }

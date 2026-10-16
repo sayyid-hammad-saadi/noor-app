@@ -4,11 +4,11 @@ import Svg, { Circle } from 'react-native-svg';
 
 import { Text } from '@/components/ui';
 import { useLanguage } from '@/i18n';
+import { sourceLabel } from '@/lib/sources';
 import { dayMonthLabel } from '@/lib/dateLabels';
 import { makeStyles, useTheme } from '@/theme';
 
 import { QADR_SOURCE } from '../content';
-import { sourceLabel } from '../format';
 import { qadrNights, type RamadanInfo } from '../ramadanCalendar';
 
 const DAY_MS = 86_400_000;

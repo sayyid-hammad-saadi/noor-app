@@ -5,8 +5,7 @@ import { GradeChip, Text } from '@/components/ui';
 import { useLanguage } from '@/i18n';
 import { makeStyles } from '@/theme';
 
-import type { Source } from '../content';
-import { sourceLabel } from '../format';
+import { type Source, sourceLabel } from '@/lib/sources';
 
 /** "Muslim 2702 [Sahih]": the reference with its grade chip. */
 export function SourceLine({ source }: { source: Source }) {

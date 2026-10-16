@@ -11,6 +11,10 @@ import { useLanguage } from '@/i18n';
 import { makeStyles, useTheme } from '@/theme';
 
 import { dayKey, weekdayName } from '@/lib/dateLabels';
+import { myAmol, practicesOn } from '@/features/calendar/calendarStore';
+import { hijriOf } from '@/features/calendar/hijriMonth';
+import type { PracticeId } from '@/features/calendar/monthContent';
+
 import { type AmolItemId, SALAWAT_TARGET, useAmol } from '../useAmol';
 import { ProgressRing } from './ProgressRing';
 
@@ -47,8 +51,13 @@ export function AmolCard({
 
   const isFriday = now.getDay() === 5;
   const surah: AmolItemId = isFriday ? 'kahf' : 'mulk';
-  const items: AmolItemId[] = ['isha', 'witr', 'tahajjud', surah, 'salawat'];
+  const base: AmolItemId[] = ['isha', 'witr', 'tahajjud', surah, 'salawat'];
+  // Practices the user added from Month Amol that apply today.
+  const extras = practicesOn(now, myAmol.use()).map((p) => `cal:${p.id}` as const);
+  const items: (AmolItemId | `cal:${PracticeId}`)[] = [...base, ...extras];
   const doneCount = items.filter((id) => done[id]).length;
+  const hijriMonths = t('date.hijriMonths', { returnObjects: true }) as string[];
+  const monthName = hijriMonths[hijriOf(now).month - 1] ?? '';
   const night = lastThird(now, place);
   const tahajjudNow = now >= night.start && now < night.end;
   const fmt = (d: Date) => {
@@ -80,7 +89,10 @@ export function AmolCard({
       </View>
 
       {items.map((id) => {
-        const title = t(`home.amol.items.${id}`);
+        const extra = id.startsWith('cal:') ? (id.slice(4) as PracticeId) : null;
+        const title = extra
+          ? t(`calendar.practices.${extra}.title`)
+          : t(`home.amol.items.${id as AmolItemId}`);
         const isDone = !!done[id];
         const doneAt = done[id];
         const highlight = id === 'tahajjud' && tahajjudNow && !isDone;
@@ -92,6 +104,7 @@ export function AmolCard({
             : t('home.amol.items.tahajjudLater', { time: fmt(night.start) });
         if (!isDone && id === 'kahf') caption = t('home.amol.items.kahfCaption');
         if (!isDone && id === 'mulk') caption = t('home.amol.items.mulkCaption');
+        if (!isDone && extra) caption = t('calendar.month.fromMonth', { month: monthName });
 
         let trailing: ReactNode = null;
         if (isDone && doneAt && id !== 'salawat') {
