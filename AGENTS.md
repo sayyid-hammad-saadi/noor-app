@@ -39,3 +39,12 @@ Docs: https://docs.expo.dev/eas/index.md
 - If `ios/` and `android/` directories do not exist, they are generated (Continuous Native Generation). Never create or edit them by hand — configure native behavior in `app.json` and config plugins.
 - Expo Go only includes its bundled native modules. After adding a library with native code, the app needs a development build: `npx expo run:ios|android` locally, or `eas build --profile development`.
 - Prefer recommended Expo modules over third-party libraries, and check your available skills before adding dependencies. Docs: https://docs.expo.dev/versions/latest/index.md
+
+## Noor project conventions
+
+- Package manager is **pnpm** (`node-linker=hoisted` in `.npmrc`). Add libraries with `npx expo install <pkg>` so SDK 56 versions are used.
+- Feature code lives in `src/features/<feature>/`; route files in `src/app/` only re-export feature screens.
+- Colours come only from theme tokens (`src/theme/palette.ts`, read via `useTheme()` / `makeStyles`). ESLint rejects colour literals anywhere else.
+- All UI text goes through `<Text>` from `@/components/ui` (picks Plus Jakarta Sans / Hind Siliguri / IBM Plex Sans Arabic / Amiri Quran and a safe line height) and through i18n keys in `src/i18n/locales/{en,bn,ar}`. `en` is the key source of truth; `bn` and `ar` must match its shape (typechecked).
+- Use start/end (not left/right) in styles and `flipInRTL` on directional icons. Prefer `minHeight` over fixed heights around text.
+- Run `pnpm lint` and `pnpm typecheck` after every change.
