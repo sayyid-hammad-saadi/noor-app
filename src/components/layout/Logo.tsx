@@ -20,7 +20,7 @@ export function Logo({
     >
       <G fill={brand.white}>
         <Rect x={24} y={24} width={72} height={72} rx={22} />
-        <Rect x={24} y={24} width={72} height={72} rx={22} rotation={45} origin="60, 60" />
+        <Rect x={24} y={24} width={72} height={72} rx={22} transform="rotate(45 60 60)" />
       </G>
       <Circle cx={57} cy={62} r={22} fill={brand.teal} />
       <Circle cx={67} cy={54} r={19} fill={brand.white} />

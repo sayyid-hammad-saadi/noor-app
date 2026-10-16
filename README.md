@@ -40,4 +40,4 @@ src/i18n/         i18next setup, locales, numerals, RTL
 src/lib/          storage and other helpers
 ```
 
-The entry route currently shows the shared component gallery (`src/features/dev`), with language and appearance switches, until the real screens are built.
+First run: Splash → Language → Onboarding. Until the permission and Home screens exist, onboarding hands off to the shared component gallery at `/dev/components` (`src/features/dev`), which has live language and appearance switches. Hand-off targets live in `src/lib/routes.ts`.

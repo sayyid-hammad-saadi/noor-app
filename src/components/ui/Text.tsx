@@ -21,6 +21,7 @@ export type TextProps = RNTextProps & {
   weight?: Weight;
   size?: number;
   color?: ColorToken;
+  /** Defaults to 'start' (follows the layout direction, not the text's script). */
   align?: 'auto' | 'start' | 'center' | 'end';
   /** Tabular figures for times and amounts. */
   tabular?: boolean;
@@ -45,7 +46,7 @@ export const Text = forwardRef<RNText, TextProps>(function Text(
     weight,
     size,
     color,
-    align = 'auto',
+    align = 'start',
     tabular,
     style,
     maxFontSizeMultiplier = 1.6,
@@ -60,7 +61,6 @@ export const Text = forwardRef<RNText, TextProps>(function Text(
 
   const base = useMemo<TextStyle>(() => {
     const s = buildTextStyle({ variant, script: resolvedScript, size, weight });
-    if (resolvedScript === 'ar' || resolvedScript === 'quran') s.writingDirection = 'rtl';
     if (tabular) s.fontVariant = ['tabular-nums'];
     s.textAlign = ALIGN[align];
     return s;

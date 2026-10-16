@@ -13,8 +13,12 @@ export type ButtonProps = {
   label: string;
   onPress?: () => void;
   variant?: ButtonVariant;
-  size?: 'md' | 'sm';
+  size?: 'lg' | 'md' | 'sm';
   icon?: LucideIcon;
+  /** Put the icon after the label (e.g. a forward arrow). */
+  iconPosition?: 'start' | 'end';
+  /** Mirror the icon in RTL (directional arrows). */
+  iconFlipInRTL?: boolean;
   disabled?: boolean;
   loading?: boolean;
   /** Stretch to fill the row (flex: 1). */
@@ -36,6 +40,8 @@ export function Button({
   variant = 'primary',
   size = 'md',
   icon,
+  iconPosition = 'start',
+  iconFlipInRTL,
   disabled,
   loading,
   grow,
@@ -46,6 +52,7 @@ export function Button({
   const { colors } = useTheme();
   const inactive = disabled || loading;
   const fg: ColorToken = disabled ? 'disFg' : FG[variant];
+  const iconSize = size === 'sm' ? 16 : size === 'lg' ? 20 : 18;
 
   return (
     <Touchable
@@ -57,7 +64,7 @@ export function Button({
       onPress={onPress}
       style={[
         styles.base,
-        size === 'sm' ? styles.sm : styles.md,
+        styles[size],
         styles[variant],
         disabled && styles.disabled,
         grow && styles.grow,
@@ -68,7 +75,9 @@ export function Button({
         <ActivityIndicator color={colors[fg]} />
       ) : (
         <>
-          {icon ? <Icon icon={icon} size={size === 'sm' ? 16 : 18} color={fg} /> : null}
+          {icon && iconPosition === 'start' ? (
+            <Icon icon={icon} size={iconSize} color={fg} flipInRTL={iconFlipInRTL} />
+          ) : null}
           <Text
             variant={size === 'sm' ? 'buttonSm' : 'button'}
             weight={variant === 'secondary' ? '600' : '700'}
@@ -79,6 +88,9 @@ export function Button({
           >
             {label}
           </Text>
+          {icon && iconPosition === 'end' ? (
+            <Icon icon={icon} size={iconSize} color={fg} flipInRTL={iconFlipInRTL} />
+          ) : null}
         </>
       )}
     </Touchable>
@@ -96,6 +108,7 @@ const useStyles = makeStyles((t) =>
       paddingVertical: t.space.sm,
     },
     // minHeight rather than height so long Bangla labels and large text never clip.
+    lg: { minHeight: t.size.buttonLg, borderRadius: t.radius.lg },
     md: { minHeight: t.size.button, borderRadius: t.radius.lg },
     sm: { minHeight: t.size.buttonSm, borderRadius: t.radius.md },
     primary: { backgroundColor: t.colors.btn },
