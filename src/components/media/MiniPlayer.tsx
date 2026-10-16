@@ -1,4 +1,4 @@
-import { Pause, Play } from 'lucide-react-native';
+import { ChevronUp, Pause, Play } from 'lucide-react-native';
 import { useTranslation } from 'react-i18next';
 import { StyleSheet, View } from 'react-native';
 
@@ -42,6 +42,8 @@ export type MiniPlayerProps = {
   onTogglePlay: () => void;
   /** Opens the full player. */
   onPress?: () => void;
+  /** Shows a chevron button that also opens the full player. */
+  expandLabel?: string;
 };
 
 /** Persistent audio strip: progress line, reciter, track and play button (.mini). */
@@ -53,6 +55,7 @@ export function MiniPlayer({
   playing,
   onTogglePlay,
   onPress,
+  expandLabel,
 }: MiniPlayerProps) {
   const styles = useStyles();
   const { shadows } = useTheme();
@@ -84,6 +87,16 @@ export function MiniPlayer({
             </Text>
           </View>
         </Touchable>
+        {expandLabel && onPress ? (
+          <Touchable
+            accessibilityRole="button"
+            accessibilityLabel={expandLabel}
+            onPress={onPress}
+            style={styles.expand}
+          >
+            <Icon icon={ChevronUp} size={20} color="text2" />
+          </Touchable>
+        ) : null}
         <PlayButton playing={playing} onPress={onTogglePlay} />
       </View>
     </View>
@@ -105,6 +118,12 @@ const useStyles = makeStyles((t) =>
     },
     info: { flex: 1, minWidth: 0, flexDirection: 'row', alignItems: 'center', gap: t.space.md },
     text: { flex: 1, minWidth: 0 },
+    expand: {
+      width: t.size.touch,
+      height: t.size.touch,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
     play: {
       borderRadius: t.radius.pill,
       backgroundColor: t.colors.btn,

@@ -13,7 +13,12 @@ import { useDailyBookmarks } from '../useDailyBookmarks';
 type Tab = 'ayah' | 'hadith';
 
 /** Daily Ayah / Hadith card. */
-export function DailyCard({ onReadInContext }: { onReadInContext: () => void }) {
+export function DailyCard({
+  onReadInContext,
+}: {
+  /** Opens the reader; the hadith tab has no Quran context, so it is ayah-only. */
+  onReadInContext: (surah: number, ayah: number) => void;
+}) {
   const styles = useStyles();
   const { t } = useTranslation();
   const { shadows } = useTheme();
@@ -105,12 +110,18 @@ export function DailyCard({ onReadInContext }: { onReadInContext: () => void }) 
           </Text>
           {tab === 'hadith' ? <GradeChip grade={DAILY_HADITH.grade} /> : null}
         </View>
-        <Touchable accessibilityRole="link" onPress={onReadInContext} style={styles.link}>
-          <Text variant="label" weight="600" color="link" numberOfLines={1}>
-            {t('home.daily.readInContext')}
-          </Text>
-          <Icon icon={ChevronRight} size={16} color="link" flipInRTL />
-        </Touchable>
+        {tab === 'ayah' ? (
+          <Touchable
+            accessibilityRole="link"
+            onPress={() => onReadInContext(DAILY_AYAH.surah, DAILY_AYAH.number)}
+            style={styles.link}
+          >
+            <Text variant="label" weight="600" color="link" numberOfLines={1}>
+              {t('home.daily.readInContext')}
+            </Text>
+            <Icon icon={ChevronRight} size={16} color="link" flipInRTL />
+          </Touchable>
+        ) : null}
       </View>
     </View>
   );

@@ -16,6 +16,7 @@ export * from './Radio';
 export * from './SearchField';
 export * from './SectionHeader';
 export * from './SegmentedControl';
+export * from './Slider';
 export * from './Stepper';
 export * from './Switch';
 export * from './Text';

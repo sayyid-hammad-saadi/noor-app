@@ -10,6 +10,11 @@ export const StorageKeys = {
   dailyBookmarks: 'noor.dailyBookmarks',
   adhan: 'noor.adhan',
   qiblaVibrate: 'noor.qiblaVibrate',
+  quranPrefs: 'noor.quran.prefs',
+  quranLastRead: 'noor.quran.lastRead',
+  quranBookmarks: 'noor.quran.bookmarks',
+  quranNotes: 'noor.quran.notes',
+  quranPlayer: 'noor.quran.player',
 } as const;
 
 type BaseKey = (typeof StorageKeys)[keyof typeof StorageKeys];

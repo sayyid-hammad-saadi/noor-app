@@ -12,4 +12,5 @@ export const routes = {
   timetable: '/prayer/timetable',
   qibla: '/qibla',
   explore: '/explore',
+  quran: '/quran',
 } as const satisfies Record<string, Href>;

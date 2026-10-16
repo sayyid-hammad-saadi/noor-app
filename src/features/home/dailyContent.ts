@@ -5,6 +5,7 @@
 export const DAILY_AYAH = {
   id: 'ayah:2:286',
   arabic: 'لَا يُكَلِّفُ ٱللَّهُ نَفْسًا إِلَّا وُسْعَهَا',
+  surah: 2,
   number: 286,
   transliteration: 'Lā yukallifullāhu nafsan illā wus‘ahā',
 } as const;

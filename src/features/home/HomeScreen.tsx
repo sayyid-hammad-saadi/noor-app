@@ -22,6 +22,7 @@ import { CityPickerSheet } from '@/features/location/CityPickerSheet';
 import { requestDeviceLocation } from '@/features/location/deviceLocation';
 import { useLocation } from '@/features/location/LocationProvider';
 import { usePrayerTimes } from '@/features/prayer/usePrayerTimes';
+import { quranRoute } from '@/features/quran/routes';
 import { routes } from '@/lib/routes';
 import { makeStyles, useTheme } from '@/theme';
 
@@ -82,6 +83,7 @@ export default function HomeScreen() {
   const onFeature = (key: FeatureKey) => {
     if (key === 'more') router.navigate(routes.explore);
     else if (key === 'qibla') router.push(routes.qibla);
+    else if (key === 'quran') router.navigate(routes.quran);
     else comingSoon();
   };
 
@@ -138,8 +140,12 @@ export default function HomeScreen() {
           />
           <FeatureGrid onPress={onFeature} />
           <View style={styles.cards}>
-            <DailyCard onReadInContext={comingSoon} />
-            <AmolCard now={now} place={place} onOpenSurah={comingSoon} />
+            <DailyCard onReadInContext={(surah, ayah) => router.push(quranRoute(surah, ayah))} />
+            <AmolCard
+              now={now}
+              place={place}
+              onOpenSurah={(surah) => router.push(quranRoute(surah))}
+            />
           </View>
         </View>
       </Animated.ScrollView>

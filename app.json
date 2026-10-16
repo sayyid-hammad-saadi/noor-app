@@ -44,11 +44,7 @@
         "expo-localization",
         {
           "supportsRTL": true,
-          "supportedLocales": [
-            "bn",
-            "en",
-            "ar"
-          ]
+          "supportedLocales": ["bn", "en", "ar"]
         }
       ],
       [
@@ -68,7 +64,15 @@
         }
       ],
       "expo-status-bar",
-      "expo-sharing"
+      "expo-sharing",
+      [
+        "expo-audio",
+        {
+          "microphonePermission": false,
+          "recordAudioAndroid": false,
+          "enableBackgroundPlayback": true
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

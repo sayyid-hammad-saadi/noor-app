@@ -202,6 +202,25 @@ const dark: Palette = {
 
 export const palettes: Record<ColorScheme, Palette> = { light, dark };
 
+/** Warm paper palette for the Quran reader's Sepia theme. */
+export const sepia: Palette = {
+  ...light,
+  bg: '#EFE4CC',
+  surface: '#F6EEDC',
+  surface2: '#EDE1C6',
+  border: '#E3D5B6',
+  ctl: '#9C8A66',
+  primary: '#8A6A2E',
+  primaryDark: '#6E5322',
+  tint: '#EADBB8',
+  text: '#3B2F1E',
+  text2: '#6B5A3F',
+  link: '#7A5A1F',
+  btn: '#7A5A1F',
+  onBtn: '#FFFFFF',
+  cardRaised: '#F6EEDC',
+};
+
 /** Mode-independent brand colours (logo mark). */
 export const brand = {
   teal: '#14A38B',

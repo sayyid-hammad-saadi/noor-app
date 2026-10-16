@@ -16,6 +16,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ToastProvider } from '@/components/feedback/Toast';
 import { LocationProvider, useLocation } from '@/features/location/LocationProvider';
 import { AdhanScheduler } from '@/features/prayer/adhanScheduler';
+import { QuranAudioProvider } from '@/features/quran/audio/QuranAudioProvider';
 import { i18n, LanguageProvider, useLanguage } from '@/i18n';
 import { fontAssets, ThemeProvider, useThemeContext } from '@/theme';
 
@@ -77,13 +78,17 @@ function AppShell({ fontsReady }: { fontsReady: boolean }) {
 
   return (
     <NavigationThemeProvider value={navigationTheme}>
-      <ToastProvider>
-        <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
-        <AdhanScheduler />
-        <Stack
-          screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.bg } }}
-        />
-      </ToastProvider>
+      <QuranAudioProvider>
+        <ToastProvider>
+          <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
+          <AdhanScheduler />
+          <Stack
+            screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.bg } }}
+          >
+            <Stack.Screen name="quran-player" options={{ presentation: 'modal' }} />
+          </Stack>
+        </ToastProvider>
+      </QuranAudioProvider>
     </NavigationThemeProvider>
   );
 }

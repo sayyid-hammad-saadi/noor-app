@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react-native';
-import { I18nManager, type StyleProp, type ViewStyle } from 'react-native';
+import { I18nManager, Platform, type StyleProp, type ViewStyle } from 'react-native';
 
 import { useTheme } from '@/theme';
 
@@ -36,7 +36,8 @@ export function Icon({
       strokeWidth={strokeWidth}
       fill={filled ? tint : 'none'}
       style={[flipInRTL && I18nManager.isRTL ? { transform: [{ scaleX: -1 }] } : null, style]}
-      accessible={false}
+      // react-native-svg forwards `accessible` to the DOM on web, which React rejects.
+      {...(Platform.OS === 'web' ? {} : { accessible: false })}
     />
   );
 }

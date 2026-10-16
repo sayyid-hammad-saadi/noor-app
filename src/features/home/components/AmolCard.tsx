@@ -37,7 +37,7 @@ export function AmolCard({
 }: {
   now: Date;
   place: Place;
-  onOpenSurah: () => void;
+  onOpenSurah: (surah: number) => void;
 }) {
   const styles = useStyles();
   const { t } = useTranslation();
@@ -158,7 +158,11 @@ export function AmolCard({
                 {trailing}
               </Touchable>
             ) : (id === 'kahf' || id === 'mulk') && !isDone ? (
-              <Touchable accessibilityRole="link" onPress={onOpenSurah} style={styles.bodyPress}>
+              <Touchable
+                accessibilityRole="link"
+                onPress={() => onOpenSurah(id === 'kahf' ? 18 : 67)}
+                style={styles.bodyPress}
+              >
                 {body}
                 {trailing}
               </Touchable>
