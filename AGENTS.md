@@ -42,7 +42,7 @@ Docs: https://docs.expo.dev/eas/index.md
 
 ## Noor project conventions
 
-- Package manager is **pnpm** (`node-linker=hoisted` in `.npmrc`). Add libraries with `npx expo install <pkg>` so SDK 56 versions are used.
+- Package manager is **pnpm** (`node-linker=hoisted` in `.npmrc`). Add libraries with `npx expo install <pkg>` so SDK 57 versions are used.
 - Feature code lives in `src/features/<feature>/`; route files in `src/app/` only re-export feature screens.
 - Colours come only from theme tokens (`src/theme/palette.ts`, read via `useTheme()` / `makeStyles`). ESLint rejects colour literals anywhere else.
 - All UI text goes through `<Text>` from `@/components/ui` (picks Plus Jakarta Sans / Hind Siliguri / IBM Plex Sans Arabic / Amiri Quran and a safe line height) and through i18n keys in `src/i18n/locales/{en,bn,ar}`. `en` is the key source of truth; `bn` and `ar` must match its shape (typechecked).
