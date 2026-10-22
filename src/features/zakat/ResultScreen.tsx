@@ -221,7 +221,7 @@ const useStyles = makeStyles((t) =>
     statusDue: { backgroundColor: t.colors.okBg },
     statusNot: { backgroundColor: t.colors.goldTint },
     payLabel: { marginTop: 6 },
-    amount: { lineHeight: 52, letterSpacing: -0.8 },
+    amount: { letterSpacing: -0.8 },
     card: {
       marginTop: t.space.md,
       paddingVertical: 6,

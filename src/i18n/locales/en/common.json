@@ -540,7 +540,10 @@
       "sizeHint": "About {{mb}} MB",
       "goToReader": "Open in reader",
       "stop": "Stop playback",
-      "playError": "Couldn't play this recitation. Check your connection or download it for offline use."
+      "playError": "Couldn't play this recitation. Check your connection or download it for offline use.",
+      "emptyTitle": "Nothing playing",
+      "emptyBody": "Open a surah and tap play to listen to its recitation.",
+      "emptyAction": "Open the Quran"
     },
     "offline": {
       "title": "Can't play {{surah}} right now",

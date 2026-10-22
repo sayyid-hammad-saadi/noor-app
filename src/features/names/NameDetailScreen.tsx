@@ -159,7 +159,7 @@ export default function NameDetailScreen() {
                 onPress={() => router.replace(nameRoute(n.id))}
                 style={styles.sim}
               >
-                <Text script="quran" size={20} color="link" numberOfLines={1}>
+                <Text script="quran" size={20} color="link">
                   {n.ar}
                 </Text>
                 <Text variant="bodyStrong" size={14} script="latin">
