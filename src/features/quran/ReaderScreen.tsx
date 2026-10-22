@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { FlatList, ScrollView, StyleSheet, View, type ViewToken } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { ErrorState, Skeleton } from '@/components/feedback';
+import { ErrorState, OfflineBanner, Skeleton } from '@/components/feedback';
 import { GradientHeader, TopBar } from '@/components/layout';
 import { MiniPlayer } from '@/components/media';
 import { IconButton, Text, Touchable } from '@/components/ui';
@@ -140,6 +140,11 @@ function Reader() {
           </>
         }
       />
+      {state.status !== 'ready' ? (
+        <View style={styles.offline}>
+          <OfflineBanner onRetry={retry} />
+        </View>
+      ) : null}
 
       <View style={styles.tabsBar}>
         <ScrollView
@@ -329,6 +334,7 @@ function ReaderSkeleton() {
 
 const useStyles = makeStyles((t) =>
   StyleSheet.create({
+    offline: { paddingHorizontal: t.size.gutter, paddingBottom: t.space.sm },
     root: { flex: 1, backgroundColor: t.colors.surface },
     flex: { flex: 1 },
     soft: { opacity: 0.85 },

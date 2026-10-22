@@ -37,6 +37,7 @@ export const StorageKeys = {
   notificationPrefs: 'noor.notifications.prefs',
   adhanSound: 'noor.adhan.sound',
   accent: 'noor.accent',
+  pendingAudio: 'noor.quran.pendingAudio',
 } as const;
 
 type BaseKey = (typeof StorageKeys)[keyof typeof StorageKeys];

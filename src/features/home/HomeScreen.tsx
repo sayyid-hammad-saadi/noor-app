@@ -32,6 +32,7 @@ import { CompactHeader } from './components/CompactHeader';
 import { DailyCard } from './components/DailyCard';
 import { type FeatureKey, FeatureGrid } from './components/FeatureGrid';
 import { HomeHeader } from './components/HomeHeader';
+import { HomeSkeleton } from './components/HomeSkeleton';
 
 /** How far the sheet's rounded top overlaps the gradient header. */
 const SHEET_OVERLAP = 30;
@@ -48,7 +49,7 @@ export default function HomeScreen() {
   const insets = useSafeAreaInsets();
   const { width, height } = useWindowDimensions();
   const { today, current, next, now, place } = usePrayerTimes();
-  const { saved, setLocation } = useLocation();
+  const { saved, setLocation, ready } = useLocation();
   const state = { today, current, next };
 
   const [headerHeight, setHeaderHeight] = useState(420);
@@ -102,8 +103,11 @@ export default function HomeScreen() {
     setPickerOpen(false);
     const result = await requestDeviceLocation();
     if (result.status === 'ok') await setLocation(result.location);
+    else if (result.status === 'denied') router.push(routes.chooseCity);
     else toast.show({ message: t(`permissions.location.${result.status}`) });
   };
+
+  if (!ready) return <HomeSkeleton />;
 
   return (
     <View style={styles.root}>

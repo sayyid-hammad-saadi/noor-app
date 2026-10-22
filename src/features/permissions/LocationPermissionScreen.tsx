@@ -38,6 +38,8 @@ export default function LocationPermissionScreen() {
     if (result.status === 'ok') {
       await setLocation(result.location);
       goNext();
+    } else if (result.status === 'denied') {
+      router.push({ pathname: routes.chooseCity, params: { denied: '1', then: 'onboarding' } });
     } else {
       setProblem(result.status);
     }

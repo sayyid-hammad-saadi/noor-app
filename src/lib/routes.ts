@@ -28,4 +28,5 @@ export const routes = {
   login: '/login',
   profile: '/profile',
   zakatHistory: '/zakat/history',
+  chooseCity: '/location',
 } as const satisfies Record<string, Href>;

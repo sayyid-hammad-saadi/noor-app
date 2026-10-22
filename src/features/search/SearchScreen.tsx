@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import { OfflineBanner } from '@/components/feedback';
 import { DuaIcon } from '@/components/icons';
 import {
   Chip,
@@ -203,6 +204,9 @@ export default function SearchScreen() {
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >
+        <View style={styles.offline}>
+          <OfflineBanner />
+        </View>
         {!local ? (
           <>
             <View style={styles.jumps}>
@@ -420,6 +424,7 @@ const useStyles = makeStyles((t) =>
     },
     cancel: { minHeight: t.size.touch, justifyContent: 'center' },
     body: { paddingHorizontal: t.size.gutter, paddingBottom: t.space.xxl },
+    offline: { marginTop: t.space.sm },
     grow: { flex: 1 },
     jumps: { marginTop: t.space.md, flexDirection: 'row', gap: t.space.sm },
     jump: {

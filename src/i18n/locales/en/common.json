@@ -52,11 +52,13 @@
   },
   "states": {
     "offlineTitle": "You're offline",
-    "offlineBody": "Prayer times and downloaded content still work.",
+    "offlineBody": "Prayer times, Qibla and downloaded content still work.",
     "errorTitle": "Something went wrong",
     "errorBody": "Check your connection and try again.",
     "emptyTitle": "Nothing here yet",
-    "loading": "Loading"
+    "loading": "Loading",
+    "offlineShort": "You're offline.",
+    "loadingPrayer": "Loading prayer times"
   },
   "grades": {
     "sahih": "Sahih",
@@ -173,7 +175,13 @@
     "searchPlaceholder": "Search cities",
     "change": "Change location, {{place}}",
     "setLocation": "Set your location",
-    "useCurrent": "Use my current location"
+    "useCurrent": "Use my current location",
+    "deniedTitle": "Location access is off",
+    "deniedBody": "We can't find your prayer times automatically. Search for your city, or allow location in your phone settings.",
+    "openSettings": "Open phone settings",
+    "results": "Results",
+    "noResults": "No cities match “{{q}}”.",
+    "popular": "Popular cities"
   },
   "permissions": {
     "location": {
@@ -533,6 +541,15 @@
       "goToReader": "Open in reader",
       "stop": "Stop playback",
       "playError": "Couldn't play this recitation. Check your connection or download it for offline use."
+    },
+    "offline": {
+      "title": "Can't play {{surah}} right now",
+      "body": "You're offline and {{reciter}}'s recitation of this surah isn't downloaded.",
+      "downloaded": "Downloaded · plays offline",
+      "playOffline": "Play offline",
+      "readOnly": "Read without audio",
+      "later": "Get it when online",
+      "queued": "It will download when you're back online."
     }
   },
   "ramadan": {
