@@ -29,6 +29,7 @@ import { CityPickerSheet } from '@/features/location/CityPickerSheet';
 import { useLocation } from '@/features/location/LocationProvider';
 import { useLanguage } from '@/i18n';
 import { dayKey, dayMonthLabel, hijriLocalized, isSameDay } from '@/lib/dateLabels';
+import { settingsRoutes } from '@/features/settings/routes';
 import { routes } from '@/lib/routes';
 import { makeStyles, useTheme } from '@/theme';
 
@@ -43,7 +44,6 @@ export default function PrayerTimesScreen() {
   const styles = useStyles();
   const router = useRouter();
   const { t } = useTranslation();
-  const toast = useToast();
   const { language } = useLanguage();
   const { place, saved, setLocation } = useLocation();
   const now = useNow();
@@ -80,7 +80,7 @@ export default function PrayerTimesScreen() {
           <Touchable
             accessibilityRole="button"
             accessibilityLabel={t('prayerTimes.method', { method: methodLabel })}
-            onPress={() => toast.show({ message: t('prayerTimes.methodSoon') })}
+            onPress={() => router.push(settingsRoutes.method)}
             style={[styles.chip, styles.chipTint]}
           >
             <Icon icon={SlidersHorizontal} size={16} color="link" />

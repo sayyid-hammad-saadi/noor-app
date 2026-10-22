@@ -33,6 +33,10 @@ export const StorageKeys = {
   quranPagesRead: 'noor.quran.pagesRead',
   notificationsRead: 'noor.notifications.read',
   account: 'noor.account',
+  prayerSettings: 'noor.prayer.settings',
+  notificationPrefs: 'noor.notifications.prefs',
+  adhanSound: 'noor.adhan.sound',
+  accent: 'noor.accent',
 } as const;
 
 type BaseKey = (typeof StorageKeys)[keyof typeof StorageKeys];

@@ -12,7 +12,7 @@ import { useLocation } from '@/features/location/LocationProvider';
 import { clockLabel } from '@/features/prayer/formatTime';
 import { useLanguage } from '@/i18n';
 import { isSameDay } from '@/lib/dateLabels';
-import { routes } from '@/lib/routes';
+import { settingsRoutes } from '@/features/settings/routes';
 import { makeStyles } from '@/theme';
 
 import { markAllRead, markRead } from './readStore';
@@ -56,7 +56,7 @@ export default function NotificationsScreen() {
             icon={SlidersHorizontal}
             size={22}
             accessibilityLabel={t('notifications.settings')}
-            onPress={() => router.push(routes.prayerTimes)}
+            onPress={() => router.push(settingsRoutes.home)}
           />
         }
       />

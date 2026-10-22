@@ -342,15 +342,18 @@
     "monthly": "Monthly timetable",
     "backToToday": "Back to today",
     "methods": {
-      "karachi": "Karachi",
+      "karachi": "University of Islamic Sciences, Karachi",
       "mwl": "Muslim World League",
-      "ummAlQura": "Umm al-Qura"
+      "ummAlQura": "Umm al-Qura, Makkah",
+      "egyptian": "Egyptian General Authority",
+      "isna": "ISNA, North America",
+      "kuwait": "Kuwait",
+      "custom": "Custom angles"
     },
     "madhabs": {
       "hanafi": "Hanafi",
       "shafi": "Shafi'i"
     },
-    "methodSoon": "Calculation settings are coming soon",
     "notificationsOff": "Turn on notifications to hear the Adhan",
     "adhanTitle": "{{prayer}} · {{time}}",
     "adhanBody": "It's time for {{prayer}}.",
@@ -1916,5 +1919,177 @@
     "gb": "{{n}} GB",
     "language": "Language",
     "theme": "Theme"
+  },
+  "settings": {
+    "title": "Settings",
+    "sections": {
+      "language": "Language",
+      "appearance": "Appearance",
+      "prayer": "Prayer",
+      "notifications": "Notifications",
+      "quran": "Quran",
+      "storage": "Storage & downloads",
+      "account": "Account",
+      "about": "About"
+    },
+    "languageNote": "Arabic switches the whole app to right-to-left. Numbers follow the language you choose.",
+    "accent": "Accent",
+    "accents": {
+      "teal": "Noor teal",
+      "emerald": "Emerald",
+      "indigo": "Indigo",
+      "rose": "Rose"
+    },
+    "method": "Calculation method",
+    "asr": "Asr time",
+    "adjust": "Adjust times",
+    "adjustNote": "Minutes added to the calculated time",
+    "adjustLabel": "{{prayer}} adjustment in minutes",
+    "highLat": "High-latitude rule",
+    "highLatNote": "For places where twilight lasts all night",
+    "highLatRules": {
+      "auto": "Automatic",
+      "middle": "Middle of the night",
+      "seventh": "One-seventh of the night",
+      "angle": "Angle-based"
+    },
+    "highLatCaptions": {
+      "auto": "Picks a rule for your latitude",
+      "middle": "Fajr no earlier than the middle of the night",
+      "seventh": "Fajr in the last seventh of the night",
+      "angle": "Portion of the night set by the twilight angle"
+    },
+    "hijriOffset": "Hijri date offset",
+    "hijriToday": "Today: {{date}}",
+    "sehri": "Sehri safety margin",
+    "sehriNote": "Sehri ends this long before Fajr",
+    "minutes": "{{n}} min",
+    "adhanEach": "Adhan for each prayer",
+    "adhanEachNote": "Tap to turn a prayer on or off",
+    "reminder": "Reminder before waqt",
+    "reminderValue": "{{n}} min before",
+    "off": "Off",
+    "jumuah": "Jumu'ah reminder",
+    "jumuahNote": "Friday {{time}} · read Al-Kahf",
+    "ramadan": "Ramadan reminders",
+    "ramadanNote": "Sehri and Iftar alerts",
+    "notRinging": "Adhan not ringing?",
+    "notRingingNote": "Allow notifications and turn off battery optimisation for Noor",
+    "arabicSize": "Arabic font size",
+    "translationBn": "Bangla translation",
+    "translationBnNote": "Muhiuddin Khan",
+    "translationEn": "English translation",
+    "translationEnNote": "Saheeh International",
+    "qari": "Default qari",
+    "used": "{{size}} used",
+    "deleteAudio": "Delete {{name}} audio",
+    "clearCache": "Clear cache",
+    "clearCacheNote": "Downloaded surah and hadith text · {{size}}",
+    "clear": "Clear",
+    "cleared": "Cache cleared",
+    "syncOn": "Sync is on",
+    "export": "Export my data",
+    "exportNote": "Bookmarks, amol, Zakat reports and settings as a file",
+    "exportUnavailable": "Export isn't available on this device.",
+    "version": "Version",
+    "credits": "Credits",
+    "creditItems": {
+      "quranText": {
+        "label": "Quran text",
+        "value": "Tanzil · Uthmani script, via AlQuran.cloud"
+      },
+      "translation": {
+        "label": "Translation",
+        "value": "Muhiuddin Khan (bn), Saheeh International (en)"
+      },
+      "audio": {
+        "label": "Audio",
+        "value": "Islamic Network recitations"
+      },
+      "hadith": {
+        "label": "Hadith",
+        "value": "fawazahmed0/hadith-api"
+      },
+      "times": {
+        "label": "Prayer times",
+        "value": "Adhan (batoulapps)"
+      }
+    },
+    "privacy": "Privacy policy",
+    "terms": "Terms of use",
+    "contact": "Contact us",
+    "rate": "Rate Noor",
+    "report": "Report a content error",
+    "reportNote": "A typo in a translation or a wrong reference",
+    "methodAngles": "Fajr {{fajr}} · Isha {{isha}}",
+    "ishaAfterMaghrib": "{{n}} min after Maghrib",
+    "recommended": "Recommended here",
+    "customNote": "Set your own Fajr and Isha angles",
+    "methodRegions": {
+      "karachi": "Bangladesh, Pakistan, India",
+      "mwl": "Europe, Far East",
+      "ummAlQura": "Saudi Arabia",
+      "egyptian": "Africa, Middle East",
+      "isna": "USA, Canada",
+      "kuwait": "Kuwait and the Gulf"
+    },
+    "angleOf": "{{prayer}} angle",
+    "methodToday": "Today in {{place}} with this method:",
+    "methodTimes": "Fajr {{fajr}} · Isha {{isha}}",
+    "methodNote": "Not sure? Follow your local mosque. Asr (Hanafi or Shafi'i) is set separately.",
+    "notifications": {
+      "beforeTitle": "{{prayer}} in {{n}} min",
+      "beforeBody": "Adhan at {{time}}."
+    }
+  },
+  "adhan": {
+    "title": "Adhan sound",
+    "voiceSection": "Adhan",
+    "notAdded": "Audio not added yet",
+    "playing": "Playing preview",
+    "noneAdded": "Adhan recordings haven't been added to this version yet, so the device sound is used.",
+    "options": "Options",
+    "fajr": "Separate Fajr Adhan",
+    "fajrNote": "Includes \"prayer is better than sleep\"",
+    "volumeNote": "The Adhan plays at your phone's notification volume.",
+    "stop": "Stop preview",
+    "preview": "Preview {{name}} Adhan",
+    "previewCurrent": "Preview Adhan",
+    "summaryFajr": "{{name}} · Fajr uses its own Adhan",
+    "voices": {
+      "default": {
+        "name": "Device default",
+        "note": "Your phone's notification sound"
+      },
+      "silent": {
+        "name": "Silent",
+        "note": "Notification only, no sound"
+      },
+      "makkah": {
+        "name": "Makkah",
+        "place": "Masjid al-Haram",
+        "note": "Bundled"
+      },
+      "madinah": {
+        "name": "Madinah",
+        "place": "Masjid an-Nabawi",
+        "note": "Bundled"
+      },
+      "aqsa": {
+        "name": "Al-Aqsa",
+        "place": "Jerusalem",
+        "note": "Bundled"
+      },
+      "alafasy": {
+        "name": "Mishary Rashid Alafasy",
+        "place": "Kuwait",
+        "note": "Bundled"
+      },
+      "takbir": {
+        "name": "Short takbir",
+        "place": "About 8 seconds",
+        "note": "Bundled"
+      }
+    }
   }
 }

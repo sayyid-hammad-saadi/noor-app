@@ -36,6 +36,7 @@ import { bookmarks, pagesRead } from '@/features/quran/data/library';
 import { downloadedAudioBytes } from '@/features/quran/data/reciters';
 import { zakatRecords } from '@/features/zakat/zakatStore';
 import { type Language, LANGUAGES, languageMeta, useLanguage } from '@/i18n';
+import { settingsRoutes } from '@/features/settings/routes';
 import { routes } from '@/lib/routes';
 import { type Appearance, makeStyles, useTheme, useThemeContext } from '@/theme';
 
@@ -80,7 +81,7 @@ export default function ProfileScreen() {
             icon={Settings}
             size={22}
             accessibilityLabel={t('profile.settings')}
-            onPress={soon}
+            onPress={() => router.push(settingsRoutes.home)}
             style={styles.edgeEnd}
           />
         </View>

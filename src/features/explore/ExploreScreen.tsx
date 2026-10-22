@@ -25,6 +25,7 @@ import { useToast } from '@/components/feedback';
 import { DuaIcon, TasbihIcon } from '@/components/icons';
 import { Icon, IconButton, Text, Touchable } from '@/components/ui';
 import { monthAmolRoute } from '@/features/calendar/routes';
+import { settingsRoutes } from '@/features/settings/routes';
 import { routes } from '@/lib/routes';
 import { toHijri } from '@/lib/calendars';
 import { makeStyles, useTheme } from '@/theme';
@@ -46,7 +47,7 @@ const SECTIONS: readonly { key: 'worship' | 'learn' | 'tools'; items: Feature[] 
       { key: 'tasbih', icon: TasbihIcon, to: routes.tasbih },
       { key: 'dua', icon: DuaIcon, to: routes.dua },
       { key: 'ramadan', icon: MoonStar, gold: true, to: routes.ramadan },
-      { key: 'adhan', icon: Volume2 },
+      { key: 'adhan', icon: Volume2, to: settingsRoutes.adhan },
     ],
   },
   {
