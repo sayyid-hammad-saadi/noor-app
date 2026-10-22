@@ -27,7 +27,28 @@
     "profile": "Profile"
   },
   "search": {
-    "placeholder": "Search"
+    "placeholder": "Search Quran, hadith, duas, masail",
+    "label": "Search everything",
+    "cancel": "Cancel",
+    "clear": "Clear search",
+    "recent": "Recent searches",
+    "clearAll": "Clear all",
+    "remove": "Remove {{q}}",
+    "popular": "Popular now",
+    "popularItems": ["Al-Kahf", "Al-Mulk", "Laylatul Qadr", "Morning", "Qada"],
+    "tabs": {
+      "all": "All",
+      "quran": "Quran",
+      "hadith": "Hadith",
+      "dua": "Dua",
+      "masail": "Masail"
+    },
+    "tabCount": "{{label}} {{n}}",
+    "seeAll": "See all {{n}}",
+    "noResults": "No results for “{{q}}”.",
+    "quranOffline": "Couldn't search the Quran text. Check your connection; surah names are still searched.",
+    "quranSearching": "Searching the Quran…",
+    "surah": "Surah {{name}} · {{n}} ayahs"
   },
   "states": {
     "offlineTitle": "You're offline",
@@ -1549,6 +1570,287 @@
       "safiyyah": "Pure, chosen",
       "maymunah": "Blessed, fortunate",
       "barakah": "Blessing"
+    }
+  },
+  "masail": {
+    "title": "Masail",
+    "subtitle": "Everyday fiqh questions",
+    "madhhab": "Madhhab: {{name}}",
+    "madhhabTitle": "Your madhhab",
+    "madhhabNote": "Answers open in this school. You can switch on any answer.",
+    "search": "Search a question",
+    "categoriesTitle": "Categories",
+    "popular": "Popular this week",
+    "categoryMeta": "{{desc}} · {{n}}",
+    "questions": "{{n}} questions",
+    "refsCount": "{{tag}} · {{n}} references",
+    "all": "All",
+    "searchIn": "Search in {{category}}",
+    "note": "Answers follow the {{school}} school by default. You can switch on any answer.",
+    "schoolAnswer": "{{school}} answer",
+    "agree": "All four schools agree.",
+    "differ": "The schools differ. Tap a school to compare.",
+    "references": "References",
+    "consultTitle": "Consult a local scholar for complex matters",
+    "consultBody": "This is general guidance. Your situation may need a personal answer.",
+    "share": "Share answer",
+    "noResults": "No questions match “{{q}}”.",
+    "categories": {
+      "taharah": {
+        "name": "Taharah",
+        "desc": "Purity"
+      },
+      "salah": {
+        "name": "Salah",
+        "desc": "Prayer"
+      },
+      "sawm": {
+        "name": "Sawm",
+        "desc": "Fasting"
+      },
+      "zakat": {
+        "name": "Zakat",
+        "desc": "Charity"
+      },
+      "hajj": {
+        "name": "Hajj & Umrah",
+        "desc": "Pilgrimage"
+      },
+      "family": {
+        "name": "Family",
+        "desc": "Marriage"
+      },
+      "money": {
+        "name": "Money",
+        "desc": "Trade & loans"
+      },
+      "daily": {
+        "name": "Daily life",
+        "desc": "Food, dress"
+      }
+    },
+    "schools": {
+      "hanafi": "Hanafi",
+      "shafii": "Shafi'i",
+      "maliki": "Maliki",
+      "hanbali": "Hanbali"
+    },
+    "books": {
+      "hidayah": "Al-Hidayah (Hanafi)",
+      "majmu": "Al-Majmu' (Shafi'i)",
+      "mudawwanah": "Al-Mudawwanah (Maliki)",
+      "mughni": "Al-Mughni (Hanbali)"
+    },
+    "tags": {
+      "wudu": "Wudu",
+      "quran": "The mushaf",
+      "travel": "Travel",
+      "witr": "Witr",
+      "jamaah": "Congregation",
+      "breaking": "What breaks the fast",
+      "exemptions": "Exemptions",
+      "gold": "Gold & silver",
+      "recipients": "Recipients",
+      "fitr": "Zakat al-Fitr",
+      "obligation": "Obligation",
+      "women": "Women",
+      "marriage": "Marriage",
+      "divorce": "Divorce",
+      "riba": "Interest",
+      "trade": "Trade",
+      "food": "Food",
+      "dress": "Dress"
+    },
+    "items": {
+      "bleeding": {
+        "q": "Does bleeding from a wound break wudu?",
+        "hanafi": "Yes. Blood or pus that flows beyond the wound breaks wudu; a drop that stays on the spot does not.",
+        "shafii": "No. Only something leaving the front or back passage breaks wudu, so bleeding elsewhere does not.",
+        "maliki": "No. Bleeding from a wound does not break wudu.",
+        "hanbali": "Only a large amount of blood breaks wudu; a small amount does not."
+      },
+      "khuff": {
+        "q": "Can I wipe over leather socks (khuff) in wudu?",
+        "hanafi": "Yes, if they were put on after a complete wudu and cover the ankles: for one day and night as a resident, three days and nights as a traveller.",
+        "shafii": "Yes, if they were put on after a complete wudu and cover the ankles: for one day and night as a resident, three days and nights as a traveller.",
+        "maliki": "Yes, over leather khuffs put on in a state of purity. The school sets no fixed time limit, though removing them once a week is recommended.",
+        "hanbali": "Yes, if they were put on after a complete wudu and cover the ankles: for one day and night as a resident, three days and nights as a traveller."
+      },
+      "touchQuran": {
+        "q": "Do I need wudu to touch the Quran?",
+        "shared": "Yes. Touching the written text of the mushaf requires wudu. Reciting from memory without touching it does not."
+      },
+      "combine": {
+        "q": "Can I combine Dhuhr and Asr while travelling?",
+        "hanafi": "Combining two prayers in one time is not permitted, except at Arafah and Muzdalifah during Hajj. A traveller shortens the four-rak'ah prayers to two instead. If needed, pray Dhuhr at the end of its time and Asr at the start of its time.",
+        "shafii": "Yes. On a journey long enough to shorten, a traveller may combine Dhuhr with Asr, and Maghrib with Isha, in the time of either prayer.",
+        "maliki": "Yes. A traveller may combine Dhuhr with Asr, and Maghrib with Isha, particularly while the journey is underway.",
+        "hanbali": "Yes. A traveller may combine Dhuhr with Asr, and Maghrib with Isha, in the time of either prayer. It is a concession, not a requirement."
+      },
+      "witr": {
+        "q": "How many rak'ahs is Witr, and is it wajib?",
+        "hanafi": "Witr is wajib. It is three rak'ahs with one salam, with qunut in the third rak'ah before ruku.",
+        "shafii": "Witr is a stressed sunnah. The minimum is one rak'ah and the most is eleven; three is common.",
+        "maliki": "Witr is a stressed sunnah. It is one rak'ah, preceded by two rak'ahs (shaf') with a salam between them.",
+        "hanbali": "Witr is a stressed sunnah. The minimum is one rak'ah; it is usually prayed as two rak'ahs and then one."
+      },
+      "lateJoin": {
+        "q": "I joined the imam late. How do I complete the missed rak'ahs?",
+        "shared": "Join the imam in whatever position he is in. After his salam, stand and complete the rak'ahs you missed. If you joined while he was still in ruku, you have caught that rak'ah."
+      },
+      "forgetEat": {
+        "q": "Does eating by mistake break the fast?",
+        "hanafi": "No. Eating or drinking out of genuine forgetfulness does not break the fast; carry on fasting.",
+        "shafii": "No. Eating or drinking out of genuine forgetfulness does not break the fast; carry on fasting.",
+        "maliki": "Keep fasting for the rest of the day, but in an obligatory fast you must make up that day later.",
+        "hanbali": "No. Eating or drinking out of genuine forgetfulness does not break the fast; carry on fasting."
+      },
+      "miswak": {
+        "q": "Can I use a miswak or toothpaste while fasting?",
+        "hanafi": "A miswak is permitted at any time of day. Toothpaste is disliked because it may reach the throat; if any is swallowed, the fast is broken.",
+        "shafii": "A miswak is sunnah before midday and disliked after it. Swallowing any toothpaste breaks the fast.",
+        "maliki": "A dry miswak is permitted all day; a moist one is disliked. Swallowing any toothpaste breaks the fast.",
+        "hanbali": "A miswak is permitted, though disliked after midday in the well-known view of the school. Swallowing any toothpaste breaks the fast."
+      },
+      "exempt": {
+        "q": "Who may leave the Ramadan fast?",
+        "shared": "The sick and travellers may leave the fast and make up the days later. Those who cannot fast at all, such as the very elderly or the chronically ill, give fidyah instead: feeding a poor person for each day."
+      },
+      "jewellery": {
+        "q": "Is zakat due on gold jewellery that I wear?",
+        "hanafi": "Yes. Gold and silver jewellery is zakatable even if worn, once your total wealth reaches the nisab.",
+        "shafii": "No zakat is due on permissible jewellery worn regularly. It is due on jewellery kept for saving or trade.",
+        "maliki": "No zakat is due on permissible jewellery worn regularly. It is due on jewellery kept for saving or trade.",
+        "hanbali": "No zakat is due on permissible jewellery worn regularly. It is due on jewellery kept for saving or trade."
+      },
+      "family": {
+        "q": "Can I give zakat to my parents or children?",
+        "shared": "No. Zakat cannot go to your parents, grandparents, children or grandchildren, whom you are already obliged to support, nor from a husband to his wife. Brothers, sisters and other relatives in need may receive it, and it carries double reward."
+      },
+      "fitr": {
+        "q": "How much is Zakat al-Fitr, and can I pay it in money?",
+        "hanafi": "It is due from everyone who owns the nisab on the morning of Eid: half a sa' of wheat, or one sa' of dates or barley, per person. Paying its value in money is allowed. Give it before the Eid prayer.",
+        "shafii": "One sa' of the local staple food per person, given before the Eid prayer. Money is not accepted in the school.",
+        "maliki": "One sa' of the local staple food per person, given before the Eid prayer. Money is not accepted in the well-known view of the school.",
+        "hanbali": "One sa' of dates, barley, raisins, wheat or dried cheese per person, given before the Eid prayer. Money is not accepted in the school."
+      },
+      "immediate": {
+        "q": "Must I perform Hajj as soon as I am able?",
+        "hanafi": "Yes. Once you are able, perform Hajj without delay; delaying it without an excuse is sinful.",
+        "shafii": "It may be delayed as long as you are determined to perform it, but performing it early is better and you are at fault if you die without it.",
+        "maliki": "Yes. Once you are able, perform Hajj without delay; delaying it without an excuse is sinful.",
+        "hanbali": "Yes. Once you are able, perform Hajj without delay; delaying it without an excuse is sinful."
+      },
+      "mahram": {
+        "q": "Can a woman go for Hajj without a mahram?",
+        "hanafi": "A woman needs her husband or a mahram when the journey is long enough to count as travel.",
+        "shafii": "For the obligatory Hajj, she may travel with a trustworthy group of women instead of a mahram.",
+        "maliki": "For the obligatory Hajj, she may travel with a safe, trustworthy company if no mahram is available.",
+        "hanbali": "A mahram is a condition of the obligation; without one, Hajj is not yet obligatory on her."
+      },
+      "umrah": {
+        "q": "Is Umrah obligatory?",
+        "hanafi": "No. Umrah is a stressed sunnah.",
+        "shafii": "Yes. Umrah is obligatory once in a lifetime for whoever is able, like Hajj.",
+        "maliki": "No. Umrah is a stressed sunnah.",
+        "hanbali": "Yes. Umrah is obligatory once in a lifetime for whoever is able, like Hajj."
+      },
+      "wali": {
+        "q": "Is a marriage valid without a wali (guardian)?",
+        "hanafi": "An adult woman of sound mind may conclude her own marriage, though involving her wali is recommended. The wali may object if the match is clearly unsuitable.",
+        "shafii": "No. The marriage is not valid without a wali, and the woman's consent is also required.",
+        "maliki": "No. The marriage is not valid without a wali, and the woman's consent is also required.",
+        "hanbali": "No. The marriage is not valid without a wali, and the woman's consent is also required."
+      },
+      "mahr": {
+        "q": "Is there a minimum mahr?",
+        "hanafi": "Yes. The minimum is ten dirhams of silver (about 30.6 g).",
+        "shafii": "No. Anything of value agreed by both is valid.",
+        "maliki": "Yes. The minimum is a quarter dinar of gold or three dirhams of silver.",
+        "hanbali": "No. Anything of value agreed by both is valid."
+      },
+      "tripleTalaq": {
+        "q": "Does saying talaq three times at once count as three?",
+        "shared": "The four schools hold that three divorces pronounced at once count as three, though doing so is sinful (bid'ah). The couple cannot remarry until she has married someone else. Some later scholars count it as one, so ask a scholar about your case."
+      },
+      "interest": {
+        "q": "Is bank interest permissible?",
+        "shared": "No. Riba (interest) is forbidden whether paid or received. Interest already received should be given away without intending reward."
+      },
+      "instalments": {
+        "q": "Can I buy on instalments for a higher price?",
+        "shared": "Yes. A higher price for paying later is allowed if the price is fixed when the contract is made and no extra charge is added for late payment."
+      },
+      "notOwned": {
+        "q": "Can I sell something I don't own yet?",
+        "shared": "No. You may not sell goods you do not yet own or possess. The exception is salam: an advance sale where the full price is paid upfront and the goods are precisely described with a fixed delivery date."
+      },
+      "seafood": {
+        "q": "Is all seafood halal?",
+        "hanafi": "Only fish is halal. Other sea creatures such as crabs are not; many Hanafi scholars count shrimp as fish.",
+        "shafii": "Yes. All sea creatures are halal.",
+        "maliki": "Yes. All sea creatures are halal.",
+        "hanbali": "All sea creatures are halal except the frog, the crocodile and the snake."
+      },
+      "ahlKitab": {
+        "q": "Can I eat meat slaughtered by Christians or Jews?",
+        "shared": "Yes. Their slaughter is halal (Quran 5:5) when the animal is slaughtered by cutting the throat and no name other than Allah's is invoked. Scholars differ about machine slaughter and stunning."
+      },
+      "awrah": {
+        "q": "What must a man cover?",
+        "hanafi": "From the navel to below the knee; the knee itself is included.",
+        "shafii": "From the navel to the knee. The navel and knee are not themselves included, but part of them should be covered to be sure.",
+        "maliki": "The private parts must be covered; covering from the navel to the knee is required in front of others.",
+        "hanbali": "From the navel to the knee; the navel and knee are not themselves included."
+      }
+    }
+  },
+  "bookmarks": {
+    "title": "Bookmarks",
+    "edit": "Edit",
+    "done": "Done",
+    "tabs": {
+      "quran": "Quran",
+      "hadith": "Hadith",
+      "dua": "Dua",
+      "names": "Names"
+    },
+    "tabCount": "{{label}} · {{n}}",
+    "folders": {
+      "all": "All",
+      "daily": "Daily reading",
+      "memorize": "Memorize",
+      "tafsir": "Tafsir notes"
+    },
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "daysAgo": "{{n}} days ago",
+    "selected": "{{n}} selected",
+    "move": "Move to folder",
+    "remove": "Remove",
+    "removed": "Bookmarks removed",
+    "noFolder": "No folder",
+    "empty": {
+      "quran": {
+        "title": "No saved ayahs",
+        "body": "Tap the bookmark on any ayah in the Quran reader to keep it here.",
+        "action": "Open the Quran"
+      },
+      "hadith": {
+        "title": "No saved hadith",
+        "body": "Tap Save on any hadith to keep it here.",
+        "action": "Browse hadith"
+      },
+      "dua": {
+        "title": "No saved duas",
+        "body": "Tap the bookmark on any dua to keep it here.",
+        "action": "Browse duas"
+      },
+      "names": {
+        "title": "No favorite names",
+        "body": "Tap the heart on a name to keep it here.",
+        "action": "Find a name"
+      }
     }
   }
 }

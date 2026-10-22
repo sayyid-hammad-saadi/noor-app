@@ -90,6 +90,7 @@ export default function HomeScreen() {
     else if (key === 'dua') router.push(routes.dua);
     else if (key === 'tasbih') router.push(routes.tasbih);
     else if (key === 'names') router.push(routes.names);
+    else if (key === 'masail') router.push(routes.masail);
     else comingSoon();
   };
 

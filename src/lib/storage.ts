@@ -27,6 +27,8 @@ export const StorageKeys = {
   readingPrefs: 'noor.reading.prefs',
   tasbih: 'noor.tasbih',
   nameFavorites: 'noor.names.favorites',
+  masailMadhhab: 'noor.masail.madhhab',
+  searchRecent: 'noor.search.recent',
 } as const;
 
 type BaseKey = (typeof StorageKeys)[keyof typeof StorageKeys];

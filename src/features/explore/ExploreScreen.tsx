@@ -54,7 +54,7 @@ const SECTIONS: readonly { key: 'worship' | 'learn' | 'tools'; items: Feature[] 
     items: [
       { key: 'quran', icon: BookOpen, to: routes.quran },
       { key: 'hadith', icon: ScrollText, to: routes.hadith },
-      { key: 'masail', icon: MessageCircleQuestionMark },
+      { key: 'masail', icon: MessageCircleQuestionMark, to: routes.masail },
       { key: 'asma', icon: 'asma' },
       { key: 'names', icon: Sparkle, to: routes.names },
       { key: 'monthAmol', icon: CalendarHeart },
@@ -65,7 +65,7 @@ const SECTIONS: readonly { key: 'worship' | 'learn' | 'tools'; items: Feature[] 
     items: [
       { key: 'zakat', icon: Coins, to: routes.zakat },
       { key: 'calendar', icon: CalendarDays, to: routes.calendar },
-      { key: 'bookmarks', icon: Bookmark, gold: true },
+      { key: 'bookmarks', icon: Bookmark, gold: true, to: routes.bookmarks },
     ],
   },
 ];
@@ -102,7 +102,11 @@ export default function ExploreScreen() {
             style={styles.edgeEnd}
           />
         </View>
-        <Touchable accessibilityRole="search" onPress={soon} style={styles.search}>
+        <Touchable
+          accessibilityRole="search"
+          onPress={() => router.push(routes.search)}
+          style={styles.search}
+        >
           <Icon icon={Search} size={20} color="text2" />
           <Text color="text2" numberOfLines={1} style={styles.grow}>
             {t('explore.search')}
