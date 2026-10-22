@@ -19,7 +19,7 @@ import { AyahItem } from './components/AyahItem';
 import { NoteSheet } from './components/NoteSheet';
 import { ReaderSearchSheet } from './components/ReaderSearchSheet';
 import { ReadingSettingsSheet } from './components/ReadingSettingsSheet';
-import { lastRead, readingPrefs } from './data/library';
+import { lastRead, readingPrefs, markPageRead } from './data/library';
 import type { Ayah } from './data/quranApi';
 import { BISMILLAH, getSurah, surahMeaning, surahName } from './data/surahs';
 import { playerRoute, quranRoute } from './routes';
@@ -95,6 +95,7 @@ function Reader() {
       page: first.page,
       at: Date.now(),
     });
+    markPageRead(first.page);
   });
 
   const subtitle = topAyah

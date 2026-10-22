@@ -324,10 +324,6 @@
       }
     }
   },
-  "placeholder": {
-    "title": "Coming soon",
-    "body": "This section arrives in a later update."
-  },
   "prayerTimes": {
     "title": "Prayer Times",
     "pickDate": "Pick a date",
@@ -357,7 +353,9 @@
     "methodSoon": "Calculation settings are coming soon",
     "notificationsOff": "Turn on notifications to hear the Adhan",
     "adhanTitle": "{{prayer}} · {{time}}",
-    "adhanBody": "It's time for {{prayer}}."
+    "adhanBody": "It's time for {{prayer}}.",
+    "markHint": "Tap a prayer's icon to mark it as prayed.",
+    "markPrayed": "Mark {{prayer}} as prayed"
   },
   "timetable": {
     "title": "Monthly Timetable",
@@ -1852,5 +1850,71 @@
         "action": "Find a name"
       }
     }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "settings": "Notification settings",
+    "filters": {
+      "all": "All",
+      "prayer": "Prayer",
+      "event": "Events"
+    },
+    "markAllRead": "Mark all read",
+    "groups": {
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "week": "This week"
+    },
+    "unread": "Unread",
+    "empty": {
+      "title": "No notifications yet",
+      "body": "Adhan times, Jumu'ah and calendar reminders will show up here."
+    },
+    "prayerBodyIn": "It's time for {{prayer}} in {{place}}.",
+    "jumuah": "Jumu'ah today",
+    "jumuahBody": "Read Surah Al-Kahf and send salawat on the Prophet ﷺ.",
+    "amol": "Amol reminder",
+    "amolBody": "{{done}} of {{total}} done yesterday.",
+    "eventBody": "{{date}} · tap to see the day's practices"
+  },
+  "login": {
+    "title": "Welcome to Noor",
+    "body": "Everything works without an account. Sign in only if you want to back up and sync across devices.",
+    "guest": "Continue as guest",
+    "guestNote": "No account needed · you can sign in later",
+    "or": "or sign in to back up & sync",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "sendCode": "Send code",
+    "codeNote": "We'll email you a 6-digit code. No password to remember.",
+    "google": "Continue with Google",
+    "apple": "Continue with Apple",
+    "privacy": "Your location stays on your device. It is only used to work out prayer times and the Qibla, and is never uploaded.",
+    "invalidEmail": "Enter a valid email address.",
+    "unavailable": "Sign-in is coming soon. Everything keeps working as a guest.",
+    "error": "Couldn't sign in. Please try again."
+  },
+  "profile": {
+    "title": "Profile",
+    "settings": "Settings",
+    "guest": "Guest",
+    "guestNote": "Your data is saved on this device only",
+    "syncTitle": "Sign in to back up & sync",
+    "syncBody": "Keep bookmarks and Zakat reports if you change phones.",
+    "signIn": "Sign in or create account",
+    "edit": "Edit",
+    "stats": {
+      "pages": "Quran pages read this year",
+      "days": "days",
+      "streak": "Prayer streak · all 5 prayed",
+      "zakat": "Zakat reports saved"
+    },
+    "favoriteNames": "Favorite names",
+    "zakatHistory": "Zakat reports history",
+    "audio": "Downloaded audio",
+    "mb": "{{n}} MB",
+    "gb": "{{n}} GB",
+    "language": "Language",
+    "theme": "Theme"
   }
 }

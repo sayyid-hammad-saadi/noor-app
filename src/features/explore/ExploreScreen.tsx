@@ -98,7 +98,7 @@ export default function ExploreScreen() {
             icon={Bell}
             size={22}
             accessibilityLabel={t('explore.notifications')}
-            onPress={soon}
+            onPress={() => router.push(routes.notifications)}
             style={styles.edgeEnd}
           />
         </View>

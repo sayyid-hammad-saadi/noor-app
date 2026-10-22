@@ -97,3 +97,18 @@ export async function downloadSurahAudio(
 export function estimateSurahMb(reciter: Reciter, count: number): number {
   return Math.max(0.1, Math.round(((count * 10 * reciter.bitrate) / 8 / 1024) * 10) / 10);
 }
+
+/** Bytes of downloaded recitation audio across all reciters (0 on web). */
+export function downloadedAudioBytes(): number {
+  if (Platform.OS === 'web') return 0;
+  const sum = (dir: Directory): number =>
+    dir
+      .list()
+      .reduce((n, entry) => n + (entry instanceof Directory ? sum(entry) : (entry.size ?? 0)), 0);
+  try {
+    const root = new Directory(Paths.document, 'quran', 'audio');
+    return root.exists ? sum(root) : 0;
+  } catch {
+    return 0;
+  }
+}

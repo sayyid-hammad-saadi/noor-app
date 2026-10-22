@@ -24,4 +24,8 @@ export const routes = {
   masail: '/masail',
   search: '/search',
   bookmarks: '/bookmarks',
+  notifications: '/notifications',
+  login: '/login',
+  profile: '/profile',
+  zakatHistory: '/zakat/history',
 } as const satisfies Record<string, Href>;

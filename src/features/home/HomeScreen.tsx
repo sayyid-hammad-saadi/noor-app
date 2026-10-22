@@ -21,6 +21,7 @@ import { SectionHeader } from '@/components/ui';
 import { CityPickerSheet } from '@/features/location/CityPickerSheet';
 import { requestDeviceLocation } from '@/features/location/deviceLocation';
 import { useLocation } from '@/features/location/LocationProvider';
+import { useNotifications } from '@/features/notifications/useNotifications';
 import { usePrayerTimes } from '@/features/prayer/usePrayerTimes';
 import { quranRoute } from '@/features/quran/routes';
 import { routes } from '@/lib/routes';
@@ -80,6 +81,9 @@ export default function HomeScreen() {
     [toast, t],
   );
 
+  const { unread } = useNotifications();
+  const openNotifications = () => router.push(routes.notifications);
+
   const onFeature = (key: FeatureKey) => {
     if (key === 'more') router.navigate(routes.explore);
     else if (key === 'qibla') router.push(routes.qibla);
@@ -127,7 +131,8 @@ export default function HomeScreen() {
             state={state}
             place={place}
             onLocationPress={() => setPickerOpen(true)}
-            onBellPress={comingSoon}
+            onBellPress={openNotifications}
+            bellUnread={unread > 0}
             onPrayerTimesPress={() => router.push(routes.prayerTimes)}
           />
           <View style={styles.headerSpacer} />
@@ -162,7 +167,13 @@ export default function HomeScreen() {
         pointerEvents={compactVisible ? 'auto' : 'none'}
         aria-hidden={!compactVisible}
       >
-        <CompactHeader now={now} state={state} place={place} onBellPress={comingSoon} />
+        <CompactHeader
+          now={now}
+          state={state}
+          place={place}
+          onBellPress={openNotifications}
+          bellUnread={unread > 0}
+        />
       </Animated.View>
 
       <CityPickerSheet

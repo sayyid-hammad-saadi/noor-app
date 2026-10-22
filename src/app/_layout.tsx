@@ -88,6 +88,7 @@ function AppShell({ fontsReady }: { fontsReady: boolean }) {
             screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.bg } }}
           >
             <Stack.Screen name="quran-player" options={{ presentation: 'modal' }} />
+            <Stack.Screen name="login" options={{ presentation: 'modal' }} />
           </Stack>
         </ToastProvider>
       </QuranAudioProvider>

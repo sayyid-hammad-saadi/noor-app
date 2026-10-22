@@ -65,3 +65,16 @@ export const notes = createPersistedStore<Record<string, string>>(
 );
 
 export const noteKey = (surah: number, ayah: number) => `${surah}:${ayah}`;
+
+/** Distinct mushaf pages (1–604) seen in the reader, per year. */
+export const pagesRead = createPersistedStore<Record<string, number[]>>(
+  StorageKeys.quranPagesRead,
+  {},
+  (raw) => (raw && typeof raw === 'object' ? (raw as Record<string, number[]>) : {}),
+);
+
+export function markPageRead(page: number, now = new Date()) {
+  const year = String(now.getFullYear());
+  if (pagesRead.get()[year]?.includes(page)) return;
+  pagesRead.set((all) => ({ ...all, [year]: [...(all[year] ?? []), page] }));
+}
