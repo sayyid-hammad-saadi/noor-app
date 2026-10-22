@@ -27,15 +27,38 @@
     "profile": "Profile"
   },
   "search": {
-    "placeholder": "Search"
+    "placeholder": "Search Quran, hadith, duas, masail",
+    "label": "Search everything",
+    "cancel": "Cancel",
+    "clear": "Clear search",
+    "recent": "Recent searches",
+    "clearAll": "Clear all",
+    "remove": "Remove {{q}}",
+    "popular": "Popular now",
+    "popularItems": ["Al-Kahf", "Al-Mulk", "Laylatul Qadr", "Morning", "Qada"],
+    "tabs": {
+      "all": "All",
+      "quran": "Quran",
+      "hadith": "Hadith",
+      "dua": "Dua",
+      "masail": "Masail"
+    },
+    "tabCount": "{{label}} {{n}}",
+    "seeAll": "See all {{n}}",
+    "noResults": "No results for “{{q}}”.",
+    "quranOffline": "Couldn't search the Quran text. Check your connection; surah names are still searched.",
+    "quranSearching": "Searching the Quran…",
+    "surah": "Surah {{name}} · {{n}} ayahs"
   },
   "states": {
     "offlineTitle": "You're offline",
-    "offlineBody": "Prayer times and downloaded content still work.",
+    "offlineBody": "Prayer times, Qibla and downloaded content still work.",
     "errorTitle": "Something went wrong",
     "errorBody": "Check your connection and try again.",
     "emptyTitle": "Nothing here yet",
-    "loading": "Loading"
+    "loading": "Loading",
+    "offlineShort": "You're offline.",
+    "loadingPrayer": "Loading prayer times"
   },
   "grades": {
     "sahih": "Sahih",
@@ -152,7 +175,13 @@
     "searchPlaceholder": "Search cities",
     "change": "Change location, {{place}}",
     "setLocation": "Set your location",
-    "useCurrent": "Use my current location"
+    "useCurrent": "Use my current location",
+    "deniedTitle": "Location access is off",
+    "deniedBody": "We can't find your prayer times automatically. Search for your city, or allow location in your phone settings.",
+    "openSettings": "Open phone settings",
+    "results": "Results",
+    "noResults": "No cities match “{{q}}”.",
+    "popular": "Popular cities"
   },
   "permissions": {
     "location": {
@@ -303,10 +332,6 @@
       }
     }
   },
-  "placeholder": {
-    "title": "Coming soon",
-    "body": "This section arrives in a later update."
-  },
   "prayerTimes": {
     "title": "Prayer Times",
     "pickDate": "Pick a date",
@@ -325,18 +350,23 @@
     "monthly": "Monthly timetable",
     "backToToday": "Back to today",
     "methods": {
-      "karachi": "Karachi",
+      "karachi": "University of Islamic Sciences, Karachi",
       "mwl": "Muslim World League",
-      "ummAlQura": "Umm al-Qura"
+      "ummAlQura": "Umm al-Qura, Makkah",
+      "egyptian": "Egyptian General Authority",
+      "isna": "ISNA, North America",
+      "kuwait": "Kuwait",
+      "custom": "Custom angles"
     },
     "madhabs": {
       "hanafi": "Hanafi",
       "shafi": "Shafi'i"
     },
-    "methodSoon": "Calculation settings are coming soon",
     "notificationsOff": "Turn on notifications to hear the Adhan",
     "adhanTitle": "{{prayer}} · {{time}}",
-    "adhanBody": "It's time for {{prayer}}."
+    "adhanBody": "It's time for {{prayer}}.",
+    "markHint": "Tap a prayer's icon to mark it as prayed.",
+    "markPrayed": "Mark {{prayer}} as prayed"
   },
   "timetable": {
     "title": "Monthly Timetable",
@@ -510,7 +540,19 @@
       "sizeHint": "About {{mb}} MB",
       "goToReader": "Open in reader",
       "stop": "Stop playback",
-      "playError": "Couldn't play this recitation. Check your connection or download it for offline use."
+      "playError": "Couldn't play this recitation. Check your connection or download it for offline use.",
+      "emptyTitle": "Nothing playing",
+      "emptyBody": "Open a surah and tap play to listen to its recitation.",
+      "emptyAction": "Open the Quran"
+    },
+    "offline": {
+      "title": "Can't play {{surah}} right now",
+      "body": "You're offline and {{reciter}}'s recitation of this surah isn't downloaded.",
+      "downloaded": "Downloaded · plays offline",
+      "playOffline": "Play offline",
+      "readOnly": "Read without audio",
+      "later": "Get it when online",
+      "queued": "It will download when you're back online."
     }
   },
   "ramadan": {
@@ -1345,6 +1387,728 @@
       "newMoon": {
         "title": "Seeing the new moon",
         "translation": "O Allah, bring it over us with blessing and faith, safety and Islam. My Lord and your Lord is Allah."
+      }
+    }
+  },
+  "explore": {
+    "title": "Explore",
+    "search": "Search features, surahs, duas",
+    "notifications": "Notifications",
+    "comingSoon": "Coming soon",
+    "sections": {
+      "worship": {
+        "title": "Worship",
+        "caption": "Daily practice"
+      },
+      "learn": {
+        "title": "Learn",
+        "caption": "Quran, hadith and fiqh"
+      },
+      "tools": {
+        "title": "Tools",
+        "caption": "Plan and keep track"
+      }
+    },
+    "features": {
+      "prayer": "Prayer Times",
+      "qibla": "Qibla",
+      "tasbih": "Tasbih",
+      "dua": "Dua",
+      "ramadan": "Ramadan",
+      "adhan": "Adhan",
+      "quran": "Quran",
+      "hadith": "Hadith",
+      "masail": "Masail",
+      "asma": "Asma ul Husna",
+      "names": "Islamic Names",
+      "monthAmol": "Month Amol",
+      "zakat": "Zakat",
+      "calendar": "Calendar",
+      "bookmarks": "Bookmarks"
+    }
+  },
+  "tasbih": {
+    "title": "Tasbih",
+    "vibrationOn": "Vibration on",
+    "vibrationOff": "Vibration off",
+    "dhikr": "Dhikr",
+    "custom": "Custom",
+    "countA11y": "Count. {{n}} of {{target}}",
+    "of": "of {{target}}",
+    "tap": "Tap to count",
+    "reached": "Target reached",
+    "reachedToast": "{{target}} completed. Keep going or reset.",
+    "reset": "Reset",
+    "target": "Target {{n}}",
+    "targetTitle": "Target",
+    "history": "History",
+    "seeAll": "See all",
+    "today": "Today",
+    "week": "This week",
+    "streak": "Streak",
+    "streakDays": "{{n}} days",
+    "historyTitle": "Last 14 days",
+    "noHistory": "No dhikr counted yet.",
+    "customTitle": "Add your own dhikr",
+    "customLabel": "Dhikr",
+    "customPlaceholder": "e.g. Astaghfirullah",
+    "customMeaning": "Meaning (optional)",
+    "add": "Add",
+    "remove": "Remove {{name}}",
+    "presets": {
+      "subhanallah": {
+        "label": "SubhanAllah",
+        "meaning": "Glory be to Allah"
+      },
+      "alhamdulillah": {
+        "label": "Alhamdulillah",
+        "meaning": "All praise is for Allah"
+      },
+      "allahuakbar": {
+        "label": "Allahu Akbar",
+        "meaning": "Allah is the Greatest"
+      },
+      "lailaha": {
+        "label": "La ilaha illallah",
+        "meaning": "There is no god but Allah"
+      },
+      "astaghfirullah": {
+        "label": "Astaghfirullah",
+        "meaning": "I seek Allah's forgiveness"
+      }
+    }
+  },
+  "names": {
+    "title": "Islamic Names",
+    "favorites": "Favorites, {{n}} saved",
+    "favoritesTitle": "Favorite names",
+    "savedCount": "{{n}} saved",
+    "gender": "Gender",
+    "genders": {
+      "all": "All",
+      "male": "Male",
+      "female": "Female",
+      "unisex": "Unisex"
+    },
+    "theme": "Theme",
+    "themes": {
+      "quranic": "Quranic",
+      "prophets": "Prophets",
+      "sahaba": "Sahaba",
+      "sahabiyyat": "Sahabiyyat"
+    },
+    "letter": "Starting letter",
+    "any": "Any",
+    "anyShort": "Any",
+    "syllables": "Syllables",
+    "syllableCount": "{{n}} syllables",
+    "oneSyllable": "1 syllable",
+    "generate": "Generate random name",
+    "noMatch": "No names match these choices. Try another letter or syllable count.",
+    "save": "Save to favorites",
+    "unsave": "Remove from favorites",
+    "shareCard": "Share as card",
+    "details": "Details",
+    "copy": "Copy",
+    "copied": "Copied",
+    "shareList": "Share list",
+    "noFavorites": "No favorites yet",
+    "noFavoritesBody": "Tap the heart on a name to keep it here.",
+    "inQuran": "Quranic · {{ref}}",
+    "origin": "{{origin}} origin",
+    "origins": {
+      "arabic": "Arabic",
+      "hebrew": "Hebrew"
+    },
+    "hear": "Hear pronunciation",
+    "hearCaption": "Read aloud in Arabic",
+    "meaning": "Meaning",
+    "originLabel": "Origin",
+    "rootLabel": "Root",
+    "inQuranTitle": "IN THE QURAN · {{ref}}",
+    "similar": "Similar names",
+    "meaningNote": "Meanings of names are approximate; scholars of Arabic sometimes differ.",
+    "shareText": "{{name}} ({{arabic}}): {{meaning}}",
+    "shareFailed": "Couldn't share the card.",
+    "items": {
+      "ihsan": "Excellence; doing good as if you see Allah",
+      "nur": "Light",
+      "huda": "Guidance",
+      "rahma": "Mercy",
+      "salam": "Peace",
+      "firdaus": "The highest garden of Paradise",
+      "kawthar": "Abundance; a river in Paradise",
+      "tasnim": "A spring of Paradise",
+      "sabir": "Patient",
+      "hanif": "Upright; inclining to pure faith",
+      "luqman": "The wise man named in the Quran",
+      "imran": "Father of Maryam (as)",
+      "maryam": "Mother of Prophet Isa (as)",
+      "adam": "The first man and prophet",
+      "nuh": "Prophet Nuh (as); rest, comfort",
+      "ibrahim": "Prophet Ibrahim (as), the friend of Allah",
+      "ismail": "Prophet Ismail (as); God hears",
+      "ishaq": "Prophet Ishaq (as); laughter",
+      "yusuf": "Prophet Yusuf (as)",
+      "musa": "Prophet Musa (as)",
+      "harun": "Prophet Harun (as), brother of Musa",
+      "dawud": "Prophet Dawud (as); beloved",
+      "sulayman": "Prophet Sulayman (as); peaceful",
+      "yunus": "Prophet Yunus (as); dove",
+      "yahya": "Prophet Yahya (as); he lives",
+      "isa": "Prophet Isa (as)",
+      "idris": "Prophet Idris (as)",
+      "ayyub": "Prophet Ayyub (as), known for patience",
+      "zakariyya": "Prophet Zakariyya (as); Allah remembers",
+      "muhammad": "Praised; the final Prophet ﷺ",
+      "ahmad": "Most praised; a name of the Prophet ﷺ",
+      "bilal": "Moisture, freshness; the first muezzin",
+      "umar": "Long-lived; the second caliph",
+      "uthman": "The third caliph, Dhun-Nurayn",
+      "ali": "Exalted, high; the fourth caliph",
+      "hamza": "Strong, steadfast; the Prophet's ﷺ uncle",
+      "khalid": "Eternal, lasting",
+      "saad": "Happiness, good fortune",
+      "zubayr": "Strong, firm",
+      "talha": "A kind of tree",
+      "anas": "Friendliness, affection",
+      "muadh": "Protected",
+      "salman": "Safe, sound",
+      "abdullah": "Servant of Allah",
+      "usama": "Lion",
+      "ammar": "Long-lived; one who builds",
+      "hasan": "Good, beautiful",
+      "husayn": "Little good one",
+      "zayd": "Growth, increase; the only Companion named in the Quran",
+      "khadijah": "First wife of the Prophet ﷺ",
+      "aishah": "Living, lively",
+      "fatimah": "Daughter of the Prophet ﷺ",
+      "sumayyah": "High; the first martyr of Islam",
+      "asma": "Lofty, exalted",
+      "hafsah": "Young lioness",
+      "ruqayyah": "Ascent, progress",
+      "zaynab": "A fragrant tree",
+      "safiyyah": "Pure, chosen",
+      "maymunah": "Blessed, fortunate",
+      "barakah": "Blessing"
+    }
+  },
+  "masail": {
+    "title": "Masail",
+    "subtitle": "Everyday fiqh questions",
+    "madhhab": "Madhhab: {{name}}",
+    "madhhabTitle": "Your madhhab",
+    "madhhabNote": "Answers open in this school. You can switch on any answer.",
+    "search": "Search a question",
+    "categoriesTitle": "Categories",
+    "popular": "Popular this week",
+    "categoryMeta": "{{desc}} · {{n}}",
+    "questions": "{{n}} questions",
+    "refsCount": "{{tag}} · {{n}} references",
+    "all": "All",
+    "searchIn": "Search in {{category}}",
+    "note": "Answers follow the {{school}} school by default. You can switch on any answer.",
+    "schoolAnswer": "{{school}} answer",
+    "agree": "All four schools agree.",
+    "differ": "The schools differ. Tap a school to compare.",
+    "references": "References",
+    "consultTitle": "Consult a local scholar for complex matters",
+    "consultBody": "This is general guidance. Your situation may need a personal answer.",
+    "share": "Share answer",
+    "noResults": "No questions match “{{q}}”.",
+    "categories": {
+      "taharah": {
+        "name": "Taharah",
+        "desc": "Purity"
+      },
+      "salah": {
+        "name": "Salah",
+        "desc": "Prayer"
+      },
+      "sawm": {
+        "name": "Sawm",
+        "desc": "Fasting"
+      },
+      "zakat": {
+        "name": "Zakat",
+        "desc": "Charity"
+      },
+      "hajj": {
+        "name": "Hajj & Umrah",
+        "desc": "Pilgrimage"
+      },
+      "family": {
+        "name": "Family",
+        "desc": "Marriage"
+      },
+      "money": {
+        "name": "Money",
+        "desc": "Trade & loans"
+      },
+      "daily": {
+        "name": "Daily life",
+        "desc": "Food, dress"
+      }
+    },
+    "schools": {
+      "hanafi": "Hanafi",
+      "shafii": "Shafi'i",
+      "maliki": "Maliki",
+      "hanbali": "Hanbali"
+    },
+    "books": {
+      "hidayah": "Al-Hidayah (Hanafi)",
+      "majmu": "Al-Majmu' (Shafi'i)",
+      "mudawwanah": "Al-Mudawwanah (Maliki)",
+      "mughni": "Al-Mughni (Hanbali)"
+    },
+    "tags": {
+      "wudu": "Wudu",
+      "quran": "The mushaf",
+      "travel": "Travel",
+      "witr": "Witr",
+      "jamaah": "Congregation",
+      "breaking": "What breaks the fast",
+      "exemptions": "Exemptions",
+      "gold": "Gold & silver",
+      "recipients": "Recipients",
+      "fitr": "Zakat al-Fitr",
+      "obligation": "Obligation",
+      "women": "Women",
+      "marriage": "Marriage",
+      "divorce": "Divorce",
+      "riba": "Interest",
+      "trade": "Trade",
+      "food": "Food",
+      "dress": "Dress"
+    },
+    "items": {
+      "bleeding": {
+        "q": "Does bleeding from a wound break wudu?",
+        "hanafi": "Yes. Blood or pus that flows beyond the wound breaks wudu; a drop that stays on the spot does not.",
+        "shafii": "No. Only something leaving the front or back passage breaks wudu, so bleeding elsewhere does not.",
+        "maliki": "No. Bleeding from a wound does not break wudu.",
+        "hanbali": "Only a large amount of blood breaks wudu; a small amount does not."
+      },
+      "khuff": {
+        "q": "Can I wipe over leather socks (khuff) in wudu?",
+        "hanafi": "Yes, if they were put on after a complete wudu and cover the ankles: for one day and night as a resident, three days and nights as a traveller.",
+        "shafii": "Yes, if they were put on after a complete wudu and cover the ankles: for one day and night as a resident, three days and nights as a traveller.",
+        "maliki": "Yes, over leather khuffs put on in a state of purity. The school sets no fixed time limit, though removing them once a week is recommended.",
+        "hanbali": "Yes, if they were put on after a complete wudu and cover the ankles: for one day and night as a resident, three days and nights as a traveller."
+      },
+      "touchQuran": {
+        "q": "Do I need wudu to touch the Quran?",
+        "shared": "Yes. Touching the written text of the mushaf requires wudu. Reciting from memory without touching it does not."
+      },
+      "combine": {
+        "q": "Can I combine Dhuhr and Asr while travelling?",
+        "hanafi": "Combining two prayers in one time is not permitted, except at Arafah and Muzdalifah during Hajj. A traveller shortens the four-rak'ah prayers to two instead. If needed, pray Dhuhr at the end of its time and Asr at the start of its time.",
+        "shafii": "Yes. On a journey long enough to shorten, a traveller may combine Dhuhr with Asr, and Maghrib with Isha, in the time of either prayer.",
+        "maliki": "Yes. A traveller may combine Dhuhr with Asr, and Maghrib with Isha, particularly while the journey is underway.",
+        "hanbali": "Yes. A traveller may combine Dhuhr with Asr, and Maghrib with Isha, in the time of either prayer. It is a concession, not a requirement."
+      },
+      "witr": {
+        "q": "How many rak'ahs is Witr, and is it wajib?",
+        "hanafi": "Witr is wajib. It is three rak'ahs with one salam, with qunut in the third rak'ah before ruku.",
+        "shafii": "Witr is a stressed sunnah. The minimum is one rak'ah and the most is eleven; three is common.",
+        "maliki": "Witr is a stressed sunnah. It is one rak'ah, preceded by two rak'ahs (shaf') with a salam between them.",
+        "hanbali": "Witr is a stressed sunnah. The minimum is one rak'ah; it is usually prayed as two rak'ahs and then one."
+      },
+      "lateJoin": {
+        "q": "I joined the imam late. How do I complete the missed rak'ahs?",
+        "shared": "Join the imam in whatever position he is in. After his salam, stand and complete the rak'ahs you missed. If you joined while he was still in ruku, you have caught that rak'ah."
+      },
+      "forgetEat": {
+        "q": "Does eating by mistake break the fast?",
+        "hanafi": "No. Eating or drinking out of genuine forgetfulness does not break the fast; carry on fasting.",
+        "shafii": "No. Eating or drinking out of genuine forgetfulness does not break the fast; carry on fasting.",
+        "maliki": "Keep fasting for the rest of the day, but in an obligatory fast you must make up that day later.",
+        "hanbali": "No. Eating or drinking out of genuine forgetfulness does not break the fast; carry on fasting."
+      },
+      "miswak": {
+        "q": "Can I use a miswak or toothpaste while fasting?",
+        "hanafi": "A miswak is permitted at any time of day. Toothpaste is disliked because it may reach the throat; if any is swallowed, the fast is broken.",
+        "shafii": "A miswak is sunnah before midday and disliked after it. Swallowing any toothpaste breaks the fast.",
+        "maliki": "A dry miswak is permitted all day; a moist one is disliked. Swallowing any toothpaste breaks the fast.",
+        "hanbali": "A miswak is permitted, though disliked after midday in the well-known view of the school. Swallowing any toothpaste breaks the fast."
+      },
+      "exempt": {
+        "q": "Who may leave the Ramadan fast?",
+        "shared": "The sick and travellers may leave the fast and make up the days later. Those who cannot fast at all, such as the very elderly or the chronically ill, give fidyah instead: feeding a poor person for each day."
+      },
+      "jewellery": {
+        "q": "Is zakat due on gold jewellery that I wear?",
+        "hanafi": "Yes. Gold and silver jewellery is zakatable even if worn, once your total wealth reaches the nisab.",
+        "shafii": "No zakat is due on permissible jewellery worn regularly. It is due on jewellery kept for saving or trade.",
+        "maliki": "No zakat is due on permissible jewellery worn regularly. It is due on jewellery kept for saving or trade.",
+        "hanbali": "No zakat is due on permissible jewellery worn regularly. It is due on jewellery kept for saving or trade."
+      },
+      "family": {
+        "q": "Can I give zakat to my parents or children?",
+        "shared": "No. Zakat cannot go to your parents, grandparents, children or grandchildren, whom you are already obliged to support, nor from a husband to his wife. Brothers, sisters and other relatives in need may receive it, and it carries double reward."
+      },
+      "fitr": {
+        "q": "How much is Zakat al-Fitr, and can I pay it in money?",
+        "hanafi": "It is due from everyone who owns the nisab on the morning of Eid: half a sa' of wheat, or one sa' of dates or barley, per person. Paying its value in money is allowed. Give it before the Eid prayer.",
+        "shafii": "One sa' of the local staple food per person, given before the Eid prayer. Money is not accepted in the school.",
+        "maliki": "One sa' of the local staple food per person, given before the Eid prayer. Money is not accepted in the well-known view of the school.",
+        "hanbali": "One sa' of dates, barley, raisins, wheat or dried cheese per person, given before the Eid prayer. Money is not accepted in the school."
+      },
+      "immediate": {
+        "q": "Must I perform Hajj as soon as I am able?",
+        "hanafi": "Yes. Once you are able, perform Hajj without delay; delaying it without an excuse is sinful.",
+        "shafii": "It may be delayed as long as you are determined to perform it, but performing it early is better and you are at fault if you die without it.",
+        "maliki": "Yes. Once you are able, perform Hajj without delay; delaying it without an excuse is sinful.",
+        "hanbali": "Yes. Once you are able, perform Hajj without delay; delaying it without an excuse is sinful."
+      },
+      "mahram": {
+        "q": "Can a woman go for Hajj without a mahram?",
+        "hanafi": "A woman needs her husband or a mahram when the journey is long enough to count as travel.",
+        "shafii": "For the obligatory Hajj, she may travel with a trustworthy group of women instead of a mahram.",
+        "maliki": "For the obligatory Hajj, she may travel with a safe, trustworthy company if no mahram is available.",
+        "hanbali": "A mahram is a condition of the obligation; without one, Hajj is not yet obligatory on her."
+      },
+      "umrah": {
+        "q": "Is Umrah obligatory?",
+        "hanafi": "No. Umrah is a stressed sunnah.",
+        "shafii": "Yes. Umrah is obligatory once in a lifetime for whoever is able, like Hajj.",
+        "maliki": "No. Umrah is a stressed sunnah.",
+        "hanbali": "Yes. Umrah is obligatory once in a lifetime for whoever is able, like Hajj."
+      },
+      "wali": {
+        "q": "Is a marriage valid without a wali (guardian)?",
+        "hanafi": "An adult woman of sound mind may conclude her own marriage, though involving her wali is recommended. The wali may object if the match is clearly unsuitable.",
+        "shafii": "No. The marriage is not valid without a wali, and the woman's consent is also required.",
+        "maliki": "No. The marriage is not valid without a wali, and the woman's consent is also required.",
+        "hanbali": "No. The marriage is not valid without a wali, and the woman's consent is also required."
+      },
+      "mahr": {
+        "q": "Is there a minimum mahr?",
+        "hanafi": "Yes. The minimum is ten dirhams of silver (about 30.6 g).",
+        "shafii": "No. Anything of value agreed by both is valid.",
+        "maliki": "Yes. The minimum is a quarter dinar of gold or three dirhams of silver.",
+        "hanbali": "No. Anything of value agreed by both is valid."
+      },
+      "tripleTalaq": {
+        "q": "Does saying talaq three times at once count as three?",
+        "shared": "The four schools hold that three divorces pronounced at once count as three, though doing so is sinful (bid'ah). The couple cannot remarry until she has married someone else. Some later scholars count it as one, so ask a scholar about your case."
+      },
+      "interest": {
+        "q": "Is bank interest permissible?",
+        "shared": "No. Riba (interest) is forbidden whether paid or received. Interest already received should be given away without intending reward."
+      },
+      "instalments": {
+        "q": "Can I buy on instalments for a higher price?",
+        "shared": "Yes. A higher price for paying later is allowed if the price is fixed when the contract is made and no extra charge is added for late payment."
+      },
+      "notOwned": {
+        "q": "Can I sell something I don't own yet?",
+        "shared": "No. You may not sell goods you do not yet own or possess. The exception is salam: an advance sale where the full price is paid upfront and the goods are precisely described with a fixed delivery date."
+      },
+      "seafood": {
+        "q": "Is all seafood halal?",
+        "hanafi": "Only fish is halal. Other sea creatures such as crabs are not; many Hanafi scholars count shrimp as fish.",
+        "shafii": "Yes. All sea creatures are halal.",
+        "maliki": "Yes. All sea creatures are halal.",
+        "hanbali": "All sea creatures are halal except the frog, the crocodile and the snake."
+      },
+      "ahlKitab": {
+        "q": "Can I eat meat slaughtered by Christians or Jews?",
+        "shared": "Yes. Their slaughter is halal (Quran 5:5) when the animal is slaughtered by cutting the throat and no name other than Allah's is invoked. Scholars differ about machine slaughter and stunning."
+      },
+      "awrah": {
+        "q": "What must a man cover?",
+        "hanafi": "From the navel to below the knee; the knee itself is included.",
+        "shafii": "From the navel to the knee. The navel and knee are not themselves included, but part of them should be covered to be sure.",
+        "maliki": "The private parts must be covered; covering from the navel to the knee is required in front of others.",
+        "hanbali": "From the navel to the knee; the navel and knee are not themselves included."
+      }
+    }
+  },
+  "bookmarks": {
+    "title": "Bookmarks",
+    "edit": "Edit",
+    "done": "Done",
+    "tabs": {
+      "quran": "Quran",
+      "hadith": "Hadith",
+      "dua": "Dua",
+      "names": "Names"
+    },
+    "tabCount": "{{label}} · {{n}}",
+    "folders": {
+      "all": "All",
+      "daily": "Daily reading",
+      "memorize": "Memorize",
+      "tafsir": "Tafsir notes"
+    },
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "daysAgo": "{{n}} days ago",
+    "selected": "{{n}} selected",
+    "move": "Move to folder",
+    "remove": "Remove",
+    "removed": "Bookmarks removed",
+    "noFolder": "No folder",
+    "empty": {
+      "quran": {
+        "title": "No saved ayahs",
+        "body": "Tap the bookmark on any ayah in the Quran reader to keep it here.",
+        "action": "Open the Quran"
+      },
+      "hadith": {
+        "title": "No saved hadith",
+        "body": "Tap Save on any hadith to keep it here.",
+        "action": "Browse hadith"
+      },
+      "dua": {
+        "title": "No saved duas",
+        "body": "Tap the bookmark on any dua to keep it here.",
+        "action": "Browse duas"
+      },
+      "names": {
+        "title": "No favorite names",
+        "body": "Tap the heart on a name to keep it here.",
+        "action": "Find a name"
+      }
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "settings": "Notification settings",
+    "filters": {
+      "all": "All",
+      "prayer": "Prayer",
+      "event": "Events"
+    },
+    "markAllRead": "Mark all read",
+    "groups": {
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "week": "This week"
+    },
+    "unread": "Unread",
+    "empty": {
+      "title": "No notifications yet",
+      "body": "Adhan times, Jumu'ah and calendar reminders will show up here."
+    },
+    "prayerBodyIn": "It's time for {{prayer}} in {{place}}.",
+    "jumuah": "Jumu'ah today",
+    "jumuahBody": "Read Surah Al-Kahf and send salawat on the Prophet ﷺ.",
+    "amol": "Amol reminder",
+    "amolBody": "{{done}} of {{total}} done yesterday.",
+    "eventBody": "{{date}} · tap to see the day's practices"
+  },
+  "login": {
+    "title": "Welcome to Noor",
+    "body": "Everything works without an account. Sign in only if you want to back up and sync across devices.",
+    "guest": "Continue as guest",
+    "guestNote": "No account needed · you can sign in later",
+    "or": "or sign in to back up & sync",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "sendCode": "Send code",
+    "codeNote": "We'll email you a 6-digit code. No password to remember.",
+    "google": "Continue with Google",
+    "apple": "Continue with Apple",
+    "privacy": "Your location stays on your device. It is only used to work out prayer times and the Qibla, and is never uploaded.",
+    "invalidEmail": "Enter a valid email address.",
+    "unavailable": "Sign-in is coming soon. Everything keeps working as a guest.",
+    "error": "Couldn't sign in. Please try again."
+  },
+  "profile": {
+    "title": "Profile",
+    "settings": "Settings",
+    "guest": "Guest",
+    "guestNote": "Your data is saved on this device only",
+    "syncTitle": "Sign in to back up & sync",
+    "syncBody": "Keep bookmarks and Zakat reports if you change phones.",
+    "signIn": "Sign in or create account",
+    "edit": "Edit",
+    "stats": {
+      "pages": "Quran pages read this year",
+      "days": "days",
+      "streak": "Prayer streak · all 5 prayed",
+      "zakat": "Zakat reports saved"
+    },
+    "favoriteNames": "Favorite names",
+    "zakatHistory": "Zakat reports history",
+    "audio": "Downloaded audio",
+    "mb": "{{n}} MB",
+    "gb": "{{n}} GB",
+    "language": "Language",
+    "theme": "Theme"
+  },
+  "settings": {
+    "title": "Settings",
+    "sections": {
+      "language": "Language",
+      "appearance": "Appearance",
+      "prayer": "Prayer",
+      "notifications": "Notifications",
+      "quran": "Quran",
+      "storage": "Storage & downloads",
+      "account": "Account",
+      "about": "About"
+    },
+    "languageNote": "Arabic switches the whole app to right-to-left. Numbers follow the language you choose.",
+    "accent": "Accent",
+    "accents": {
+      "teal": "Noor teal",
+      "emerald": "Emerald",
+      "indigo": "Indigo",
+      "rose": "Rose"
+    },
+    "method": "Calculation method",
+    "asr": "Asr time",
+    "adjust": "Adjust times",
+    "adjustNote": "Minutes added to the calculated time",
+    "adjustLabel": "{{prayer}} adjustment in minutes",
+    "highLat": "High-latitude rule",
+    "highLatNote": "For places where twilight lasts all night",
+    "highLatRules": {
+      "auto": "Automatic",
+      "middle": "Middle of the night",
+      "seventh": "One-seventh of the night",
+      "angle": "Angle-based"
+    },
+    "highLatCaptions": {
+      "auto": "Picks a rule for your latitude",
+      "middle": "Fajr no earlier than the middle of the night",
+      "seventh": "Fajr in the last seventh of the night",
+      "angle": "Portion of the night set by the twilight angle"
+    },
+    "hijriOffset": "Hijri date offset",
+    "hijriToday": "Today: {{date}}",
+    "sehri": "Sehri safety margin",
+    "sehriNote": "Sehri ends this long before Fajr",
+    "minutes": "{{n}} min",
+    "adhanEach": "Adhan for each prayer",
+    "adhanEachNote": "Tap to turn a prayer on or off",
+    "reminder": "Reminder before waqt",
+    "reminderValue": "{{n}} min before",
+    "off": "Off",
+    "jumuah": "Jumu'ah reminder",
+    "jumuahNote": "Friday {{time}} · read Al-Kahf",
+    "ramadan": "Ramadan reminders",
+    "ramadanNote": "Sehri and Iftar alerts",
+    "notRinging": "Adhan not ringing?",
+    "notRingingNote": "Allow notifications and turn off battery optimisation for Noor",
+    "arabicSize": "Arabic font size",
+    "translationBn": "Bangla translation",
+    "translationBnNote": "Muhiuddin Khan",
+    "translationEn": "English translation",
+    "translationEnNote": "Saheeh International",
+    "qari": "Default qari",
+    "used": "{{size}} used",
+    "deleteAudio": "Delete {{name}} audio",
+    "clearCache": "Clear cache",
+    "clearCacheNote": "Downloaded surah and hadith text · {{size}}",
+    "clear": "Clear",
+    "cleared": "Cache cleared",
+    "syncOn": "Sync is on",
+    "export": "Export my data",
+    "exportNote": "Bookmarks, amol, Zakat reports and settings as a file",
+    "exportUnavailable": "Export isn't available on this device.",
+    "version": "Version",
+    "credits": "Credits",
+    "creditItems": {
+      "quranText": {
+        "label": "Quran text",
+        "value": "Tanzil · Uthmani script, via AlQuran.cloud"
+      },
+      "translation": {
+        "label": "Translation",
+        "value": "Muhiuddin Khan (bn), Saheeh International (en)"
+      },
+      "audio": {
+        "label": "Audio",
+        "value": "Islamic Network recitations"
+      },
+      "hadith": {
+        "label": "Hadith",
+        "value": "fawazahmed0/hadith-api"
+      },
+      "times": {
+        "label": "Prayer times",
+        "value": "Adhan (batoulapps)"
+      }
+    },
+    "privacy": "Privacy policy",
+    "terms": "Terms of use",
+    "contact": "Contact us",
+    "rate": "Rate Noor",
+    "report": "Report a content error",
+    "reportNote": "A typo in a translation or a wrong reference",
+    "methodAngles": "Fajr {{fajr}} · Isha {{isha}}",
+    "ishaAfterMaghrib": "{{n}} min after Maghrib",
+    "recommended": "Recommended here",
+    "customNote": "Set your own Fajr and Isha angles",
+    "methodRegions": {
+      "karachi": "Bangladesh, Pakistan, India",
+      "mwl": "Europe, Far East",
+      "ummAlQura": "Saudi Arabia",
+      "egyptian": "Africa, Middle East",
+      "isna": "USA, Canada",
+      "kuwait": "Kuwait and the Gulf"
+    },
+    "angleOf": "{{prayer}} angle",
+    "methodToday": "Today in {{place}} with this method:",
+    "methodTimes": "Fajr {{fajr}} · Isha {{isha}}",
+    "methodNote": "Not sure? Follow your local mosque. Asr (Hanafi or Shafi'i) is set separately.",
+    "notifications": {
+      "beforeTitle": "{{prayer}} in {{n}} min",
+      "beforeBody": "Adhan at {{time}}."
+    }
+  },
+  "adhan": {
+    "title": "Adhan sound",
+    "voiceSection": "Adhan",
+    "notAdded": "Audio not added yet",
+    "playing": "Playing preview",
+    "noneAdded": "Adhan recordings haven't been added to this version yet, so the device sound is used.",
+    "options": "Options",
+    "fajr": "Separate Fajr Adhan",
+    "fajrNote": "Includes \"prayer is better than sleep\"",
+    "volumeNote": "The Adhan plays at your phone's notification volume.",
+    "stop": "Stop preview",
+    "preview": "Preview {{name}} Adhan",
+    "previewCurrent": "Preview Adhan",
+    "summaryFajr": "{{name}} · Fajr uses its own Adhan",
+    "voices": {
+      "default": {
+        "name": "Device default",
+        "note": "Your phone's notification sound"
+      },
+      "silent": {
+        "name": "Silent",
+        "note": "Notification only, no sound"
+      },
+      "makkah": {
+        "name": "Makkah",
+        "place": "Masjid al-Haram",
+        "note": "Bundled"
+      },
+      "madinah": {
+        "name": "Madinah",
+        "place": "Masjid an-Nabawi",
+        "note": "Bundled"
+      },
+      "aqsa": {
+        "name": "Al-Aqsa",
+        "place": "Jerusalem",
+        "note": "Bundled"
+      },
+      "alafasy": {
+        "name": "Mishary Rashid Alafasy",
+        "place": "Kuwait",
+        "note": "Bundled"
+      },
+      "takbir": {
+        "name": "Short takbir",
+        "place": "About 8 seconds",
+        "note": "Bundled"
       }
     }
   }

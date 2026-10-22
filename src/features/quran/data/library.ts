@@ -27,10 +27,20 @@ export const readingPrefs = createPersistedStore<ReadingPrefs>(
 export type LastRead = { surah: number; ayah: number; juz: number; page: number; at: number };
 export const lastRead = createPersistedStore<LastRead | null>(StorageKeys.quranLastRead, null);
 
-export type Bookmark = { surah: number; ayah: number; at: number };
+export type BookmarkFolder = 'daily' | 'memorize' | 'tafsir';
+export const BOOKMARK_FOLDERS: readonly BookmarkFolder[] = ['daily', 'memorize', 'tafsir'];
+
+export type Bookmark = { surah: number; ayah: number; at: number; folder?: BookmarkFolder };
 export const bookmarks = createPersistedStore<Bookmark[]>(StorageKeys.quranBookmarks, [], (raw) =>
   Array.isArray(raw) ? (raw as Bookmark[]) : [],
 );
+
+export const bookmarkKey = (b: Pick<Bookmark, 'surah' | 'ayah'>) => `${b.surah}:${b.ayah}`;
+
+/** Files the given bookmarks ("surah:ayah" keys) under a folder, or none. */
+export function setBookmarkFolder(keys: readonly string[], folder: BookmarkFolder | undefined) {
+  bookmarks.set((list) => list.map((b) => (keys.includes(bookmarkKey(b)) ? { ...b, folder } : b)));
+}
 
 export function isBookmarked(list: Bookmark[], surah: number, ayah: number): boolean {
   return list.some((b) => b.surah === surah && b.ayah === ayah);
@@ -55,3 +65,16 @@ export const notes = createPersistedStore<Record<string, string>>(
 );
 
 export const noteKey = (surah: number, ayah: number) => `${surah}:${ayah}`;
+
+/** Distinct mushaf pages (1–604) seen in the reader, per year. */
+export const pagesRead = createPersistedStore<Record<string, number[]>>(
+  StorageKeys.quranPagesRead,
+  {},
+  (raw) => (raw && typeof raw === 'object' ? (raw as Record<string, number[]>) : {}),
+);
+
+export function markPageRead(page: number, now = new Date()) {
+  const year = String(now.getFullYear());
+  if (pagesRead.get()[year]?.includes(page)) return;
+  pagesRead.set((all) => ({ ...all, [year]: [...(all[year] ?? []), page] }));
+}

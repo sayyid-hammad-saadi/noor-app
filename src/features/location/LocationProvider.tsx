@@ -12,6 +12,7 @@ import { type Language, useLanguage } from '@/i18n';
 
 import { CITIES, type City, DEFAULT_CITY } from './cities';
 import { loadLocation, type SavedLocation, saveLocation } from './locationStore';
+import { type PrayerSettings, prayerSettings } from '@/features/prayer/prayerSettings';
 
 /** A location ready for prayer-time calculation and display. */
 export type Place = {
@@ -33,6 +34,8 @@ type LocationContextValue = {
   saved: SavedLocation | null;
   setLocation: (location: SavedLocation) => Promise<void>;
   ready: boolean;
+  /** Calculation settings in effect (method, adjustments, Hijri offset…). */
+  settings: PrayerSettings;
 };
 
 const LocationContext = createContext<LocationContextValue | null>(null);
@@ -89,9 +92,11 @@ export function LocationProvider({ children }: PropsWithChildren) {
     await saveLocation(location);
   }, []);
 
+  // Prayer settings change every computed time, so consumers re-render with them.
+  const settings = prayerSettings.use();
   const value = useMemo<LocationContextValue>(
-    () => ({ place: resolvePlace(saved, language), saved, setLocation, ready }),
-    [saved, language, setLocation, ready],
+    () => ({ place: resolvePlace(saved, language), saved, setLocation, ready, settings }),
+    [saved, language, setLocation, ready, settings],
   );
 
   return <LocationContext.Provider value={value}>{children}</LocationContext.Provider>;

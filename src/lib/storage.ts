@@ -25,6 +25,19 @@ export const StorageKeys = {
   hadithBookmarks: 'noor.hadith.bookmarks',
   duaBookmarks: 'noor.dua.bookmarks',
   readingPrefs: 'noor.reading.prefs',
+  tasbih: 'noor.tasbih',
+  nameFavorites: 'noor.names.favorites',
+  masailMadhhab: 'noor.masail.madhhab',
+  searchRecent: 'noor.search.recent',
+  prayerLog: 'noor.prayer.log',
+  quranPagesRead: 'noor.quran.pagesRead',
+  notificationsRead: 'noor.notifications.read',
+  account: 'noor.account',
+  prayerSettings: 'noor.prayer.settings',
+  notificationPrefs: 'noor.notifications.prefs',
+  adhanSound: 'noor.adhan.sound',
+  accent: 'noor.accent',
+  pendingAudio: 'noor.quran.pendingAudio',
 } as const;
 
 type BaseKey = (typeof StorageKeys)[keyof typeof StorageKeys];

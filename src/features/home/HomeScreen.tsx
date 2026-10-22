@@ -21,6 +21,7 @@ import { SectionHeader } from '@/components/ui';
 import { CityPickerSheet } from '@/features/location/CityPickerSheet';
 import { requestDeviceLocation } from '@/features/location/deviceLocation';
 import { useLocation } from '@/features/location/LocationProvider';
+import { useNotifications } from '@/features/notifications/useNotifications';
 import { usePrayerTimes } from '@/features/prayer/usePrayerTimes';
 import { quranRoute } from '@/features/quran/routes';
 import { routes } from '@/lib/routes';
@@ -31,6 +32,7 @@ import { CompactHeader } from './components/CompactHeader';
 import { DailyCard } from './components/DailyCard';
 import { type FeatureKey, FeatureGrid } from './components/FeatureGrid';
 import { HomeHeader } from './components/HomeHeader';
+import { HomeSkeleton } from './components/HomeSkeleton';
 
 /** How far the sheet's rounded top overlaps the gradient header. */
 const SHEET_OVERLAP = 30;
@@ -47,7 +49,7 @@ export default function HomeScreen() {
   const insets = useSafeAreaInsets();
   const { width, height } = useWindowDimensions();
   const { today, current, next, now, place } = usePrayerTimes();
-  const { saved, setLocation } = useLocation();
+  const { saved, setLocation, ready } = useLocation();
   const state = { today, current, next };
 
   const [headerHeight, setHeaderHeight] = useState(420);
@@ -80,6 +82,9 @@ export default function HomeScreen() {
     [toast, t],
   );
 
+  const { unread } = useNotifications();
+  const openNotifications = () => router.push(routes.notifications);
+
   const onFeature = (key: FeatureKey) => {
     if (key === 'more') router.navigate(routes.explore);
     else if (key === 'qibla') router.push(routes.qibla);
@@ -88,6 +93,9 @@ export default function HomeScreen() {
     else if (key === 'calendar') router.push(routes.calendar);
     else if (key === 'hadith') router.push(routes.hadith);
     else if (key === 'dua') router.push(routes.dua);
+    else if (key === 'tasbih') router.push(routes.tasbih);
+    else if (key === 'names') router.push(routes.names);
+    else if (key === 'masail') router.push(routes.masail);
     else comingSoon();
   };
 
@@ -95,8 +103,11 @@ export default function HomeScreen() {
     setPickerOpen(false);
     const result = await requestDeviceLocation();
     if (result.status === 'ok') await setLocation(result.location);
+    else if (result.status === 'denied') router.push(routes.chooseCity);
     else toast.show({ message: t(`permissions.location.${result.status}`) });
   };
+
+  if (!ready) return <HomeSkeleton />;
 
   return (
     <View style={styles.root}>
@@ -124,7 +135,8 @@ export default function HomeScreen() {
             state={state}
             place={place}
             onLocationPress={() => setPickerOpen(true)}
-            onBellPress={comingSoon}
+            onBellPress={openNotifications}
+            bellUnread={unread > 0}
             onPrayerTimesPress={() => router.push(routes.prayerTimes)}
           />
           <View style={styles.headerSpacer} />
@@ -159,7 +171,13 @@ export default function HomeScreen() {
         pointerEvents={compactVisible ? 'auto' : 'none'}
         aria-hidden={!compactVisible}
       >
-        <CompactHeader now={now} state={state} place={place} onBellPress={comingSoon} />
+        <CompactHeader
+          now={now}
+          state={state}
+          place={place}
+          onBellPress={openNotifications}
+          bellUnread={unread > 0}
+        />
       </Animated.View>
 
       <CityPickerSheet
