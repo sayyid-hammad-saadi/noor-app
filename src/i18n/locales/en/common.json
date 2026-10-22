@@ -1347,5 +1347,208 @@
         "translation": "O Allah, bring it over us with blessing and faith, safety and Islam. My Lord and your Lord is Allah."
       }
     }
+  },
+  "explore": {
+    "title": "Explore",
+    "search": "Search features, surahs, duas",
+    "notifications": "Notifications",
+    "comingSoon": "Coming soon",
+    "sections": {
+      "worship": {
+        "title": "Worship",
+        "caption": "Daily practice"
+      },
+      "learn": {
+        "title": "Learn",
+        "caption": "Quran, hadith and fiqh"
+      },
+      "tools": {
+        "title": "Tools",
+        "caption": "Plan and keep track"
+      }
+    },
+    "features": {
+      "prayer": "Prayer Times",
+      "qibla": "Qibla",
+      "tasbih": "Tasbih",
+      "dua": "Dua",
+      "ramadan": "Ramadan",
+      "adhan": "Adhan",
+      "quran": "Quran",
+      "hadith": "Hadith",
+      "masail": "Masail",
+      "asma": "Asma ul Husna",
+      "names": "Islamic Names",
+      "monthAmol": "Month Amol",
+      "zakat": "Zakat",
+      "calendar": "Calendar",
+      "bookmarks": "Bookmarks"
+    }
+  },
+  "tasbih": {
+    "title": "Tasbih",
+    "vibrationOn": "Vibration on",
+    "vibrationOff": "Vibration off",
+    "dhikr": "Dhikr",
+    "custom": "Custom",
+    "countA11y": "Count. {{n}} of {{target}}",
+    "of": "of {{target}}",
+    "tap": "Tap to count",
+    "reached": "Target reached",
+    "reachedToast": "{{target}} completed. Keep going or reset.",
+    "reset": "Reset",
+    "target": "Target {{n}}",
+    "targetTitle": "Target",
+    "history": "History",
+    "seeAll": "See all",
+    "today": "Today",
+    "week": "This week",
+    "streak": "Streak",
+    "streakDays": "{{n}} days",
+    "historyTitle": "Last 14 days",
+    "noHistory": "No dhikr counted yet.",
+    "customTitle": "Add your own dhikr",
+    "customLabel": "Dhikr",
+    "customPlaceholder": "e.g. Astaghfirullah",
+    "customMeaning": "Meaning (optional)",
+    "add": "Add",
+    "remove": "Remove {{name}}",
+    "presets": {
+      "subhanallah": {
+        "label": "SubhanAllah",
+        "meaning": "Glory be to Allah"
+      },
+      "alhamdulillah": {
+        "label": "Alhamdulillah",
+        "meaning": "All praise is for Allah"
+      },
+      "allahuakbar": {
+        "label": "Allahu Akbar",
+        "meaning": "Allah is the Greatest"
+      },
+      "lailaha": {
+        "label": "La ilaha illallah",
+        "meaning": "There is no god but Allah"
+      },
+      "astaghfirullah": {
+        "label": "Astaghfirullah",
+        "meaning": "I seek Allah's forgiveness"
+      }
+    }
+  },
+  "names": {
+    "title": "Islamic Names",
+    "favorites": "Favorites, {{n}} saved",
+    "favoritesTitle": "Favorite names",
+    "savedCount": "{{n}} saved",
+    "gender": "Gender",
+    "genders": {
+      "all": "All",
+      "male": "Male",
+      "female": "Female",
+      "unisex": "Unisex"
+    },
+    "theme": "Theme",
+    "themes": {
+      "quranic": "Quranic",
+      "prophets": "Prophets",
+      "sahaba": "Sahaba",
+      "sahabiyyat": "Sahabiyyat"
+    },
+    "letter": "Starting letter",
+    "any": "Any",
+    "anyShort": "Any",
+    "syllables": "Syllables",
+    "syllableCount": "{{n}} syllables",
+    "oneSyllable": "1 syllable",
+    "generate": "Generate random name",
+    "noMatch": "No names match these choices. Try another letter or syllable count.",
+    "save": "Save to favorites",
+    "unsave": "Remove from favorites",
+    "shareCard": "Share as card",
+    "details": "Details",
+    "copy": "Copy",
+    "copied": "Copied",
+    "shareList": "Share list",
+    "noFavorites": "No favorites yet",
+    "noFavoritesBody": "Tap the heart on a name to keep it here.",
+    "inQuran": "Quranic · {{ref}}",
+    "origin": "{{origin}} origin",
+    "origins": {
+      "arabic": "Arabic",
+      "hebrew": "Hebrew"
+    },
+    "hear": "Hear pronunciation",
+    "hearCaption": "Read aloud in Arabic",
+    "meaning": "Meaning",
+    "originLabel": "Origin",
+    "rootLabel": "Root",
+    "inQuranTitle": "IN THE QURAN · {{ref}}",
+    "similar": "Similar names",
+    "meaningNote": "Meanings of names are approximate; scholars of Arabic sometimes differ.",
+    "shareText": "{{name}} ({{arabic}}): {{meaning}}",
+    "shareFailed": "Couldn't share the card.",
+    "items": {
+      "ihsan": "Excellence; doing good as if you see Allah",
+      "nur": "Light",
+      "huda": "Guidance",
+      "rahma": "Mercy",
+      "salam": "Peace",
+      "firdaus": "The highest garden of Paradise",
+      "kawthar": "Abundance; a river in Paradise",
+      "tasnim": "A spring of Paradise",
+      "sabir": "Patient",
+      "hanif": "Upright; inclining to pure faith",
+      "luqman": "The wise man named in the Quran",
+      "imran": "Father of Maryam (as)",
+      "maryam": "Mother of Prophet Isa (as)",
+      "adam": "The first man and prophet",
+      "nuh": "Prophet Nuh (as); rest, comfort",
+      "ibrahim": "Prophet Ibrahim (as), the friend of Allah",
+      "ismail": "Prophet Ismail (as); God hears",
+      "ishaq": "Prophet Ishaq (as); laughter",
+      "yusuf": "Prophet Yusuf (as)",
+      "musa": "Prophet Musa (as)",
+      "harun": "Prophet Harun (as), brother of Musa",
+      "dawud": "Prophet Dawud (as); beloved",
+      "sulayman": "Prophet Sulayman (as); peaceful",
+      "yunus": "Prophet Yunus (as); dove",
+      "yahya": "Prophet Yahya (as); he lives",
+      "isa": "Prophet Isa (as)",
+      "idris": "Prophet Idris (as)",
+      "ayyub": "Prophet Ayyub (as), known for patience",
+      "zakariyya": "Prophet Zakariyya (as); Allah remembers",
+      "muhammad": "Praised; the final Prophet ﷺ",
+      "ahmad": "Most praised; a name of the Prophet ﷺ",
+      "bilal": "Moisture, freshness; the first muezzin",
+      "umar": "Long-lived; the second caliph",
+      "uthman": "The third caliph, Dhun-Nurayn",
+      "ali": "Exalted, high; the fourth caliph",
+      "hamza": "Strong, steadfast; the Prophet's ﷺ uncle",
+      "khalid": "Eternal, lasting",
+      "saad": "Happiness, good fortune",
+      "zubayr": "Strong, firm",
+      "talha": "A kind of tree",
+      "anas": "Friendliness, affection",
+      "muadh": "Protected",
+      "salman": "Safe, sound",
+      "abdullah": "Servant of Allah",
+      "usama": "Lion",
+      "ammar": "Long-lived; one who builds",
+      "hasan": "Good, beautiful",
+      "husayn": "Little good one",
+      "zayd": "Growth, increase; the only Companion named in the Quran",
+      "khadijah": "First wife of the Prophet ﷺ",
+      "aishah": "Living, lively",
+      "fatimah": "Daughter of the Prophet ﷺ",
+      "sumayyah": "High; the first martyr of Islam",
+      "asma": "Lofty, exalted",
+      "hafsah": "Young lioness",
+      "ruqayyah": "Ascent, progress",
+      "zaynab": "A fragrant tree",
+      "safiyyah": "Pure, chosen",
+      "maymunah": "Blessed, fortunate",
+      "barakah": "Blessing"
+    }
   }
 }

@@ -88,6 +88,8 @@ export default function HomeScreen() {
     else if (key === 'calendar') router.push(routes.calendar);
     else if (key === 'hadith') router.push(routes.hadith);
     else if (key === 'dua') router.push(routes.dua);
+    else if (key === 'tasbih') router.push(routes.tasbih);
+    else if (key === 'names') router.push(routes.names);
     else comingSoon();
   };
 
