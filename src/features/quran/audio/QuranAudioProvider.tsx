@@ -19,8 +19,12 @@ import { Platform } from 'react-native';
 import { createPersistedStore } from '@/lib/persistedStore';
 import { StorageKeys } from '@/lib/storage';
 
-import { audioSource, getReciter, type Reciter } from '../data/reciters';
+import { isOnline } from '@/lib/network';
+
+import { audioSource, getReciter, isSurahDownloaded, type Reciter } from '../data/reciters';
 import { getSurah } from '../data/surahs';
+import { AudioOfflineSheet } from './AudioOfflineSheet';
+import { watchPendingDownloads } from './pendingDownloads';
 
 export type PlayerPrefs = { reciter: string; speed: number; repeat: number };
 
@@ -74,6 +78,12 @@ export function QuranAudioProvider({ children }: PropsWithChildren) {
   const [track, setTrack] = useState<Track | null>(null);
   const [sleepEndsAt, setSleepEndsAt] = useState<number | null>(null);
   const [error, setError] = useState(false);
+  /** A play request held back because the device is offline and the surah isn't downloaded. */
+  const [blocked, setBlocked] = useState<{
+    surah: number;
+    fromAyah: number;
+    repeat?: number;
+  } | null>(null);
 
   // Mutable mirrors for the native event callback.
   const trackRef = useRef<Track | null>(null);
@@ -141,6 +151,8 @@ export function QuranAudioProvider({ children }: PropsWithChildren) {
     return () => sub.remove();
   }, [player, load]);
 
+  useEffect(() => (Platform.OS === 'web' ? undefined : watchPendingDownloads()), []);
+
   // Sleep timer.
   useEffect(() => {
     if (!sleepEndsAt) return;
@@ -154,7 +166,7 @@ export function QuranAudioProvider({ children }: PropsWithChildren) {
     return () => clearTimeout(id);
   }, [sleepEndsAt, player]);
 
-  const play = useCallback(
+  const start = useCallback(
     (surahNumber: number, fromAyah = 1, repeat?: number) => {
       const surah = getSurah(surahNumber);
       repeatOverride.current = repeat ?? null;
@@ -166,6 +178,24 @@ export function QuranAudioProvider({ children }: PropsWithChildren) {
       });
     },
     [load],
+  );
+
+  /** Plays, unless offline with nothing downloaded for this surah (34f). */
+  const play = useCallback(
+    (surahNumber: number, fromAyah = 1, repeat?: number) => {
+      const surah = getSurah(surahNumber);
+      const r = getReciter(prefsRef.current.reciter);
+      if (Platform.OS === 'web' || isSurahDownloaded(r, surah.firstAyahId, surah.ayahCount)) {
+        start(surahNumber, fromAyah, repeat);
+        return;
+      }
+      void isOnline().then((online) =>
+        online
+          ? start(surahNumber, fromAyah, repeat)
+          : setBlocked({ surah: surahNumber, fromAyah, repeat }),
+      );
+    },
+    [start],
   );
 
   const value = useMemo<QuranAudio>(
@@ -224,7 +254,23 @@ export function QuranAudioProvider({ children }: PropsWithChildren) {
     [track, status, reciter, prefs, sleepEndsAt, error, play, load, player],
   );
 
-  return <QuranAudioContext.Provider value={value}>{children}</QuranAudioContext.Provider>;
+  return (
+    <QuranAudioContext.Provider value={value}>
+      {children}
+      <AudioOfflineSheet
+        request={blocked}
+        reciter={reciter}
+        onClose={() => setBlocked(null)}
+        onPlayWith={(id) => {
+          const req = blocked;
+          playerPrefs.set((p) => ({ ...p, reciter: id }));
+          prefsRef.current = { ...prefsRef.current, reciter: id };
+          setBlocked(null);
+          if (req) start(req.surah, req.fromAyah, req.repeat);
+        }}
+      />
+    </QuranAudioContext.Provider>
+  );
 }
 
 export function useQuranAudio(): QuranAudio {

@@ -17,15 +17,23 @@ export type SkeletonProps = {
   height?: number;
   radius?: number;
   style?: StyleProp<ViewStyle>;
+  /** Translucent block for gradient headers (.skw). */
+  onHeader?: boolean;
 };
 
 /** Pulsing placeholder block (.sk). Static when the user prefers reduced motion. */
-export function Skeleton({ width = '100%', height = 14, radius = 8, style }: SkeletonProps) {
+export function Skeleton({
+  width = '100%',
+  height = 14,
+  radius = 8,
+  style,
+  onHeader,
+}: SkeletonProps) {
   const { colors } = useTheme();
   const reduceMotion = useReducedMotion();
   const progress = useSharedValue(0);
-  const from = colors.skel1;
-  const to = colors.skel2;
+  const from = onHeader ? colors.onHeaderChip : colors.skel1;
+  const to = onHeader ? colors.onHeaderChip : colors.skel2;
 
   useEffect(() => {
     if (reduceMotion) return;
@@ -35,6 +43,8 @@ export function Skeleton({ width = '100%', height = 14, radius = 8, style }: Ske
 
   const animated = useAnimatedStyle(() => ({
     backgroundColor: interpolateColor(progress.value, [0, 1], [from, to]),
+    // Header blocks share one colour, so they pulse by opacity instead.
+    opacity: onHeader ? 1 - progress.value * 0.45 : 1,
   }));
 
   return (

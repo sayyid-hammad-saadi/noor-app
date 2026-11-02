@@ -1,5 +1,1 @@
-import { ComingSoonScreen } from '@/features/placeholder/ComingSoonScreen';
-
-export default function Screen() {
-  return <ComingSoonScreen tab="profile" />;
-}
+export { default } from '@/features/profile/ProfileScreen';

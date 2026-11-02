@@ -20,10 +20,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Svg, { Circle, G, Rect } from 'react-native-svg';
 
 import { BottomSheet, EmptyState, useToast } from '@/components/feedback';
-import { GradientHeader } from '@/components/layout';
+import { GradientHeader, TopBar } from '@/components/layout';
 import { Avatar, Button, Icon, IconButton, List, ListRow, Text, Touchable } from '@/components/ui';
 import { useNow } from '@/features/prayer/usePrayerTimes';
 import { useLanguage } from '@/i18n';
+import { routes } from '@/lib/routes';
 import { makeStyles, useTheme } from '@/theme';
 
 import { REPEATS, SLEEP_MINUTES, SPEEDS, useQuranAudio } from './audio/QuranAudioProvider';
@@ -47,8 +48,21 @@ export default function PlayerScreen() {
   if (!track) {
     return (
       <SafeAreaView style={styles.root} edges={['top', 'bottom']}>
+        <TopBar
+          backIcon={ChevronDown}
+          backLabel={t('quran.player.minimise')}
+          onBack={() => (router.canGoBack() ? router.back() : router.replace(routes.quran))}
+        />
         <View style={styles.flex}>
-          <EmptyState icon={Play} title={t('quran.player.title')} />
+          <EmptyState
+            icon={Play}
+            title={t('quran.player.emptyTitle')}
+            body={t('quran.player.emptyBody')}
+            action={{
+              label: t('quran.player.emptyAction'),
+              onPress: () => router.replace(routes.quran),
+            }}
+          />
         </View>
       </SafeAreaView>
     );

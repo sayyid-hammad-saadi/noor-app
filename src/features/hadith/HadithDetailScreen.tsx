@@ -15,7 +15,14 @@ import { ScrollView, Share, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { ActionBar } from '@/components/content';
-import { Banner, EmptyState, ErrorState, Skeleton, useToast } from '@/components/feedback';
+import {
+  Banner,
+  EmptyState,
+  ErrorState,
+  OfflineBanner,
+  Skeleton,
+  useToast,
+} from '@/components/feedback';
 import { TopBar } from '@/components/layout';
 import {
   GradeChip,
@@ -69,6 +76,9 @@ export default function HadithDetailScreen() {
     return (
       <SafeAreaView style={styles.root} edges={['top']}>
         <TopBar title={title} />
+        <View style={styles.offline}>
+          <OfflineBanner onRetry={retry} />
+        </View>
         {state.status === 'error' ? (
           <ErrorState
             title={t('hadith.loadError')}
@@ -281,6 +291,7 @@ function Reader({
 
 const useStyles = makeStyles((t) =>
   StyleSheet.create({
+    offline: { paddingHorizontal: t.size.gutter, paddingBottom: t.space.sm },
     root: { flex: 1, backgroundColor: t.colors.bg },
     body: {
       paddingHorizontal: t.size.gutter,

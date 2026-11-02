@@ -19,11 +19,13 @@ export function CompactHeader({
   state,
   place,
   onBellPress,
+  bellUnread = false,
 }: {
   now: Date;
   state: PrayerState;
   place: Place;
   onBellPress: () => void;
+  bellUnread?: boolean;
 }) {
   const styles = useStyles();
   const { t } = useTranslation();
@@ -48,7 +50,7 @@ export function CompactHeader({
             {sub}
           </Text>
         </View>
-        <NotificationsButton onPress={onBellPress} />
+        <NotificationsButton onPress={onBellPress} unread={bellUnread} />
       </View>
     </GradientHeader>
   );

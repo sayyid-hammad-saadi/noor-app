@@ -219,6 +219,110 @@ const dark: Palette = {
 
 export const palettes: Record<ColorScheme, Palette> = { light, dark };
 
+export type Accent = 'teal' | 'emerald' | 'indigo' | 'rose';
+export const ACCENTS: readonly Accent[] = ['teal', 'emerald', 'indigo', 'rose'];
+
+type AccentTokens = Pick<
+  Palette,
+  'primary' | 'primaryDark' | 'tint' | 'link' | 'btn' | 'onBtn' | 'hdr1' | 'hdr2' | 'hlBg' | 'hlFg'
+>;
+
+/** Brand-colour overrides for the accent setting; teal is the base palette. */
+const accentTokens: Record<Exclude<Accent, 'teal'>, Record<ColorScheme, AccentTokens>> = {
+  emerald: {
+    light: {
+      primary: '#23955C',
+      primaryDark: '#1D7A4A',
+      tint: '#E4F4EA',
+      link: '#1D7A4A',
+      btn: '#1D7A4A',
+      onBtn: '#FFFFFF',
+      hdr1: '#1A6B42',
+      hdr2: '#135234',
+      hlBg: '#FFFFFF',
+      hlFg: '#1D7A4A',
+    },
+    dark: {
+      primary: '#3CC27F',
+      primaryDark: '#2FA86B',
+      tint: '#15301F',
+      link: '#3CC27F',
+      btn: '#3CC27F',
+      onBtn: '#062012',
+      hdr1: '#123A26',
+      hdr2: '#0C2A1B',
+      hlBg: '#3CC27F',
+      hlFg: '#062012',
+    },
+  },
+  indigo: {
+    light: {
+      primary: '#4A5CC4',
+      primaryDark: '#3F51B5',
+      tint: '#E8EAF8',
+      link: '#3F51B5',
+      btn: '#3F51B5',
+      onBtn: '#FFFFFF',
+      hdr1: '#34449A',
+      hdr2: '#28357A',
+      hlBg: '#FFFFFF',
+      hlFg: '#3F51B5',
+    },
+    dark: {
+      primary: '#8C9BF2',
+      primaryDark: '#7586E6',
+      tint: '#1E2340',
+      link: '#8C9BF2',
+      btn: '#8C9BF2',
+      onBtn: '#0D1230',
+      hdr1: '#222B5C',
+      hdr2: '#181F45',
+      hlBg: '#8C9BF2',
+      hlFg: '#0D1230',
+    },
+  },
+  rose: {
+    light: {
+      primary: '#C4466A',
+      primaryDark: '#B23A5B',
+      tint: '#FBE9EE',
+      link: '#B23A5B',
+      btn: '#B23A5B',
+      onBtn: '#FFFFFF',
+      hdr1: '#9A3150',
+      hdr2: '#7A253F',
+      hlBg: '#FFFFFF',
+      hlFg: '#B23A5B',
+    },
+    dark: {
+      primary: '#F07EA0',
+      primaryDark: '#E0668B',
+      tint: '#3A1A24',
+      link: '#F07EA0',
+      btn: '#F07EA0',
+      onBtn: '#2E0A16',
+      hdr1: '#4F1C2C',
+      hdr2: '#3A1420',
+      hlBg: '#F07EA0',
+      hlFg: '#2E0A16',
+    },
+  },
+};
+
+export function accentPalette(scheme: ColorScheme, accent: Accent): Palette {
+  return accent === 'teal'
+    ? palettes[scheme]
+    : { ...palettes[scheme], ...accentTokens[accent][scheme] };
+}
+
+/** Swatch shown for each accent in Settings (its light-mode button colour). */
+export const accentSwatch: Record<Accent, string> = {
+  teal: light.btn,
+  emerald: accentTokens.emerald.light.btn,
+  indigo: accentTokens.indigo.light.btn,
+  rose: accentTokens.rose.light.btn,
+};
+
 /** Warm paper palette for the Quran reader's Sepia theme. */
 export const sepia: Palette = {
   ...light,

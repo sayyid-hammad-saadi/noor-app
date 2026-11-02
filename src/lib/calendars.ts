@@ -10,12 +10,19 @@ function julianDay(year: number, month: number, day: number): number {
   return Math.floor(Date.UTC(year, month - 1, day) / 86400000) + 2440588;
 }
 
+let userOffset = 0;
+
+/** The user's Hijri date offset (Settings), applied by every conversion below. */
+export function setHijriOffset(days: number) {
+  userOffset = days;
+}
+
 /**
  * Tabular (civil) Islamic calendar. Bangladesh usually follows local moon sighting,
- * which tends to match this (and lag Umm al-Qura by a day); a user adjustment of
- * ±1–2 days can be passed as `adjustDays`.
+ * which tends to match this (and lag Umm al-Qura by a day); the user can shift it by
+ * ±1–2 days in Settings.
  */
-export function toHijri(date: Date, adjustDays = 0): DateParts {
+export function toHijri(date: Date, adjustDays = userOffset): DateParts {
   const jd = julianDay(date.getFullYear(), date.getMonth() + 1, date.getDate()) + adjustDays;
   let l = jd - 1948440 + 10632;
   const n = Math.floor((l - 1) / 10631);

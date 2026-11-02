@@ -72,28 +72,67 @@ async function download(surah: number): Promise<SurahContent> {
   };
 }
 
-/** Surah text and translations: memory → device cache → network (then cached). */
-export async function loadSurah(surah: number): Promise<SurahContent> {
+/** Surah content from memory or the device cache only; null when not downloaded. */
+export async function cachedSurah(surah: number): Promise<SurahContent | null> {
   const hit = memory.get(surah);
   if (hit) return hit;
-
   const file = cacheFile(surah);
-  if (file?.exists) {
-    try {
-      const cached = JSON.parse(await file.text()) as SurahContent;
-      memory.set(surah, cached);
-      return cached;
-    } catch {
-      // Corrupt cache: fall through to the network.
-    }
+  if (!file?.exists) return null;
+  try {
+    const cached = JSON.parse(await file.text()) as SurahContent;
+    memory.set(surah, cached);
+    return cached;
+  } catch {
+    return null;
   }
+}
+
+/** Surah text and translations: memory → device cache → network (then cached). */
+export async function loadSurah(surah: number): Promise<SurahContent> {
+  const cached = await cachedSurah(surah);
+  if (cached) return cached;
 
   const content = await download(surah);
   memory.set(surah, content);
   try {
-    file?.write(JSON.stringify(content));
+    cacheFile(surah)?.write(JSON.stringify(content));
   } catch {
     // Caching is best-effort.
   }
   return content;
+}
+
+export type AyahHit = { surah: number; ayah: number; text: string };
+export type QuranSearchResult = { total: number; hits: AyahHit[] };
+
+type SearchResponse = {
+  code: number;
+  data?: {
+    count: number;
+    matches: { text: string; numberInSurah: number; surah: { number: number } }[];
+  };
+};
+
+/**
+ * Full-text search through AlQuran.cloud in one edition (a translation, or the plain
+ * Arabic text). The API answers 404 when nothing matches.
+ */
+export async function searchQuran(
+  query: string,
+  edition: 'en.sahih' | 'bn.bengali' | 'quran-simple-clean',
+  signal?: AbortSignal,
+): Promise<QuranSearchResult> {
+  const res = await fetch(`${API}/search/${encodeURIComponent(query)}/all/${edition}`, { signal });
+  if (res.status === 404) return { total: 0, hits: [] };
+  if (!res.ok) throw new Error(`Quran search failed: ${res.status}`);
+  const json = (await res.json()) as SearchResponse;
+  if (json.code === 404 || !json.data) return { total: 0, hits: [] };
+  return {
+    total: json.data.count,
+    hits: json.data.matches.map((m) => ({
+      surah: m.surah.number,
+      ayah: m.numberInSurah,
+      text: m.text,
+    })),
+  };
 }

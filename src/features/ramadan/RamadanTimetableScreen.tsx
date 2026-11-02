@@ -21,7 +21,7 @@ import { isSameDay } from '@/lib/dateLabels';
 import { makeStyles, palettes, useTheme } from '@/theme';
 
 import { ASHRA_AR } from './content';
-import { fastTimes, SEHRI_MARGIN_MIN } from './fastTimes';
+import { fastTimes, sehriMargin } from './fastTimes';
 import { ramadanTimetableHtml } from './ramadanPdf';
 import { ASHRAS, ashraDays, ramadanDate, ramadanInfo } from './ramadanCalendar';
 
@@ -92,7 +92,7 @@ export default function RamadanTimetableScreen() {
           place: place.label ?? '',
         }),
         subtitle,
-        note: `${t('ramadan.timetable.margin', { n: localizeDigits(SEHRI_MARGIN_MIN) })} · ${t('ramadan.moonNote')}`,
+        note: `${t('ramadan.timetable.margin', { n: localizeDigits(sehriMargin()) })} · ${t('ramadan.moonNote')}`,
         head: [
           t('ramadan.timetable.day'),
           t('ramadan.timetable.sehri'),
@@ -171,7 +171,7 @@ export default function RamadanTimetableScreen() {
           </Touchable>
           <View style={styles.noteChip}>
             <Text variant="label" weight="600" color="link" numberOfLines={2}>
-              {t('ramadan.timetable.margin', { n: localizeDigits(SEHRI_MARGIN_MIN) })}
+              {t('ramadan.timetable.margin', { n: localizeDigits(sehriMargin()) })}
             </Text>
           </View>
         </View>

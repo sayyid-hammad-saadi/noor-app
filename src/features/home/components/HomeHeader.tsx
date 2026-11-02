@@ -32,6 +32,7 @@ export function HomeHeader({
   place,
   onLocationPress,
   onBellPress,
+  bellUnread = false,
   onPrayerTimesPress,
 }: {
   now: Date;
@@ -39,6 +40,7 @@ export function HomeHeader({
   place: Place;
   onLocationPress: () => void;
   onBellPress: () => void;
+  bellUnread?: boolean;
   onPrayerTimesPress: () => void;
 }) {
   const styles = useStyles();
@@ -68,7 +70,7 @@ export function HomeHeader({
             </Text>
           </View>
         </View>
-        <NotificationsButton onPress={onBellPress} />
+        <NotificationsButton onPress={onBellPress} unread={bellUnread} />
       </View>
 
       <Touchable

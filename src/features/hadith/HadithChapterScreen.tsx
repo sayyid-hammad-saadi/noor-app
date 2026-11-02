@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { FlatList, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { ErrorState, Skeleton } from '@/components/feedback';
+import { ErrorState, OfflineBanner, Skeleton } from '@/components/feedback';
 import { TopBar } from '@/components/layout';
 import { useLanguage } from '@/i18n';
 import { makeStyles } from '@/theme';
@@ -37,6 +37,11 @@ export default function HadithChapterScreen() {
         title={info?.name ?? t('hadith.chapter', { n: localizeDigits(section) })}
         subtitle={`${t(`hadith.books.${book}`)} · ${t('hadith.chapter', { n: localizeDigits(section) })}`}
       />
+      {state.status !== 'ready' ? (
+        <View style={styles.offline}>
+          <OfflineBanner onRetry={retry} />
+        </View>
+      ) : null}
       {state.status === 'error' ? (
         <ErrorState
           title={t('hadith.loadError')}
@@ -80,6 +85,7 @@ export default function HadithChapterScreen() {
 
 const useStyles = makeStyles((t) =>
   StyleSheet.create({
+    offline: { paddingHorizontal: t.size.gutter, paddingBottom: t.space.sm },
     root: { flex: 1, backgroundColor: t.colors.bg },
     list: {
       paddingHorizontal: t.size.gutter,

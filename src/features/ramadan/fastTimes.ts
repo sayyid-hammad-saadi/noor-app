@@ -1,17 +1,18 @@
 import type { Place } from '@/features/location/LocationProvider';
+import { prayerSettings } from '@/features/prayer/prayerSettings';
 import { computeDay } from '@/features/prayer/prayerTimes';
 
 import { addDays } from './ramadanCalendar';
 
-/** Sehri ends this many minutes before Fajr, as a precaution (shown on the timetable). */
-export const SEHRI_MARGIN_MIN = 5;
+/** Sehri ends this many minutes before Fajr, as a precaution (Settings; shown on the timetable). */
+export const sehriMargin = () => prayerSettings.get().sehriMargin;
 
 export type FastTimes = { sehri: Date; iftar: Date; fajr: Date; maghrib: Date };
 
 export function fastTimes(place: Place, date: Date): FastTimes {
   const t = computeDay(place.latitude, place.longitude, date, place.countryCode);
   return {
-    sehri: new Date(t.fajr.getTime() - SEHRI_MARGIN_MIN * 60_000),
+    sehri: new Date(t.fajr.getTime() - sehriMargin() * 60_000),
     iftar: t.maghrib,
     fajr: t.fajr,
     maghrib: t.maghrib,

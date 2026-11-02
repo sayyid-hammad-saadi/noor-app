@@ -5,6 +5,7 @@ import {
   Bell,
   BellOff,
   CalendarDays,
+  Check,
   ChevronDown,
   ChevronRight,
   MapPin,
@@ -27,11 +28,13 @@ import { PRAYER_ICONS } from './prayerIcons';
 import { CityPickerSheet } from '@/features/location/CityPickerSheet';
 import { useLocation } from '@/features/location/LocationProvider';
 import { useLanguage } from '@/i18n';
-import { dayMonthLabel, hijriLocalized, isSameDay } from '@/lib/dateLabels';
+import { dayKey, dayMonthLabel, hijriLocalized, isSameDay } from '@/lib/dateLabels';
+import { settingsRoutes } from '@/features/settings/routes';
 import { routes } from '@/lib/routes';
 import { makeStyles, useTheme } from '@/theme';
 
 import { setAdhan, useAdhanPrefs } from './adhanPrefs';
+import { prayerLog, togglePrayed } from './prayerLog';
 import { clockLabel, untilParts } from './formatTime';
 import { dayDetails, methodFor, PRAYERS, type PrayerName, prayerState } from './prayerTimes';
 import { useNow } from './usePrayerTimes';
@@ -41,7 +44,6 @@ export default function PrayerTimesScreen() {
   const styles = useStyles();
   const router = useRouter();
   const { t } = useTranslation();
-  const toast = useToast();
   const { language } = useLanguage();
   const { place, saved, setLocation } = useLocation();
   const now = useNow();
@@ -57,6 +59,7 @@ export default function PrayerTimesScreen() {
   const { method, madhab } = methodFor(place.countryCode);
   const methodLabel = `${t(`prayerTimes.methods.${method}`)} · ${t(`prayerTimes.madhabs.${madhab}`)}`;
   const fmt = (d: Date) => clockLabel(d, language, place.timeZone, t);
+  const prayed = prayerLog.use()[dayKey(date)] ?? [];
 
   return (
     <SafeAreaView style={styles.root} edges={['top']}>
@@ -77,7 +80,7 @@ export default function PrayerTimesScreen() {
           <Touchable
             accessibilityRole="button"
             accessibilityLabel={t('prayerTimes.method', { method: methodLabel })}
-            onPress={() => toast.show({ message: t('prayerTimes.methodSoon') })}
+            onPress={() => router.push(settingsRoutes.method)}
             style={[styles.chip, styles.chipTint]}
           >
             <Icon icon={SlidersHorizontal} size={16} color="link" />
@@ -107,6 +110,8 @@ export default function PrayerTimesScreen() {
               start={fmt(day.times[p])}
               end={fmt(day.ends[p])}
               isCurrent={current === p}
+              prayed={prayed.includes(p)}
+              onTogglePrayed={day.times[p] <= now ? () => togglePrayed(date, p) : null}
               progress={
                 current === p
                   ? {
@@ -119,6 +124,10 @@ export default function PrayerTimesScreen() {
             />
           ))}
         </View>
+
+        <Text variant="caption" align="center" style={styles.hint}>
+          {t('prayerTimes.markHint')}
+        </Text>
 
         <ForbiddenTimes
           rows={[
@@ -170,12 +179,17 @@ function PrayerRow({
   start,
   end,
   isCurrent,
+  prayed,
+  onTogglePrayed,
   progress,
 }: {
   prayer: PrayerName;
   start: string;
   end: string;
   isCurrent: boolean;
+  prayed: boolean;
+  /** Null until the prayer's time has begun. */
+  onTogglePrayed: (() => void) | null;
   progress: { startMs: number; endMs: number; now: Date } | null;
 }) {
   const styles = useStyles();
@@ -222,14 +236,33 @@ function PrayerRow({
       ]}
     >
       <View style={styles.rowMain}>
-        <View style={[styles.tile, isCurrent && styles.tileCurrent]}>
-          <Icon
-            icon={PRAYER_ICONS[prayer]}
-            size={22}
-            color={isCurrent ? 'onBtn' : 'primary'}
-            filled={isCurrent && prayer === 'isha'}
-          />
-        </View>
+        {onTogglePrayed ? (
+          <Touchable
+            accessibilityRole="checkbox"
+            accessibilityState={{ checked: prayed }}
+            accessibilityLabel={t('prayerTimes.markPrayed', { prayer: name })}
+            onPress={onTogglePrayed}
+            hitSlop={4}
+            style={[styles.tile, (isCurrent || prayed) && styles.tileCurrent]}
+          >
+            <Icon
+              icon={prayed ? Check : PRAYER_ICONS[prayer]}
+              size={22}
+              color={isCurrent || prayed ? 'onBtn' : 'primary'}
+              strokeWidth={prayed ? 3 : undefined}
+              filled={!prayed && isCurrent && prayer === 'isha'}
+            />
+          </Touchable>
+        ) : (
+          <View style={[styles.tile, isCurrent && styles.tileCurrent]}>
+            <Icon
+              icon={PRAYER_ICONS[prayer]}
+              size={22}
+              color={isCurrent ? 'onBtn' : 'primary'}
+              filled={isCurrent && prayer === 'isha'}
+            />
+          </View>
+        )}
         <View style={styles.names}>
           <View style={styles.nameRow}>
             <Text
@@ -366,6 +399,7 @@ const useStyles = makeStyles((t) =>
     chipTint: { backgroundColor: t.colors.tint },
     chipPlain: { backgroundColor: t.colors.surface, borderWidth: 1, borderColor: t.colors.border },
     list: { marginTop: t.space.md, gap: t.space.sm },
+    hint: { marginTop: t.space.sm },
     row: { borderRadius: t.radius.card, paddingStart: t.space.md, paddingEnd: 6 },
     rowPlain: {
       minHeight: 64,
